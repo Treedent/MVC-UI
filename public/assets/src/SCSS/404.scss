@@ -1,0 +1,43 @@
+/*!
+ * MvcUI CSS page d'erreur 404
+ *
+ * MvcUI Application
+ *
+ * @package    MvcUI
+ * @author     Regis TEDONE
+ * @email      syradev@proton.me
+ * @copyright  Syradev 2023
+ * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
+ * @version    1.0.0
+*/
+
+@import "variables";
+
+body, html {
+  height: 100% !important;
+}
+
+#main404 {
+  width: 100%;
+  height: 100%;
+  background: url(../imgs/404.jpg) no-repeat bottom;
+  background-size: cover;
+}
+
+#message404 {
+  background-color: rgba(255, 255, 255, .65);
+  border-radius: 6px;
+
+  a {
+    color: $primary;
+    text-decoration: none;
+
+    &:hover {
+      color: $secondary
+    }
+  }
+}
+
+#mvclogo {
+  width: 400px;
+}

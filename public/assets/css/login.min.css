@@ -1,0 +1,13 @@
+/*!
+ * MvcUI CSS page de login
+ *
+ * MvcUI Application
+ *
+ * @package    MvcUI
+ * @author     Regis TEDONE
+ * @email      syradev@proton.me
+ * @copyright  Syradev 2023
+ * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
+ * @version    1.0.0
+***/body,html{height:100% !important}#mainLogin{width:100%;height:100%;background:url(https://source.unsplash.com/1600x900/?nature,people,architecture) no-repeat bottom;background-size:cover !important}#loginLogo{width:300px}#loginContainer{padding:24px;width:100%;max-width:340px;margin:0 auto;border:none;background:rgba(255,255,255,0.65);border-radius:6px;transition:background-color 1s}#loginContainer.error{background:rgba(255,0,0,0.85)}#loginContainer input{height:48px;padding:20px 10px;background:rgba(255,255,255,0.3);border:none;color:#0F657D}#loginContainer input:focus{box-shadow:0 0 2px #ff9000;background:rgba(255,255,255,0.9)}::placeholder{color:#015293 !important}
+/*# sourceMappingURL=login.min.css.map */

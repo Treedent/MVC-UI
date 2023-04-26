@@ -1,0 +1,13 @@
+{
+  "install_dir": "/home/regis/Public/localsites/mvc-ui.org",
+  "domain": "mvc.org",
+  "originating_url": "https://www.mvc-ui.org",
+  "originating_segment": "/",
+  "version": "1.0.0",
+  "session_name": "MvcUiUserSession",
+  "session_token_label": "MVCUI_CSRF_TOKEN_SESS_IDX",
+  "form_token_label": "mvc-ui-csrf-token-label",
+  "hashAlgo": "sha3-512",
+  "cipherAlgo": "aes-256-cbc",
+  "hmacData": "loCVRhEEWLCGjV7kRU06RBhXRhr2yzpcPQQE4C9Xvp"
+}
