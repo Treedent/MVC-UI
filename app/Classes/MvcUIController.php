@@ -76,7 +76,7 @@ final class MvcUIController {
     public function cacheRoutes(): void
     {
         $mvcConf = $this->getConf();
-        ini_set('session.name', $mvcConf->session_name);
+        ini_set('session.name', $mvcConf->user_session_name);
         ini_set('session.use_cookies', true);
         ini_set('session.use_only_cookies', false);
         ini_set('session.use_strict_mode', true);

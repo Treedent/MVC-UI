@@ -4,6 +4,9 @@
     ErrorDocument 404 /404
     ErrorDocument 401 /401
 
+    RewriteCond %{HTTP_HOST} ^mvc-ui.org
+    RewriteRule (.*) https://www.mvc-ui.org/$1 [R=301,L]
+
     RewriteCond $0#%{REQUEST_URI} ([^#]*)#(.*)\1$
     RewriteRule ^.*$ - [E=CWD:%2]
 

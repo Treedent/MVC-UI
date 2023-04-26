@@ -4,7 +4,7 @@
   "originating_segment": "/",
   "hmacData": "loCVRhEEWLCGjV7kRU06RBhXRhr2yzpcPQQE4C9Xvp",
   "version": "1.0.0",
-  "session_name": "MvcUiUserSession",
+  "user_session_name": "MvcUiUserSession",
   "session_token_label": "MVCUI_CSRF_TOKEN_SESS_IDX",
   "form_token_label": "mvc-ui-csrf-token-label",
   "hashAlgo": "sha3-512",
