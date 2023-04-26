@@ -24,6 +24,7 @@ final class MvcUIController {
     const PARTIALSPATH = self::VIEWPATH . '/Partials';
     const LAYOUT_EXT = '.layout.php';
     const TMPL_EXT = '.tmpl.php';
+    const PARTIAL_EXT = '.part.php';
     const ASSETSFOLDER = '/assets';
     const PAGETITLE = 'Mvc-UI';
 
@@ -207,7 +208,7 @@ final class MvcUIController {
         // Récupère le layout
         $layout_ar = explode('.', $layout);
         ob_start();
-        require(self::VIEWPATH . '/' . $layout_ar[0] . '/' . $layout_ar[1] . self::LAYOUT_EXT);
+        require(sprintf("%s/%s/%s%s", self::VIEWPATH, $layout_ar[0], $layout_ar[1], self::LAYOUT_EXT));
         $layout_content = ob_get_contents();
         ob_end_clean();
         $layout = str_replace('{{ pageTitle }}', self::PAGETITLE, $layout_content);

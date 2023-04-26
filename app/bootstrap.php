@@ -15,7 +15,7 @@
 
 use SYRADEV\app\MvcUIController;
 
-// Instantie la classe MvcUI
+// Instance la classe MvcUI
 $mvcUI = MvcUIController::getInstance();
 
 // Récupère l'url demandée

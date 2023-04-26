@@ -12,8 +12,8 @@
  * @version    1.0.0
  ***/
 
-// Lamp autoloader
+// MvcUI autoloader
 require_once __DIR__ . '/../app/autoload.php';
 
-// Lamp boostraper
+// MvcUI bootstrapper
 require_once __DIR__ . '/../app/bootstrap.php';

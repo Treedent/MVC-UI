@@ -12,9 +12,6 @@
  * @version    1.0.0
  */
 
-use SYRADEV\app\MvcUIController;
-
-
 ?>
 
 <p class="text-justify">MVC-UI est un package open-source proposant un squelette de démarrage pour des applications web basées sur le modèle MVC. Ce squelette est développé en PHP8, avec une implémentation côté client en javascript ES6, et une base de données MySQL.</p>
