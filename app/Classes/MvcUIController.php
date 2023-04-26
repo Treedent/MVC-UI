@@ -232,6 +232,19 @@ final class MvcUIController {
         return self::PARTIALSPATH . $partial;
     }
 
+    /*** Renders a partial
+     * @param $partial
+     * @return string *
+     ***/
+    public function renderPartial($partial): string
+    {
+        ob_start();
+        require(self::PARTIALSPATH . '/' . $partial . self::PARTIAL_EXT);
+        $partial_content = ob_get_contents();
+        ob_end_clean();
+        return $partial_content;
+    }
+
     /*** Vérifie si un utilisateur est connecté
      * @return bool
      ***/
