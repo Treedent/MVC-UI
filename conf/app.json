@@ -1,6 +1,6 @@
 {
-  "install_dir": "/home/regis/Public/localsites/mvc-ui.org",
-  "domain": "mvc.org",
+  "install_dir": "/home/user/localsites/mvc-ui.org",
+  "domain": "mvc-ui.org",
   "originating_url": "https://www.mvc-ui.org",
   "originating_segment": "/",
   "version": "1.0.0",
