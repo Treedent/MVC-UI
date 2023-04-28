@@ -1,5 +1,5 @@
 <?php
-/***
+/**
 * MvcUI classe principale de l'interface
 *
 * MvcUI Application
@@ -10,22 +10,67 @@
 * @copyright  Syradev 2023
 * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
 * @version    1.0.0
-***/
+*/
 
 namespace SYRADEV\app;
 
-/*** MvcUI controller ***/
+/**
+ * Classe MvcUIControlller
+ */
 class MvcUIController {
 
-    protected static self|null $instance = null;
+    /**
+     * Instance de la classe
+     * @protected MvcUIController|null $instance
+     */
+    protected static ?MvcUIController $instance = null;
 
+    /**
+     * Chemin vers le fichier de routes
+     * @const ROUTESFILE
+     */
     const ROUTESFILE = __DIR__ . '/../routes.php';
+
+    /**
+     * Chemin vers le dossier des vues
+     * @const VIEWPATH
+     */
     const VIEWPATH = __DIR__ . '/../Views';
+
+    /**
+     * Chemin vers le dossier des partiels
+     * @const PARTIALSPATH
+     */
     const PARTIALSPATH = self::VIEWPATH . '/Partials';
+
+    /**
+     * Extension des fichiers de Layout
+     * @const LAYOUT_EXT
+     */
     const LAYOUT_EXT = '.layout.php';
+
+    /**
+     * Extension des fichiers de Template
+     * @const TMPL_EXT
+     */
     const TMPL_EXT = '.tmpl.php';
+
+    /**
+     * Extension des fichiers de Partiel
+     * @const PARTIAL_EXT
+     */
     const PARTIAL_EXT = '.part.php';
+
+    /**
+     * Chemin vers les assets
+     * @const ASSETSFOLDER
+     */
     const ASSETSFOLDER = '/assets';
+
+    /**
+     * Titre de page par défaut
+     * @const ASSETSFOLDER
+     */
     const PAGETITLE = 'Mvc-UI';
 
 
@@ -39,9 +84,10 @@ class MvcUIController {
     }
 
 
-    /*** Instantie l'objet MvcUIController
+    /**
+     * Instantie l'objet MvcUIController
      * @return MvcUIController object *
-     ***/
+     */
     public static function getInstance(): MvcUIController
     {
         if (MvcUIController::$instance === null) {
@@ -50,9 +96,10 @@ class MvcUIController {
         return MvcUIController::$instance;
     }
 
-    /*** Récupère la configuration de l'application
+    /**
+     * Récupère la configuration de l'application
      * @param null $key
-     ***/
+     */
     public function getConf($key = null)
     {
         $confFile = __DIR__ . '/../../conf/app.json';
@@ -60,19 +107,21 @@ class MvcUIController {
         return $conf->$key ?? $conf;
     }
 
-    /*** Renvoie le chemin des assets
+    /**
+     * Renvoie le chemin des assets
      * @param $asset
      * @return string *
-     ***/
+     */
     public static function assets($asset): string
     {
         return self::ASSETSFOLDER . $asset;
     }
 
 
-    /*** Mise en cache des routes de l'Application dans une session PHP
+    /**
+     * Mise en cache des routes de l'Application dans une session PHP
      * @return void
-     ***/
+     */
     public function cacheRoutes(): void
     {
         $mvcConf = $this->getConf();
@@ -101,11 +150,12 @@ class MvcUIController {
         }
     }
 
-    /*** Renvoie vrai si une route existe
+    /**
+     * Renvoie vrai si une route existe
      * @param string $routeName
      * @param bool|null $startBy
      * @return bool $isRoute *
-     ***/
+     */
     public static function isRoute(string $routeName, bool|null $startBy = null): bool
     {
         $isRoute = false;
@@ -120,10 +170,11 @@ class MvcUIController {
     }
 
 
-    /*** Renvoie le nom d'une route à partir de ses segments
+    /**
+     * Renvoie le nom d'une route à partir de ses segments
      * @param string $requestedRoute
      * @return string|null $routeKey *
-     ***/
+     */
     public function getRouteName(string $requestedRoute): string|null
     {
         $routeName = null;
@@ -152,10 +203,11 @@ class MvcUIController {
         return $routeName;
     }
 
-    /*** Renvoie les segments d'une route à partir de son nom
+    /**
+     * Renvoie les segments d'une route à partir de son nom
      * @param string $routeName
      * @return string $route *
-     ***/
+     */
     public static function getRoute(string $routeName): string
     {
         $route = (new self)->getConf('originating_segment');
@@ -166,19 +218,21 @@ class MvcUIController {
     }
 
 
-    /*** Atténuation des risques XSS
+    /**
+     * Atténuation des risques XSS
      * @param $data
      * @return string *
-     ***/
+     */
     private static function xssafe($data): string
     {
         return htmlspecialchars($data, ENT_QUOTES | ENT_HTML5, 'UTF-8');
     }
 
 
-    /*** Génère un jeton CSRF
+    /**
+     * Génère un jeton CSRF
      * @return string *
-     ***/
+     */
     private function generateCSRFToken(): string
     {
         $mvcConf = $this->getConf();
@@ -189,20 +243,22 @@ class MvcUIController {
         return hash_hmac($mvcConf->hashAlgo, $mvcConf->hmacData, $_SESSION[$sessionTokenLabel]);
     }
 
-    /*** Renvoie le jeton CSRF
+    /**
+     * Renvoie le jeton CSRF
      * @return string *
-     ***/
+     */
     public static function getCSRFToken(): string
     {
         return self::xssafe((new self)->generateCSRFToken());
     }
 
-    /*** Rendu d'un layout + template
+    /**
+     * Rendu d'un layout + template
      * @param $layout
      * @param null $view
      * @param null $data
      * @return string *
-     ***/
+     */
     public function render($layout, $view = null, $data = null): string
     {
         // Récupère le layout
@@ -233,10 +289,11 @@ class MvcUIController {
         return self::PARTIALSPATH . $partial;
     }
 
-    /*** Renders a partial
+    /**
+     * Rendu d'un partiel
      * @param $partial
      * @return string *
-     ***/
+     */
     public function renderPartial($partial): string
     {
         ob_start();
@@ -246,9 +303,10 @@ class MvcUIController {
         return $partial_content;
     }
 
-    /*** Vérifie si un utilisateur est connecté
+    /**
+     * Vérifie si un utilisateur est connecté
      * @return bool
-     ***/
+     */
     public static function isConnected(): bool
     {
         return isset($_SESSION['admin']) && !empty($_SESSION['admin']);
@@ -256,52 +314,54 @@ class MvcUIController {
 
     /*** Affiche la bannière de login
      * @return void
-     ***/
+     */
     public function login(): void
     {
         echo $this->render('Layouts.login');
     }
 
 
-    /*** Affiche la page d'accueil
+    /**
+     * Affiche la page d'accueil
      * @return void
-     ***/
+     */
     public function home(): void
     {
         echo $this->render('Layouts.default', 'Templates.home');
     }
 
-    /*** Affiche la page d'erreur 404
+    /**
+     * Affiche la page d'erreur 404
      * @return void
-     ***/
+     */
     public function error404(): void
     {
         echo $this->render('Layouts.404');
     }
 
-    /***
+    /**
      * Vérifie les requêtes Ajax
      * @return bool *
-     ***/
+     */
     public function ajaxCheck(): bool
     {
         return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
     }
 
-    /***
+    /**
      * Vérification du Domaine enregistré
      * @return bool *
-     ***/
+     */
     public function domainCheck(): bool
     {
         $domain = $this->getConf('domain');
         return $_SERVER['HTTP_HOST'] === $domain && $_SERVER['SERVER_NAME'] === $domain;
     }
 
-    /***
+    /**
      * Valide le jeton CSRF pour les appels Ajax
      * @return bool *
-     ***/
+     */
     public function validateAjaxRequest(): bool
     {
         $mvcConf = $this->getConf();
@@ -315,10 +375,10 @@ class MvcUIController {
     }
 
 
-    /***
+    /**
      * Valide le jeton CSRF pour les données postées
      * @return bool *
-     ***/
+     */
     public function validateFormRequest(): bool
     {
         $mvcConf = $this->getConf();
