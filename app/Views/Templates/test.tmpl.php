@@ -2,7 +2,7 @@
 /***
  * MvcUI template de test
  *
- * MvcUI Application
+ * Application MvcUI
  *
  * @package    MvcUI
  * @author     Regis TEDONE

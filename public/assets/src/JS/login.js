@@ -1,7 +1,7 @@
 /***
  * MvcUI JavaScript login/logout
  *
- * MvcUI Application
+ * Application MvcUI
  *
  * @package    MvcUI
  * @author     Regis TEDONE
@@ -17,7 +17,7 @@ docReady(() => {
 
     const d = document;
 
-    /*** Constantes des sélecteurs ***/
+    /*** Constantes des sélecteurs */
     const loginBtn = d.querySelector("#connect");
 
     loginBtn.addEventListener('click', (e) => {

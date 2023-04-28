@@ -1,7 +1,7 @@
 /***
  * MvcUI JavaScript principal
  *
- * MvcUI Application
+ * Application MvcUI
  *
  * @package    MvcUI
  * @author     Regis TEDONE
@@ -18,7 +18,7 @@ docReady(() => {
     const d = document;
     const totop = d.querySelector('#to-top');
 
-    /*** Evènement click sur bouton To top ***/
+    /*** Evènement click sur bouton To top */
     totop.addEventListener('click', (e) => {
         e.preventDefault();
         window.scrollTo({top: 0, behavior: 'smooth'});

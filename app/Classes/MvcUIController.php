@@ -2,7 +2,7 @@
 /**
 * MvcUI classe principale de l'interface
 *
-* MvcUI Application
+* Application MvcUI
 *
 * @package    MvcUI
 * @author     Regis TEDONE

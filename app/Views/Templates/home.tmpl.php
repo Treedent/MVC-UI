@@ -2,7 +2,7 @@
 /***
  * MvcUI template page d'accueil
  *
- * MvcUI Application
+ * Application MvcUI
  *
  * @package    MvcUI
  * @author     Regis TEDONE

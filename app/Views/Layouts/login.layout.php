@@ -2,7 +2,7 @@
 /***
  *  MvcUI Layout Login
  *
- * MvcUI Application
+ * Application MvcUI
  *
  * @package    MvcUI
  * @author     Regis TEDONE

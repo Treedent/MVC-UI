@@ -2,7 +2,7 @@
 /***
  * MvcUI template partiel de Header
  *
- * MvcUI Application
+ * Application MvcUI
  *
  * @package    MvcUI
  * @author     Regis TEDONE
@@ -10,7 +10,7 @@
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
  * @version    1.0.0
- ***/
+ */
 
 use SYRADEV\app\MvcUIController;
 
