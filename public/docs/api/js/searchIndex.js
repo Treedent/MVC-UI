@@ -73,7 +73,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\SYRADEV\\app\\MvcUIController\u003A\u003Apartial\u0028\u0029",
             "name": "partial",
-            "summary": "",
+            "summary": "Renvoie\u0020le\u0020chemin\u0020d\u0027un\u0020partiel",
             "url": "classes/SYRADEV-app-MvcUIController.html#method_partial"
         },                {
             "fqsen": "\\SYRADEV\\app\\MvcUIController\u003A\u003ArenderPartial\u0028\u0029",
@@ -88,7 +88,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\SYRADEV\\app\\MvcUIController\u003A\u003Alogin\u0028\u0029",
             "name": "login",
-            "summary": "",
+            "summary": "Affiche\u0020la\u0020banni\u00E8re\u0020de\u0020login",
             "url": "classes/SYRADEV-app-MvcUIController.html#method_login"
         },                {
             "fqsen": "\\SYRADEV\\app\\MvcUIController\u003A\u003Ahome\u0028\u0029",

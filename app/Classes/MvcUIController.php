@@ -280,10 +280,11 @@ class MvcUIController {
         return str_replace('{{ pageContent }}', $view_content, $layout);
     }
 
-    /*** Renvoie le chemin d'un partiel
+    /**
+     * Renvoie le chemin d'un partiel
      * @param $partial
      * @return string *
-     ***/
+     */
     public static function partial($partial): string
     {
         return self::PARTIALSPATH . $partial;
@@ -312,7 +313,8 @@ class MvcUIController {
         return isset($_SESSION['admin']) && !empty($_SESSION['admin']);
     }
 
-    /*** Affiche la bannière de login
+    /**
+     * Affiche la bannière de login
      * @return void
      */
     public function login(): void
