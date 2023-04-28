@@ -13,6 +13,7 @@
  ***/
 
 use SYRADEV\app\MvcUIController;
+use SYRADEV\app\TestController;
 
 return [
     'login' => [
@@ -68,5 +69,14 @@ return [
         'class' => MvcUIController::class,
         'action' => 'disconnect',
         'info' => 'Déconnecte un utilisateur.'
+    ],
+    'test'=> [
+        'access' => 'web',
+        'privacy' => 'public',
+        'method' => 'get',
+        'route' => '/test',
+        'class' => TestController::class,
+        'action' => 'test1',
+        'info' => 'Route de test.'
     ]
 ];

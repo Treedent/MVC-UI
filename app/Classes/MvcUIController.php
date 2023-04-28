@@ -15,7 +15,7 @@
 namespace SYRADEV\app;
 
 /*** MvcUI controller ***/
-final class MvcUIController {
+class MvcUIController {
 
     protected static self|null $instance = null;
 
