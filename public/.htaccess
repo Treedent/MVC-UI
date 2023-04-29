@@ -14,7 +14,7 @@
     RewriteRule ^(.*)/+$ $1 [R=301,L]
 
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^dashboard/module/(.*) /index.php?module=$1
+    RewriteRule ^pagination/(.*) /index.php?num=$1
 
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d

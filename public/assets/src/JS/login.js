@@ -1,4 +1,4 @@
-/***
+/**
  * MvcUI JavaScript login/logout
  *
  * Application MvcUI
@@ -17,7 +17,7 @@ docReady(() => {
 
     const d = document;
 
-    /*** Constantes des sélecteurs */
+    /** Constantes des sélecteurs */
     const loginBtn = d.querySelector("#connect");
 
     loginBtn.addEventListener('click', (e) => {

@@ -69,9 +69,9 @@ class MvcUIController {
 
     /**
      * Titre de page par défaut
-     * @const ASSETSFOLDER
+     * @const PAGETITLE
      */
-    const PAGETITLE = 'Mvc-UI';
+    const PAGETITLE = 'Mvc::UI';
 
 
     protected function __construct()
@@ -135,7 +135,7 @@ class MvcUIController {
         ini_set('session.cookie_samesite', 'Strict');
         ini_set('session.gc_maxlifetime', 3600);
         ini_set('session.cookie_lifetime', 3600);
-        ini_set('session.use_trans_sid', true);
+        ini_set('session.use_trans_sid', false);
         ini_set('session.trans_sid_hosts', $mvcConf->domain);
         ini_set('session.referer_check', $mvcConf->originating_url);
         ini_set('session.cache_limiter', 'nocache');
@@ -295,13 +295,24 @@ class MvcUIController {
      * @param $partial
      * @return string *
      */
-    public function renderPartial($partial): string
+    public function renderPartial($partial, $params = null): string
     {
         ob_start();
         require(self::PARTIALSPATH . '/' . $partial . self::PARTIAL_EXT);
         $partial_content = ob_get_contents();
         ob_end_clean();
         return $partial_content;
+    }
+
+    /**
+     * Compare la route courante pour son activation dans le menu
+     * @param array $routes
+     * @return string *
+     */
+    static public function isActive(array $routes): string
+    {
+        $routeName = (new self)->getRouteName($_SERVER['REQUEST_URI']);
+        return in_array($routeName, $routes) ? ' active' : '';
     }
 
     /**
@@ -320,6 +331,10 @@ class MvcUIController {
     public function login(): void
     {
         echo $this->render('Layouts.login');
+    }
+
+    public function docs(): void{
+        echo $this->render('Layouts.framed', 'Templates.docs');
     }
 
 

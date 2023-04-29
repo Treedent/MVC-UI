@@ -1,5 +1,5 @@
 <?php
-/***
+/**
  * MvcUI Définition des Routes de l'application
  *
  * MvcUI Sample App
@@ -13,7 +13,7 @@
  */
 
 use SYRADEV\app\MvcUIController;
-use SYRADEV\app\TestController;
+use SYRADEV\app\PaginateController;
 
 return [
     'login' => [
@@ -70,13 +70,23 @@ return [
         'action' => 'disconnect',
         'info' => 'Déconnecte un utilisateur.'
     ],
-    'test'=> [
+    'pagination'=> [
         'access' => 'web',
         'privacy' => 'public',
         'method' => 'get',
-        'route' => '/test',
-        'class' => TestController::class,
-        'action' => 'test1',
-        'info' => 'Route de test.'
+        'route' => '/pagination',
+        'allowed_params_regex' => 'int+',
+        'class' => PaginateController::class,
+        'action' => 'paginateDemo',
+        'info' => 'Exemple de pagination.'
+    ],
+    'docs'=> [
+        'access' => 'web',
+        'privacy' => 'public',
+        'method' => 'get',
+        'route' => '/docs',
+        'class' => MvcUIController::class,
+        'action' => 'docs',
+        'info' => 'Documentation classe MvcUI.'
     ]
 ];

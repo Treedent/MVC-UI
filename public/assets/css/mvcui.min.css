@@ -9,5 +9,5 @@
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
  * @version    1.0.0
-*/.text-justify{text-align:justify !important}#to-top{display:none;float:right;z-index:1032}#mvcfooter{height:44px}
+*/.text-justify{text-align:justify !important}#top-menu a::before{content:" ::  "}#top-menu a.active{color:#d45500}#to-top{display:none;float:right;z-index:1032}#mvcfooter{height:44px}.display-big{font-size:15rem}.rainbow_text_animated{background:linear-gradient(to right, #66f, #09f, lime, #f39, #66f);-webkit-background-clip:text;background-clip:text;color:transparent;animation:rainbow_animation 6s ease-in-out infinite;background-size:400% 100%}@keyframes rainbow_animation{0%,100%{background-position:0 0}50%{background-position:100% 0}}
 /*# sourceMappingURL=mvcui.min.css.map */

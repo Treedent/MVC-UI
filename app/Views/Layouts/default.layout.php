@@ -1,5 +1,5 @@
 <?php
-/***
+/**
  *  MvcUI Layout principal du frontend
  *
  * Application MvcUI
@@ -22,7 +22,7 @@ use Syradev\app\MvcUIController;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="<?= MvcUIController::getCSRFToken(); ?>">
     <title>{{ pageTitle }}</title>
-    <link rel="icon" type="image/png" href="<?= MvcUIController::assets('/imgs/favicon.png'); ?>">
+    <link rel="icon" type="image/svg+xml" href="<?= MvcUIController::assets('/imgs/favicon.svg'); ?>">
     <link rel="stylesheet" href="<?= MvcUIController::assets('/css/animate.min.css'); ?>">
     <link rel="stylesheet" href="<?= MvcUIController::assets('/css/bootstrap.min.css'); ?>">
     <link rel="stylesheet" href="<?= MvcUIController::assets('/css/mvcui.min.css'); ?>">
@@ -36,8 +36,8 @@ use Syradev\app\MvcUIController;
                 <div class="col">
                     <?php
                         $header = [
-                            'logo' => '/imgs/mvc-ui.svg',
-                            'title' => 'MVC-UI'
+                            'logo' => '/imgs/mvc-ui-.svg',
+                            'title' => 'Mvc::UI'
                         ];
                         require_once MvcUIController::partial('/header.part.php');
                     ?>
@@ -52,7 +52,7 @@ use Syradev\app\MvcUIController;
                 <?php
                 $footer = [
                     'logo' => '/imgs/mvc-ui.svg',
-                    'title' => 'MVC-UI',
+                    'title' => 'MVC::UI',
                     'classTitle' => 'php'
                 ];
                 require_once MvcUIController::partial('/footer.part.php');

@@ -1,5 +1,5 @@
 const AesJson = {
-    /***
+    /**
      * Encripte une valeur quelconque
      * @param {*} value
      * @param {string} password
@@ -8,7 +8,7 @@ const AesJson = {
     'encrypt': function (value, password) {
         return CryptoJS.AES.encrypt(JSON.stringify(value), password, { format: AesJson }).toString();
     },
-    /***
+    /**
      * Decripte une valeur préalablement encriptée
      * @param {string} jsonStr
      * @param {string} password
@@ -17,7 +17,7 @@ const AesJson = {
     'decrypt': function (jsonStr, password) {
         return JSON.parse(CryptoJS.AES.decrypt(jsonStr, password, { format: AesJson }).toString(CryptoJS.enc.Utf8));
     },
-    /***
+    /**
      * Stringifie une connée cryptoJS
      * @param {Object} cipherParams
      * @return {string}
@@ -28,7 +28,7 @@ const AesJson = {
         if (cipherParams.salt) j.s = cipherParams.salt.toString()
         return JSON.stringify(j).replace(/\s/g, '')
     },
-    /***
+    /**
      * Parse une donnée cryptoJS
      * @param {string} jsonStr
      * @return {*}

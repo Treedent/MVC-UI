@@ -1,5 +1,5 @@
 <?php
-/***
+/**
  * MvcUI page d'erreur 404
  *
  * Application MvcUI
@@ -29,7 +29,7 @@ use SYRADEV\app\MvcUIController;
 <div id="main404" class="d-flex justify-content-center align-items-center">
     <div id="message404" class="text-center px-5 py-5 animate__animated animate__fadeIn">
         <a href="<?= MvcUIController::getRoute('home'); ?>" title="Page d'accueil">
-            <img id="mvclogo" src="<?= MvcUIController::assets('/imgs/mvc-ui.svg'); ?>"
+            <img id="mvclogo" src="<?= MvcUIController::assets('/imgs/mvc-ui-.svg'); ?>"
                  alt="Application MVC"></a>
         <h1 class="display-5">Oh ! 404 PAGE NON TROUVÉE</h1>
         <p>Malheureusement, cette page n'existe pas. <br>Veuillez vérifier votre URL <br> ou retourner à la page

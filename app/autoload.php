@@ -1,5 +1,5 @@
 <?php
-/***
+/**
  * MvcUI fichier autoloader
  *
  * Application MvcUI
@@ -14,7 +14,7 @@
 
 require_once __DIR__ . '/Classes/MvcUIController.php';
 require_once __DIR__ . '/Classes/PdoMySQL.php';
-require_once __DIR__ . '/Classes/TestController.php';
+require_once __DIR__ . '/Classes/PaginateController.php';
 
 use SYRADEV\app\MvcUIController;
 $mvcUI = MvcUIController::getInstance();

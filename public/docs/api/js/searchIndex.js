@@ -166,22 +166,22 @@ Search.appendIndex(
             "summary": "Instance\u0020de\u0020la\u0020classe",
             "url": "classes/SYRADEV-app-MvcUIController.html#property_instance"
         },                {
-            "fqsen": "\\SYRADEV\\app\\TestController",
+            "fqsen": "\\SYRADEV\\app\\PaginateController",
             "name": "TestController",
             "summary": "Classe\u0020TestController\u0020\u00E9tends\u0020MvcUIControlller",
             "url": "classes/SYRADEV-app-TestController.html"
         },                {
-            "fqsen": "\\SYRADEV\\app\\TestController\u003A\u003AgetInstance\u0028\u0029",
+            "fqsen": "\\SYRADEV\\app\\PaginateController\u003A\u003AgetInstance\u0028\u0029",
             "name": "getInstance",
             "summary": "Instantie\u0020l\u0027objet\u0020TestController",
             "url": "classes/SYRADEV-app-TestController.html#method_getInstance"
         },                {
-            "fqsen": "\\SYRADEV\\app\\TestController\u003A\u003Atest1\u0028\u0029",
+            "fqsen": "\\SYRADEV\\app\\PaginateController\u003A\u003Atest1\u0028\u0029",
             "name": "test1",
             "summary": "Fonction\u0020de\u0020test",
             "url": "classes/SYRADEV-app-TestController.html#method_test1"
         },                {
-            "fqsen": "\\SYRADEV\\app\\TestController\u003A\u003A\u0024instance",
+            "fqsen": "\\SYRADEV\\app\\PaginateController\u003A\u003A\u0024instance",
             "name": "instance",
             "summary": "Instance\u0020de\u0020la\u0020classe",
             "url": "classes/SYRADEV-app-TestController.html#property_instance"

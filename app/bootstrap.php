@@ -1,5 +1,5 @@
 <?php
-/***
+/**
  * MvcUI interface de démarrage
  * Dispatch vers le controller ad hoc
  *
@@ -25,9 +25,9 @@ $requestUri = $_SERVER['REQUEST_URI'];
 $routeName = $mvcUI->getRouteName($requestUri);
 
 
-//***************************************************
+//**************************************************
 // Traitement de l'API Ajax *************************
-//***************************************************
+//**************************************************
 // Vérifie si la requête est une requête Ajax XmlHttpRequest
 // Vérifiction du domaine enregistré
 $requestIsAjax = $mvcUI->ajaxCheck() && $mvcUI->domainCheck();
@@ -48,7 +48,7 @@ if ($requestIsAjax) {
             // Routage de la demande
             switch ($requestUri) {
 
-                /*** Demande de connexion */
+                /** Demande de connexion */
                 case '/connect':
                     if (isset($ajaxRequest->type) && $ajaxRequest->type === 'cnx') {
                         if (isset($ajaxRequest->action) && $ajaxRequest->action === 'connect') {
@@ -67,7 +67,7 @@ if ($requestIsAjax) {
                     }
                     break;
 
-                /*** Demande de déconnexion */
+                /** Demande de déconnexion */
                 case '/disconnect':
                     if (isset($ajaxRequest->type) && $ajaxRequest->type === 'cnx') {
                         if (isset($ajaxRequest->action) && $ajaxRequest->action === 'disconnect') {
@@ -84,7 +84,7 @@ if ($requestIsAjax) {
                     }
                     break;
 
-                /*** Demande d'un template partiel */
+                /** Demande d'un template partiel */
                 case '/partial':
                     if (isset($ajaxRequest->type) && $ajaxRequest->type === 'srv') {
                         if (isset($ajaxRequest->partial)) {
@@ -121,9 +121,9 @@ if ($requestIsAjax) {
         exit();
     }
 
-//***************************************************
+//**************************************************
 // Traitement des requêtes HTTP standard ************
-//***************************************************
+//**************************************************
 } else {
 // Si la route n'existe pas
     if ($routeName === null) {

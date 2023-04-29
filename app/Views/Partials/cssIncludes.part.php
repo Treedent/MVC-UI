@@ -1,5 +1,5 @@
 <?php
-/***
+/**
  * MvcUI Inclusion de fichiers CSS additionnels
  *
  * Application MvcUI

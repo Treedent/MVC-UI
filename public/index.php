@@ -1,6 +1,6 @@
 <?php
 
-/***
+/**
  * MvcUI User Interface public index
  *
  * Application MvcUI

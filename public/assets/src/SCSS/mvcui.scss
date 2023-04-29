@@ -17,6 +17,15 @@
   text-align:justify !important;
 }
 
+#top-menu {
+  a::before {
+    content: " ::  ";
+  }
+  a.active {
+    color: $primary;
+  }
+}
+
 #to-top {
   display: none;
   float: right;
@@ -25,4 +34,27 @@
 
 #mvcfooter {
   height:44px;
+}
+
+.display-big {
+  font-size: 15rem;
+}
+
+.rainbow_text_animated {
+  background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow_animation 6s ease-in-out infinite;
+  background-size: 400% 100%;
+}
+
+@keyframes rainbow_animation {
+  0%,100% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
 }

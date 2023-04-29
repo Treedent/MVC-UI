@@ -1,5 +1,5 @@
 <?php
-/***
+/**
  *  MvcUI Layout Login
  *
  * Application MvcUI
@@ -22,7 +22,7 @@ use SYRADEV\app\MvcUIController;
     <meta name="csrf-token" content="<?= MvcUIController::getCSRFToken(); ?>">
     <meta http-equiv="refresh" content="3000">
     <title>MVCUi login</title>
-    <link rel="icon" type="image/png" href="<?= MvcUIController::assets('/imgs/favicon.png'); ?>">
+    <link rel="icon" type="image/svg+xml" href="<?= MvcUIController::assets('/imgs/favicon.svg'); ?>">
     <link rel="stylesheet" href="<?= MvcUIController::assets('/css/animate.min.css'); ?>">
     <link rel="stylesheet" href="<?= MvcUIController::assets('/css/bootstrap.min.css'); ?>">
     <link rel="stylesheet" href="<?= MvcUIController::assets('/css/bootstrap-icons.min.css'); ?>">
@@ -32,7 +32,7 @@ use SYRADEV\app\MvcUIController;
 <div id="mainLogin" class="d-flex align-items-center">
     <div id="loginContainer" class="animate__animated animate__fadeIn">
         <div class="text-center mb-4">
-            <img id="loginLogo" src="<?= MvcUIController::assets('/imgs/mvc-ui.svg'); ?>" alt="MvcUI">
+            <img id="loginLogo" src="<?= MvcUIController::assets('/imgs/mvc-ui-.svg'); ?>" alt="MvcUI">
         </div>
         <?php if (!MvcUIController::isConnected()) { ?>
             <form autocomplete="off">
