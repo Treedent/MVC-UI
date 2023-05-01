@@ -1,9 +1,21 @@
 <?php
-
+/**
+ * MvcUI classe de gestion de la pagination
+ *
+ * Application MvcUI
+ *
+ * @package    MvcUI
+ * @author     Regis TEDONE
+ * @email      syradev@proton.me
+ * @copyright  Syradev 2023
+ * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
+ * @version    1.1.0
+ */
 namespace SYRADEV\app;
 
 /**
  * Classe PaginateController étends MvcUIControlller
+ * Gestion de la pagination
  */
 class PaginateController extends MvcUIController
 {
@@ -12,7 +24,7 @@ class PaginateController extends MvcUIController
 
     /**
      * Instantie l'objet PaginateController
-     * @return MvcUIController object *
+     * @return PaginateController object *
      */
     public static function getInstance(): MvcUIController
     {
@@ -23,7 +35,7 @@ class PaginateController extends MvcUIController
     }
 
     /**
-     * Fonction de test
+     * Affiche la page de test de la pagination
      * @return void *
      */
     public function paginateDemo(): void

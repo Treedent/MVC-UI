@@ -1,0 +1,2248 @@
+<?xml version="1.0"?>
+<project name="Documentation">
+                <file path="app/autoload.php" hash="639be8cf08720e6114a017f9d67a4a71">
+            <docblock line="0">
+    <description>MvcUI fichier d&#039;autochargement des classes</description>
+    <long-description>Application MvcUI</long-description>
+                    <tag
+                name="package"
+                description="MvcUI"
+                                                                                                />
+                            <tag
+                name="author"
+                description="Regis TEDONE"
+                                                                                                />
+                            <tag
+                name="email"
+                description="syradev@proton.me"
+                                                                                                />
+                            <tag
+                name="copyright"
+                description="Syradev 2023"
+                                                                                                />
+                            <tag
+                name="license"
+                description="https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License"
+                                                                                                />
+                            <tag
+                name="version"
+                description=""
+                                 version="1.1.0"                                                                />
+            </docblock>
+
+
+            
+            
+
+            
+                        
+                        
+                        
+                        
+            
+            <parse_markers></parse_markers>
+        </file>
+            <file path="app/bootstrap.php" hash="6034b1617250b51cea631c9e81ee0189">
+            <docblock line="0">
+    <description>MvcUI interface de démarrage
+Dispatch vers le controller ad hoc</description>
+    <long-description>Application MvcUI</long-description>
+                    <tag
+                name="package"
+                description="MvcUI"
+                                                                                                />
+                            <tag
+                name="author"
+                description="Regis TEDONE"
+                                                                                                />
+                            <tag
+                name="email"
+                description="syradev@proton.me"
+                                                                                                />
+                            <tag
+                name="copyright"
+                description="Syradev 2023"
+                                                                                                />
+                            <tag
+                name="license"
+                description="https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License"
+                                                                                                />
+                            <tag
+                name="version"
+                description=""
+                                 version="1.1.0"                                                                />
+            </docblock>
+
+
+            
+            
+
+            
+                        
+                        
+                        
+                        
+            
+            <parse_markers></parse_markers>
+        </file>
+            <file path="app/Classes/MvcUIController.php" hash="b837b503a784a255d34745aae473e598">
+            <docblock line="0">
+    <description>MvcUI classe principale de l&#039;interface</description>
+    <long-description>Application MvcUI</long-description>
+                    <tag
+                name="package"
+                description="MvcUI"
+                                                                                                />
+                            <tag
+                name="author"
+                description="Regis TEDONE"
+                                                                                                />
+                            <tag
+                name="email"
+                description="syradev@proton.me"
+                                                                                                />
+                            <tag
+                name="copyright"
+                description="Syradev 2023"
+                                                                                                />
+                            <tag
+                name="license"
+                description="https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License"
+                                                                                                />
+                            <tag
+                name="version"
+                description=""
+                                 version="1.1.0"                                                                />
+            </docblock>
+
+
+            
+                            <namespace-alias name="\SYRADEV\app"/>
+            
+
+            
+                        
+                        
+                                        <class final="false" abstract="false" namespace="\SYRADEV\app" line="22">
+                    <name>MvcUIController</name>
+                    <full_name>\SYRADEV\app\MvcUIController</full_name>
+                    <docblock line="22">
+    <description>Classe MvcUIControlller</description>
+    <long-description></long-description>
+                    <tag
+                name="package"
+                description="MvcUI"
+                                                                                                />
+            </docblock>
+
+                    
+                    
+                                            <constant namespace="\SYRADEV\app\MvcUIController" line="35" visibility="public">
+    <name>ROUTESFILE</name>
+    <full_name>\SYRADEV\app\MvcUIController::ROUTESFILE</full_name>
+    <value>__DIR__ . &#039;/../routes.php&#039;</value>
+        <docblock line="35">
+    <description>Chemin vers le fichier de routes</description>
+    <long-description></long-description>
+                    <tag
+                name="const"
+                description="ROUTESFILE"
+                                                                                                />
+                        </docblock>
+
+</constant>
+
+                                            <constant namespace="\SYRADEV\app\MvcUIController" line="41" visibility="public">
+    <name>VIEWPATH</name>
+    <full_name>\SYRADEV\app\MvcUIController::VIEWPATH</full_name>
+    <value>__DIR__ . &#039;/../Views&#039;</value>
+        <docblock line="41">
+    <description>Chemin vers le dossier des vues</description>
+    <long-description></long-description>
+                    <tag
+                name="const"
+                description="VIEWPATH"
+                                                                                                />
+                        </docblock>
+
+</constant>
+
+                                            <constant namespace="\SYRADEV\app\MvcUIController" line="47" visibility="public">
+    <name>PARTIALSPATH</name>
+    <full_name>\SYRADEV\app\MvcUIController::PARTIALSPATH</full_name>
+    <value>self::VIEWPATH . &#039;/Partials&#039;</value>
+        <docblock line="47">
+    <description>Chemin vers le dossier des partiels</description>
+    <long-description></long-description>
+                    <tag
+                name="const"
+                description="PARTIALSPATH"
+                                                                                                />
+                        </docblock>
+
+</constant>
+
+                                            <constant namespace="\SYRADEV\app\MvcUIController" line="53" visibility="public">
+    <name>LAYOUT_EXT</name>
+    <full_name>\SYRADEV\app\MvcUIController::LAYOUT_EXT</full_name>
+    <value>&#039;.layout.php&#039;</value>
+        <docblock line="53">
+    <description>Extension des fichiers de Layout</description>
+    <long-description></long-description>
+                    <tag
+                name="const"
+                description="LAYOUT_EXT"
+                                                                                                />
+                        </docblock>
+
+</constant>
+
+                                            <constant namespace="\SYRADEV\app\MvcUIController" line="59" visibility="public">
+    <name>TMPL_EXT</name>
+    <full_name>\SYRADEV\app\MvcUIController::TMPL_EXT</full_name>
+    <value>&#039;.tmpl.php&#039;</value>
+        <docblock line="59">
+    <description>Extension des fichiers de Template</description>
+    <long-description></long-description>
+                    <tag
+                name="const"
+                description="TMPL_EXT"
+                                                                                                />
+                        </docblock>
+
+</constant>
+
+                                            <constant namespace="\SYRADEV\app\MvcUIController" line="65" visibility="public">
+    <name>PARTIAL_EXT</name>
+    <full_name>\SYRADEV\app\MvcUIController::PARTIAL_EXT</full_name>
+    <value>&#039;.part.php&#039;</value>
+        <docblock line="65">
+    <description>Extension des fichiers de Partiel</description>
+    <long-description></long-description>
+                    <tag
+                name="const"
+                description="PARTIAL_EXT"
+                                                                                                />
+                        </docblock>
+
+</constant>
+
+                                            <constant namespace="\SYRADEV\app\MvcUIController" line="71" visibility="public">
+    <name>ASSETSFOLDER</name>
+    <full_name>\SYRADEV\app\MvcUIController::ASSETSFOLDER</full_name>
+    <value>&#039;/assets&#039;</value>
+        <docblock line="71">
+    <description>Chemin vers les assets</description>
+    <long-description></long-description>
+                    <tag
+                name="const"
+                description="ASSETSFOLDER"
+                                                                                                />
+                        </docblock>
+
+</constant>
+
+                                            <constant namespace="\SYRADEV\app\MvcUIController" line="77" visibility="public">
+    <name>PAGETITLE</name>
+    <full_name>\SYRADEV\app\MvcUIController::PAGETITLE</full_name>
+    <value>&#039;Mvc::UI&#039;</value>
+        <docblock line="77">
+    <description>Titre de page par défaut</description>
+    <long-description></long-description>
+                    <tag
+                name="const"
+                description="PAGETITLE"
+                                                                                                />
+                        </docblock>
+
+</constant>
+
+                                        
+                                            <property namespace="\SYRADEV\app\MvcUIController" line="29" visibility="protected">
+    <name>instance</name>
+    <full_name>\SYRADEV\app\MvcUIController::$instance</full_name>
+    <default>null</default>
+        <docblock line="29">
+    <description>Instance de la classe</description>
+    <long-description></long-description>
+                    <tag
+                name="protected"
+                description="MvcUIController|null $instance"
+                                                                                                />
+            </docblock>
+
+</property>
+
+                                        
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="80" visibility="protected" returnByReference="false">
+    <name>__construct</name>
+    <full_name>\SYRADEV\app\MvcUIController::__construct()</full_name>
+    <value></value>
+            <docblock line="80">
+    <description></description>
+    <long-description></long-description>
+    </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="85" visibility="protected" returnByReference="false">
+    <name>__clone</name>
+    <full_name>\SYRADEV\app\MvcUIController::__clone()</full_name>
+    <value></value>
+            <docblock line="85">
+    <description></description>
+    <long-description></long-description>
+    </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="true" namespace="\SYRADEV\app" line="94" visibility="public" returnByReference="false">
+    <name>getInstance</name>
+    <full_name>\SYRADEV\app\MvcUIController::getInstance()</full_name>
+    <value></value>
+            <docblock line="94">
+    <description>Instantie l&#039;objet MvcUIController</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description="object *"
+                                                                                                 type="\SYRADEV\app\MvcUIController"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="106" visibility="public" returnByReference="false">
+    <name>getConf</name>
+    <full_name>\SYRADEV\app\MvcUIController::getConf()</full_name>
+    <value></value>
+                <argument line="106" by_reference="false">
+    <name>key</name>
+    <default>null</default>
+    <type>null</type>
+</argument>
+
+        <docblock line="106">
+    <description>Récupère la configuration de l&#039;application</description>
+    <long-description></long-description>
+                    <tag
+                name="param"
+                description=""
+                                                                 variable="key"                                 type="null"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="true" namespace="\SYRADEV\app" line="118" visibility="public" returnByReference="false">
+    <name>assets</name>
+    <full_name>\SYRADEV\app\MvcUIController::assets()</full_name>
+    <value></value>
+                <argument line="118" by_reference="false">
+    <name>asset</name>
+    <default></default>
+    <type></type>
+</argument>
+
+        <docblock line="118">
+    <description>Renvoie le chemin des assets</description>
+    <long-description></long-description>
+                    <tag
+                name="param"
+                description=""
+                                                                 variable="asset"                                />
+                            <tag
+                name="return"
+                description="*"
+                                                                                                 type="string"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="128" visibility="public" returnByReference="false">
+    <name>cacheRoutes</name>
+    <full_name>\SYRADEV\app\MvcUIController::cacheRoutes()</full_name>
+    <value></value>
+            <docblock line="128">
+    <description>Mise en cache des routes de l&#039;Application dans une session PHP</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description=""
+                                                                                                 type="void"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="true" namespace="\SYRADEV\app" line="162" visibility="public" returnByReference="false">
+    <name>isRoute</name>
+    <full_name>\SYRADEV\app\MvcUIController::isRoute()</full_name>
+    <value></value>
+                <argument line="162" by_reference="false">
+    <name>routeName</name>
+    <default></default>
+    <type>string</type>
+</argument>
+
+            <argument line="162" by_reference="false">
+    <name>startBy</name>
+    <default>null</default>
+    <type>bool|null</type>
+</argument>
+
+        <docblock line="162">
+    <description>Renvoie vrai si une route existe</description>
+    <long-description></long-description>
+                    <tag
+                name="param"
+                description=""
+                                                                 variable="routeName"                                 type="string"/>
+                <tag
+                name="param"
+                description=""
+                                                                 variable="startBy"                                 type="bool|null"/>
+                            <tag
+                name="return"
+                description="$isRoute *"
+                                                                                                 type="bool"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="181" visibility="public" returnByReference="false">
+    <name>getRouteName</name>
+    <full_name>\SYRADEV\app\MvcUIController::getRouteName()</full_name>
+    <value></value>
+                <argument line="181" by_reference="false">
+    <name>requestedRoute</name>
+    <default></default>
+    <type>string</type>
+</argument>
+
+        <docblock line="181">
+    <description>Renvoie le nom d&#039;une route à partir de ses segments</description>
+    <long-description></long-description>
+                    <tag
+                name="param"
+                description=""
+                                                                 variable="requestedRoute"                                 type="string"/>
+                            <tag
+                name="return"
+                description="$routeKey *"
+                                                                                                 type="string|null"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="true" namespace="\SYRADEV\app" line="214" visibility="public" returnByReference="false">
+    <name>getRoute</name>
+    <full_name>\SYRADEV\app\MvcUIController::getRoute()</full_name>
+    <value></value>
+                <argument line="214" by_reference="false">
+    <name>routeName</name>
+    <default></default>
+    <type>string</type>
+</argument>
+
+        <docblock line="214">
+    <description>Renvoie les segments d&#039;une route à partir de son nom</description>
+    <long-description></long-description>
+                    <tag
+                name="param"
+                description=""
+                                                                 variable="routeName"                                 type="string"/>
+                            <tag
+                name="return"
+                description="$route *"
+                                                                                                 type="string"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="true" namespace="\SYRADEV\app" line="229" visibility="private" returnByReference="false">
+    <name>xssafe</name>
+    <full_name>\SYRADEV\app\MvcUIController::xssafe()</full_name>
+    <value></value>
+                <argument line="229" by_reference="false">
+    <name>data</name>
+    <default></default>
+    <type></type>
+</argument>
+
+        <docblock line="229">
+    <description>Atténuation des risques XSS</description>
+    <long-description></long-description>
+                    <tag
+                name="param"
+                description=""
+                                                                 variable="data"                                />
+                            <tag
+                name="return"
+                description="*"
+                                                                                                 type="string"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="239" visibility="private" returnByReference="false">
+    <name>generateCSRFToken</name>
+    <full_name>\SYRADEV\app\MvcUIController::generateCSRFToken()</full_name>
+    <value></value>
+            <docblock line="239">
+    <description>Génère un jeton CSRF</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description="*"
+                                                                                                 type="string"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="true" namespace="\SYRADEV\app" line="253" visibility="public" returnByReference="false">
+    <name>getCSRFToken</name>
+    <full_name>\SYRADEV\app\MvcUIController::getCSRFToken()</full_name>
+    <value></value>
+            <docblock line="253">
+    <description>Renvoie le jeton CSRF</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description="*"
+                                                                                                 type="string"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="265" visibility="public" returnByReference="false">
+    <name>render</name>
+    <full_name>\SYRADEV\app\MvcUIController::render()</full_name>
+    <value></value>
+                <argument line="265" by_reference="false">
+    <name>layout</name>
+    <default></default>
+    <type></type>
+</argument>
+
+            <argument line="265" by_reference="false">
+    <name>view</name>
+    <default>null</default>
+    <type>null</type>
+</argument>
+
+            <argument line="265" by_reference="false">
+    <name>data</name>
+    <default>null</default>
+    <type>null</type>
+</argument>
+
+        <docblock line="265">
+    <description>Rendu d&#039;un layout + template</description>
+    <long-description></long-description>
+                    <tag
+                name="param"
+                description=""
+                                                                 variable="layout"                                />
+                <tag
+                name="param"
+                description=""
+                                                                 variable="view"                                 type="null"/>
+                <tag
+                name="param"
+                description=""
+                                                                 variable="data"                                 type="null"/>
+                            <tag
+                name="return"
+                description="*"
+                                                                                                 type="string"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="true" namespace="\SYRADEV\app" line="291" visibility="public" returnByReference="false">
+    <name>partial</name>
+    <full_name>\SYRADEV\app\MvcUIController::partial()</full_name>
+    <value></value>
+                <argument line="291" by_reference="false">
+    <name>partial</name>
+    <default></default>
+    <type></type>
+</argument>
+
+        <docblock line="291">
+    <description>Renvoie le chemin d&#039;un partiel</description>
+    <long-description></long-description>
+                    <tag
+                name="param"
+                description=""
+                                                                 variable="partial"                                />
+                            <tag
+                name="return"
+                description="*"
+                                                                                                 type="string"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="302" visibility="public" returnByReference="false">
+    <name>renderPartial</name>
+    <full_name>\SYRADEV\app\MvcUIController::renderPartial()</full_name>
+    <value></value>
+                <argument line="302" by_reference="false">
+    <name>partial</name>
+    <default></default>
+    <type>string</type>
+</argument>
+
+            <argument line="302" by_reference="false">
+    <name>params</name>
+    <default>null</default>
+    <type>null</type>
+</argument>
+
+        <docblock line="302">
+    <description>Rendu d&#039;un partiel</description>
+    <long-description></long-description>
+                    <tag
+                name="param"
+                description=""
+                                                                 variable="partial"                                 type="string"/>
+                <tag
+                name="param"
+                description=""
+                                                                 variable="params"                                 type="null"/>
+                            <tag
+                name="return"
+                description=""
+                                                                                                 type="string"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="true" namespace="\SYRADEV\app" line="316" visibility="public" returnByReference="false">
+    <name>isActive</name>
+    <full_name>\SYRADEV\app\MvcUIController::isActive()</full_name>
+    <value></value>
+                <argument line="316" by_reference="false">
+    <name>routes</name>
+    <default></default>
+    <type>array</type>
+</argument>
+
+        <docblock line="316">
+    <description>Compare la route courante pour son activation dans le menu</description>
+    <long-description></long-description>
+                    <tag
+                name="param"
+                description=""
+                                                                 variable="routes"                                 type="array"/>
+                            <tag
+                name="return"
+                description="*"
+                                                                                                 type="string"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="true" namespace="\SYRADEV\app" line="326" visibility="public" returnByReference="false">
+    <name>isConnected</name>
+    <full_name>\SYRADEV\app\MvcUIController::isConnected()</full_name>
+    <value></value>
+            <docblock line="326">
+    <description>Vérifie si un utilisateur est connecté</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description=""
+                                                                                                 type="bool"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="335" visibility="public" returnByReference="false">
+    <name>login</name>
+    <full_name>\SYRADEV\app\MvcUIController::login()</full_name>
+    <value></value>
+            <docblock line="335">
+    <description>Affiche la bannière de login</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description=""
+                                                                                                 type="void"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="340" visibility="public" returnByReference="false">
+    <name>docs</name>
+    <full_name>\SYRADEV\app\MvcUIController::docs()</full_name>
+    <value></value>
+            <docblock line="340">
+    <description></description>
+    <long-description></long-description>
+    </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="354" visibility="public" returnByReference="false">
+    <name>home</name>
+    <full_name>\SYRADEV\app\MvcUIController::home()</full_name>
+    <value></value>
+            <docblock line="354">
+    <description>Affiche la page d&#039;accueil</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description=""
+                                                                                                 type="void"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="363" visibility="public" returnByReference="false">
+    <name>error404</name>
+    <full_name>\SYRADEV\app\MvcUIController::error404()</full_name>
+    <value></value>
+            <docblock line="363">
+    <description>Affiche la page d&#039;erreur 404</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description=""
+                                                                                                 type="void"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="372" visibility="public" returnByReference="false">
+    <name>ajaxCheck</name>
+    <full_name>\SYRADEV\app\MvcUIController::ajaxCheck()</full_name>
+    <value></value>
+            <docblock line="372">
+    <description>Vérifie les requêtes Ajax</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description="*"
+                                                                                                 type="bool"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="381" visibility="public" returnByReference="false">
+    <name>domainCheck</name>
+    <full_name>\SYRADEV\app\MvcUIController::domainCheck()</full_name>
+    <value></value>
+            <docblock line="381">
+    <description>Vérification du Domaine enregistré</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description="*"
+                                                                                                 type="bool"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="391" visibility="public" returnByReference="false">
+    <name>validateAjaxRequest</name>
+    <full_name>\SYRADEV\app\MvcUIController::validateAjaxRequest()</full_name>
+    <value></value>
+            <docblock line="391">
+    <description>Valide le jeton CSRF pour les appels Ajax</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description="*"
+                                                                                                 type="bool"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="408" visibility="public" returnByReference="false">
+    <name>validateFormRequest</name>
+    <full_name>\SYRADEV\app\MvcUIController::validateFormRequest()</full_name>
+    <value></value>
+            <docblock line="408">
+    <description>Valide le jeton CSRF pour les données postées</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description="*"
+                                                                                                 type="bool"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="true" namespace="\SYRADEV\app" line="421" visibility="public" returnByReference="false">
+    <name>getCopyRights</name>
+    <full_name>\SYRADEV\app\MvcUIController::getCopyRights()</full_name>
+    <value></value>
+            <docblock line="421">
+    <description></description>
+    <long-description></long-description>
+    </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="true" namespace="\SYRADEV\app" line="429" visibility="public" returnByReference="false">
+    <name>huerotate</name>
+    <full_name>\SYRADEV\app\MvcUIController::huerotate()</full_name>
+    <value></value>
+            <docblock line="429">
+    <description></description>
+    <long-description></long-description>
+    </docblock>
+
+</method>
+
+                                                        </class>
+            
+                        
+            
+            <parse_markers></parse_markers>
+        </file>
+            <file path="app/Classes/PaginateController.php" hash="d1982af4564cf290a1543fb7f7ef06e0">
+            <docblock line="0">
+    <description>MvcUI classe de gestion de la pagination</description>
+    <long-description>Application MvcUI</long-description>
+                    <tag
+                name="package"
+                description="MvcUI"
+                                                                                                />
+                            <tag
+                name="author"
+                description="Regis TEDONE"
+                                                                                                />
+                            <tag
+                name="email"
+                description="syradev@proton.me"
+                                                                                                />
+                            <tag
+                name="copyright"
+                description="Syradev 2023"
+                                                                                                />
+                            <tag
+                name="license"
+                description="https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License"
+                                                                                                />
+                            <tag
+                name="version"
+                description=""
+                                 version="1.1.0"                                                                />
+            </docblock>
+
+
+            
+                            <namespace-alias name="\SYRADEV\app"/>
+            
+
+            
+                        
+                        
+                                        <class final="false" abstract="false" namespace="\SYRADEV\app" line="20">
+                    <name>PaginateController</name>
+                    <full_name>\SYRADEV\app\PaginateController</full_name>
+                    <docblock line="20">
+    <description>Classe PaginateController étends MvcUIControlller
+Gestion de la pagination</description>
+    <long-description></long-description>
+                    <tag
+                name="package"
+                description="MvcUI"
+                                                                                                />
+            </docblock>
+
+                                            <extends>\SYRADEV\app\MvcUIController</extends> 
+                    
+                                                                <constant namespace="\SYRADEV\app\MvcUIController" line="35" visibility="public">
+    <name>ROUTESFILE</name>
+    <full_name>\SYRADEV\app\MvcUIController::ROUTESFILE</full_name>
+    <value>__DIR__ . &#039;/../routes.php&#039;</value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>    <docblock line="35">
+    <description>Chemin vers le fichier de routes</description>
+    <long-description></long-description>
+                    <tag
+                name="const"
+                description="ROUTESFILE"
+                                                                                                />
+                        </docblock>
+
+</constant>
+
+                                            <constant namespace="\SYRADEV\app\MvcUIController" line="41" visibility="public">
+    <name>VIEWPATH</name>
+    <full_name>\SYRADEV\app\MvcUIController::VIEWPATH</full_name>
+    <value>__DIR__ . &#039;/../Views&#039;</value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>    <docblock line="41">
+    <description>Chemin vers le dossier des vues</description>
+    <long-description></long-description>
+                    <tag
+                name="const"
+                description="VIEWPATH"
+                                                                                                />
+                        </docblock>
+
+</constant>
+
+                                            <constant namespace="\SYRADEV\app\MvcUIController" line="47" visibility="public">
+    <name>PARTIALSPATH</name>
+    <full_name>\SYRADEV\app\MvcUIController::PARTIALSPATH</full_name>
+    <value>self::VIEWPATH . &#039;/Partials&#039;</value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>    <docblock line="47">
+    <description>Chemin vers le dossier des partiels</description>
+    <long-description></long-description>
+                    <tag
+                name="const"
+                description="PARTIALSPATH"
+                                                                                                />
+                        </docblock>
+
+</constant>
+
+                                            <constant namespace="\SYRADEV\app\MvcUIController" line="53" visibility="public">
+    <name>LAYOUT_EXT</name>
+    <full_name>\SYRADEV\app\MvcUIController::LAYOUT_EXT</full_name>
+    <value>&#039;.layout.php&#039;</value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>    <docblock line="53">
+    <description>Extension des fichiers de Layout</description>
+    <long-description></long-description>
+                    <tag
+                name="const"
+                description="LAYOUT_EXT"
+                                                                                                />
+                        </docblock>
+
+</constant>
+
+                                            <constant namespace="\SYRADEV\app\MvcUIController" line="59" visibility="public">
+    <name>TMPL_EXT</name>
+    <full_name>\SYRADEV\app\MvcUIController::TMPL_EXT</full_name>
+    <value>&#039;.tmpl.php&#039;</value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>    <docblock line="59">
+    <description>Extension des fichiers de Template</description>
+    <long-description></long-description>
+                    <tag
+                name="const"
+                description="TMPL_EXT"
+                                                                                                />
+                        </docblock>
+
+</constant>
+
+                                            <constant namespace="\SYRADEV\app\MvcUIController" line="65" visibility="public">
+    <name>PARTIAL_EXT</name>
+    <full_name>\SYRADEV\app\MvcUIController::PARTIAL_EXT</full_name>
+    <value>&#039;.part.php&#039;</value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>    <docblock line="65">
+    <description>Extension des fichiers de Partiel</description>
+    <long-description></long-description>
+                    <tag
+                name="const"
+                description="PARTIAL_EXT"
+                                                                                                />
+                        </docblock>
+
+</constant>
+
+                                            <constant namespace="\SYRADEV\app\MvcUIController" line="71" visibility="public">
+    <name>ASSETSFOLDER</name>
+    <full_name>\SYRADEV\app\MvcUIController::ASSETSFOLDER</full_name>
+    <value>&#039;/assets&#039;</value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>    <docblock line="71">
+    <description>Chemin vers les assets</description>
+    <long-description></long-description>
+                    <tag
+                name="const"
+                description="ASSETSFOLDER"
+                                                                                                />
+                        </docblock>
+
+</constant>
+
+                                            <constant namespace="\SYRADEV\app\MvcUIController" line="77" visibility="public">
+    <name>PAGETITLE</name>
+    <full_name>\SYRADEV\app\MvcUIController::PAGETITLE</full_name>
+    <value>&#039;Mvc::UI&#039;</value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>    <docblock line="77">
+    <description>Titre de page par défaut</description>
+    <long-description></long-description>
+                    <tag
+                name="const"
+                description="PAGETITLE"
+                                                                                                />
+                        </docblock>
+
+</constant>
+
+                    
+                                            <property namespace="\SYRADEV\app\PaginateController" line="23" visibility="protected">
+    <name>instance</name>
+    <full_name>\SYRADEV\app\PaginateController::$instance</full_name>
+    <default>null</default>
+        <docblock line="23">
+    <description>Instance de la classe</description>
+    <long-description></long-description>
+    </docblock>
+
+</property>
+
+                                                                <property namespace="\SYRADEV\app\MvcUIController" line="29" visibility="protected">
+    <name>instance</name>
+    <full_name>\SYRADEV\app\MvcUIController::$instance</full_name>
+    <default>null</default>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>    <docblock line="29">
+    <description>Instance de la classe</description>
+    <long-description></long-description>
+                    <tag
+                name="protected"
+                description="MvcUIController|null $instance"
+                                                                                                />
+            </docblock>
+
+</property>
+
+                    
+                                            <method final="false" abstract="false" static="true" namespace="\SYRADEV\app" line="29" visibility="public" returnByReference="false">
+    <name>getInstance</name>
+    <full_name>\SYRADEV\app\PaginateController::getInstance()</full_name>
+    <value></value>
+            <docblock line="29">
+    <description>Instantie l&#039;objet PaginateController</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description="object *"
+                                                                                                 type="\SYRADEV\app\PaginateController"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="41" visibility="public" returnByReference="false">
+    <name>paginateDemo</name>
+    <full_name>\SYRADEV\app\PaginateController::paginateDemo()</full_name>
+    <value></value>
+            <docblock line="41">
+    <description>Affiche la page de test de la pagination</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description="*"
+                                                                                                 type="void"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="true" namespace="\SYRADEV\app" line="53" visibility="public" returnByReference="false">
+    <name>getPagination</name>
+    <full_name>\SYRADEV\app\PaginateController::getPagination()</full_name>
+    <value></value>
+                <argument line="53" by_reference="false">
+    <name>num</name>
+    <default></default>
+    <type>int</type>
+</argument>
+
+            <argument line="53" by_reference="false">
+    <name>maxpage</name>
+    <default></default>
+    <type>int</type>
+</argument>
+
+            <argument line="53" by_reference="false">
+    <name>align</name>
+    <default></default>
+    <type>string</type>
+</argument>
+
+        <docblock line="53">
+    <description>Construit une barre de pagination</description>
+    <long-description></long-description>
+                    <tag
+                name="param"
+                description=""
+                                                                 variable="num"                                 type="int"/>
+                <tag
+                name="param"
+                description=""
+                                                                 variable="maxpage"                                 type="int"/>
+                <tag
+                name="param"
+                description=""
+                                                                 variable="align"                                 type="string"/>
+                            <tag
+                name="return"
+                description=""
+                                                                                                 type="string"/>
+            </docblock>
+
+</method>
+
+                                                                <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="80" visibility="protected" returnByReference="false">
+    <name>__construct</name>
+    <full_name>\SYRADEV\app\MvcUIController::__construct()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>        <docblock line="80">
+    <description></description>
+    <long-description></long-description>
+    </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="85" visibility="protected" returnByReference="false">
+    <name>__clone</name>
+    <full_name>\SYRADEV\app\MvcUIController::__clone()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>        <docblock line="85">
+    <description></description>
+    <long-description></long-description>
+    </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="true" namespace="\SYRADEV\app" line="94" visibility="public" returnByReference="false">
+    <name>getInstance</name>
+    <full_name>\SYRADEV\app\MvcUIController::getInstance()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>        <docblock line="94">
+    <description>Instantie l&#039;objet MvcUIController</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description="object *"
+                                                                                                 type="\SYRADEV\app\MvcUIController"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="106" visibility="public" returnByReference="false">
+    <name>getConf</name>
+    <full_name>\SYRADEV\app\MvcUIController::getConf()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>            <argument line="106" by_reference="false">
+    <name>key</name>
+    <default>null</default>
+    <type>null</type>
+</argument>
+
+        <docblock line="106">
+    <description>Récupère la configuration de l&#039;application</description>
+    <long-description></long-description>
+                    <tag
+                name="param"
+                description=""
+                                                                 variable="key"                                 type="null"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="true" namespace="\SYRADEV\app" line="118" visibility="public" returnByReference="false">
+    <name>assets</name>
+    <full_name>\SYRADEV\app\MvcUIController::assets()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>            <argument line="118" by_reference="false">
+    <name>asset</name>
+    <default></default>
+    <type></type>
+</argument>
+
+        <docblock line="118">
+    <description>Renvoie le chemin des assets</description>
+    <long-description></long-description>
+                    <tag
+                name="param"
+                description=""
+                                                                 variable="asset"                                />
+                            <tag
+                name="return"
+                description="*"
+                                                                                                 type="string"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="128" visibility="public" returnByReference="false">
+    <name>cacheRoutes</name>
+    <full_name>\SYRADEV\app\MvcUIController::cacheRoutes()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>        <docblock line="128">
+    <description>Mise en cache des routes de l&#039;Application dans une session PHP</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description=""
+                                                                                                 type="void"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="true" namespace="\SYRADEV\app" line="162" visibility="public" returnByReference="false">
+    <name>isRoute</name>
+    <full_name>\SYRADEV\app\MvcUIController::isRoute()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>            <argument line="162" by_reference="false">
+    <name>routeName</name>
+    <default></default>
+    <type>string</type>
+</argument>
+
+            <argument line="162" by_reference="false">
+    <name>startBy</name>
+    <default>null</default>
+    <type>bool|null</type>
+</argument>
+
+        <docblock line="162">
+    <description>Renvoie vrai si une route existe</description>
+    <long-description></long-description>
+                    <tag
+                name="param"
+                description=""
+                                                                 variable="routeName"                                 type="string"/>
+                <tag
+                name="param"
+                description=""
+                                                                 variable="startBy"                                 type="bool|null"/>
+                            <tag
+                name="return"
+                description="$isRoute *"
+                                                                                                 type="bool"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="181" visibility="public" returnByReference="false">
+    <name>getRouteName</name>
+    <full_name>\SYRADEV\app\MvcUIController::getRouteName()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>            <argument line="181" by_reference="false">
+    <name>requestedRoute</name>
+    <default></default>
+    <type>string</type>
+</argument>
+
+        <docblock line="181">
+    <description>Renvoie le nom d&#039;une route à partir de ses segments</description>
+    <long-description></long-description>
+                    <tag
+                name="param"
+                description=""
+                                                                 variable="requestedRoute"                                 type="string"/>
+                            <tag
+                name="return"
+                description="$routeKey *"
+                                                                                                 type="string|null"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="true" namespace="\SYRADEV\app" line="214" visibility="public" returnByReference="false">
+    <name>getRoute</name>
+    <full_name>\SYRADEV\app\MvcUIController::getRoute()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>            <argument line="214" by_reference="false">
+    <name>routeName</name>
+    <default></default>
+    <type>string</type>
+</argument>
+
+        <docblock line="214">
+    <description>Renvoie les segments d&#039;une route à partir de son nom</description>
+    <long-description></long-description>
+                    <tag
+                name="param"
+                description=""
+                                                                 variable="routeName"                                 type="string"/>
+                            <tag
+                name="return"
+                description="$route *"
+                                                                                                 type="string"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="true" namespace="\SYRADEV\app" line="229" visibility="private" returnByReference="false">
+    <name>xssafe</name>
+    <full_name>\SYRADEV\app\MvcUIController::xssafe()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>            <argument line="229" by_reference="false">
+    <name>data</name>
+    <default></default>
+    <type></type>
+</argument>
+
+        <docblock line="229">
+    <description>Atténuation des risques XSS</description>
+    <long-description></long-description>
+                    <tag
+                name="param"
+                description=""
+                                                                 variable="data"                                />
+                            <tag
+                name="return"
+                description="*"
+                                                                                                 type="string"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="239" visibility="private" returnByReference="false">
+    <name>generateCSRFToken</name>
+    <full_name>\SYRADEV\app\MvcUIController::generateCSRFToken()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>        <docblock line="239">
+    <description>Génère un jeton CSRF</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description="*"
+                                                                                                 type="string"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="true" namespace="\SYRADEV\app" line="253" visibility="public" returnByReference="false">
+    <name>getCSRFToken</name>
+    <full_name>\SYRADEV\app\MvcUIController::getCSRFToken()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>        <docblock line="253">
+    <description>Renvoie le jeton CSRF</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description="*"
+                                                                                                 type="string"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="265" visibility="public" returnByReference="false">
+    <name>render</name>
+    <full_name>\SYRADEV\app\MvcUIController::render()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>            <argument line="265" by_reference="false">
+    <name>layout</name>
+    <default></default>
+    <type></type>
+</argument>
+
+            <argument line="265" by_reference="false">
+    <name>view</name>
+    <default>null</default>
+    <type>null</type>
+</argument>
+
+            <argument line="265" by_reference="false">
+    <name>data</name>
+    <default>null</default>
+    <type>null</type>
+</argument>
+
+        <docblock line="265">
+    <description>Rendu d&#039;un layout + template</description>
+    <long-description></long-description>
+                    <tag
+                name="param"
+                description=""
+                                                                 variable="layout"                                />
+                <tag
+                name="param"
+                description=""
+                                                                 variable="view"                                 type="null"/>
+                <tag
+                name="param"
+                description=""
+                                                                 variable="data"                                 type="null"/>
+                            <tag
+                name="return"
+                description="*"
+                                                                                                 type="string"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="true" namespace="\SYRADEV\app" line="291" visibility="public" returnByReference="false">
+    <name>partial</name>
+    <full_name>\SYRADEV\app\MvcUIController::partial()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>            <argument line="291" by_reference="false">
+    <name>partial</name>
+    <default></default>
+    <type></type>
+</argument>
+
+        <docblock line="291">
+    <description>Renvoie le chemin d&#039;un partiel</description>
+    <long-description></long-description>
+                    <tag
+                name="param"
+                description=""
+                                                                 variable="partial"                                />
+                            <tag
+                name="return"
+                description="*"
+                                                                                                 type="string"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="302" visibility="public" returnByReference="false">
+    <name>renderPartial</name>
+    <full_name>\SYRADEV\app\MvcUIController::renderPartial()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>            <argument line="302" by_reference="false">
+    <name>partial</name>
+    <default></default>
+    <type>string</type>
+</argument>
+
+            <argument line="302" by_reference="false">
+    <name>params</name>
+    <default>null</default>
+    <type>null</type>
+</argument>
+
+        <docblock line="302">
+    <description>Rendu d&#039;un partiel</description>
+    <long-description></long-description>
+                    <tag
+                name="param"
+                description=""
+                                                                 variable="partial"                                 type="string"/>
+                <tag
+                name="param"
+                description=""
+                                                                 variable="params"                                 type="null"/>
+                            <tag
+                name="return"
+                description=""
+                                                                                                 type="string"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="true" namespace="\SYRADEV\app" line="316" visibility="public" returnByReference="false">
+    <name>isActive</name>
+    <full_name>\SYRADEV\app\MvcUIController::isActive()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>            <argument line="316" by_reference="false">
+    <name>routes</name>
+    <default></default>
+    <type>array</type>
+</argument>
+
+        <docblock line="316">
+    <description>Compare la route courante pour son activation dans le menu</description>
+    <long-description></long-description>
+                    <tag
+                name="param"
+                description=""
+                                                                 variable="routes"                                 type="array"/>
+                            <tag
+                name="return"
+                description="*"
+                                                                                                 type="string"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="true" namespace="\SYRADEV\app" line="326" visibility="public" returnByReference="false">
+    <name>isConnected</name>
+    <full_name>\SYRADEV\app\MvcUIController::isConnected()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>        <docblock line="326">
+    <description>Vérifie si un utilisateur est connecté</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description=""
+                                                                                                 type="bool"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="335" visibility="public" returnByReference="false">
+    <name>login</name>
+    <full_name>\SYRADEV\app\MvcUIController::login()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>        <docblock line="335">
+    <description>Affiche la bannière de login</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description=""
+                                                                                                 type="void"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="340" visibility="public" returnByReference="false">
+    <name>docs</name>
+    <full_name>\SYRADEV\app\MvcUIController::docs()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>        <docblock line="340">
+    <description></description>
+    <long-description></long-description>
+    </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="354" visibility="public" returnByReference="false">
+    <name>home</name>
+    <full_name>\SYRADEV\app\MvcUIController::home()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>        <docblock line="354">
+    <description>Affiche la page d&#039;accueil</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description=""
+                                                                                                 type="void"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="363" visibility="public" returnByReference="false">
+    <name>error404</name>
+    <full_name>\SYRADEV\app\MvcUIController::error404()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>        <docblock line="363">
+    <description>Affiche la page d&#039;erreur 404</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description=""
+                                                                                                 type="void"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="372" visibility="public" returnByReference="false">
+    <name>ajaxCheck</name>
+    <full_name>\SYRADEV\app\MvcUIController::ajaxCheck()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>        <docblock line="372">
+    <description>Vérifie les requêtes Ajax</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description="*"
+                                                                                                 type="bool"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="381" visibility="public" returnByReference="false">
+    <name>domainCheck</name>
+    <full_name>\SYRADEV\app\MvcUIController::domainCheck()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>        <docblock line="381">
+    <description>Vérification du Domaine enregistré</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description="*"
+                                                                                                 type="bool"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="391" visibility="public" returnByReference="false">
+    <name>validateAjaxRequest</name>
+    <full_name>\SYRADEV\app\MvcUIController::validateAjaxRequest()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>        <docblock line="391">
+    <description>Valide le jeton CSRF pour les appels Ajax</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description="*"
+                                                                                                 type="bool"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="false" namespace="\SYRADEV\app" line="408" visibility="public" returnByReference="false">
+    <name>validateFormRequest</name>
+    <full_name>\SYRADEV\app\MvcUIController::validateFormRequest()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>        <docblock line="408">
+    <description>Valide le jeton CSRF pour les données postées</description>
+    <long-description></long-description>
+                    <tag
+                name="return"
+                description="*"
+                                                                                                 type="bool"/>
+            </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="true" namespace="\SYRADEV\app" line="421" visibility="public" returnByReference="false">
+    <name>getCopyRights</name>
+    <full_name>\SYRADEV\app\MvcUIController::getCopyRights()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>        <docblock line="421">
+    <description></description>
+    <long-description></long-description>
+    </docblock>
+
+</method>
+
+                                            <method final="false" abstract="false" static="true" namespace="\SYRADEV\app" line="429" visibility="public" returnByReference="false">
+    <name>huerotate</name>
+    <full_name>\SYRADEV\app\MvcUIController::huerotate()</full_name>
+    <value></value>
+    <inherited_from>\SYRADEV\app\MvcUIController</inherited_from>        <docblock line="429">
+    <description></description>
+    <long-description></long-description>
+    </docblock>
+
+</method>
+
+                                    </class>
+            
+                        
+            
+            <parse_markers></parse_markers>
+        </file>
+            <file path="app/Classes/PdoMySQL.php" hash="ac9c1c961513d9f09968e42c1941074c">
+            <docblock line="0">
+    <description>Classe PdoMySQL
+Permet d&#039;opérer sur une base de données MySQL</description>
+    <long-description>Application MvcUI</long-description>
+                    <tag
+                name="package"
+                description="MvcUI"
+                                                                                                />
+                            <tag
+                name="author"
+                description="Regis TEDONE"
+                                                                                                />
+                            <tag
+                name="email"
+                description="syradev@proton.me"
+                                                                                                />
+                            <tag
+                name="copyright"
+                description="Syradev 2023"
+                                                                                                />
+                            <tag
+                name="license"
+                description="https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License"
+                                                                                                />
+                            <tag
+                name="version"
+                description=""
+                                 version="1.1.0"                                                                />
+            </docblock>
+
+
+            
+                            <namespace-alias name="\SYRADEV\app"/>
+            
+
+            
+                        
+                        
+                                        <class final="false" abstract="false" namespace="\SYRADEV\app" line="20">
+                    <name>PdoMySQL</name>
+                    <full_name>\SYRADEV\app\PdoMySQL</full_name>
+                    <docblock line="20">
+    <description></description>
+    <long-description></long-description>
+                    <tag
+                name="package"
+                description="MvcUI"
+                                                                                                />
+            </docblock>
+
+                    
+                    
+                                        
+                                        
+                                                        </class>
+            
+                        
+            
+            <parse_markers></parse_markers>
+        </file>
+            <file path="app/routes.php" hash="d89ef423d23925846b3f3551faba19e6">
+            <docblock line="0">
+    <description>MvcUI Définition des Routes de l&#039;application</description>
+    <long-description>MvcUI Sample App</long-description>
+                    <tag
+                name="package"
+                description="MvcUI"
+                                                                                                />
+                            <tag
+                name="author"
+                description="Regis TEDONE"
+                                                                                                />
+                            <tag
+                name="email"
+                description="syradev@proton.me"
+                                                                                                />
+                            <tag
+                name="copyright"
+                description="Syradev 2023"
+                                                                                                />
+                            <tag
+                name="license"
+                description="https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License"
+                                                                                                />
+                            <tag
+                name="version"
+                description=""
+                                 version="1.1.0"                                                                />
+            </docblock>
+
+
+            
+            
+
+            
+                        
+                        
+                        
+                        
+            
+            <parse_markers></parse_markers>
+        </file>
+            <file path="app/Views/Layouts/404.layout.php" hash="816c2cfdfd50a33f63ee101ca84a2c9f">
+            <docblock line="0">
+    <description>MvcUI page d&#039;erreur 404</description>
+    <long-description>Application MvcUI</long-description>
+                    <tag
+                name="package"
+                description="MvcUI"
+                                                                                                />
+                            <tag
+                name="author"
+                description="Regis TEDONE"
+                                                                                                />
+                            <tag
+                name="email"
+                description="syradev@proton.me"
+                                                                                                />
+                            <tag
+                name="copyright"
+                description="Syradev 2023"
+                                                                                                />
+                            <tag
+                name="license"
+                description="https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License"
+                                                                                                />
+                            <tag
+                name="version"
+                description=""
+                                 version="1.1.0"                                                                />
+            </docblock>
+
+
+            
+            
+
+            
+                        
+                        
+                        
+                        
+            
+            <parse_markers></parse_markers>
+        </file>
+            <file path="app/Views/Layouts/default.layout.php" hash="aa6cfb6b7ac82bbc5a29db5b3668826c">
+            <docblock line="0">
+    <description>MvcUI Layout principal du frontend</description>
+    <long-description>Application MvcUI</long-description>
+                    <tag
+                name="package"
+                description="MvcUI"
+                                                                                                />
+                            <tag
+                name="author"
+                description="Regis TEDONE"
+                                                                                                />
+                            <tag
+                name="email"
+                description="syradev@proton.me"
+                                                                                                />
+                            <tag
+                name="copyright"
+                description="Syradev 2023"
+                                                                                                />
+                            <tag
+                name="license"
+                description="https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License"
+                                                                                                />
+                            <tag
+                name="version"
+                description=""
+                                 version="1.1.0"                                                                />
+            </docblock>
+
+
+            
+            
+
+            
+                        
+                        
+                        
+                        
+            
+            <parse_markers></parse_markers>
+        </file>
+            <file path="app/Views/Layouts/login.layout.php" hash="f5f503dc0b568917d08160c992861b4c">
+            <docblock line="0">
+    <description>MvcUI Layout Login</description>
+    <long-description>Application MvcUI</long-description>
+                    <tag
+                name="package"
+                description="MvcUI"
+                                                                                                />
+                            <tag
+                name="author"
+                description="Regis TEDONE"
+                                                                                                />
+                            <tag
+                name="copyright"
+                description="Syradev 2023"
+                                                                                                />
+                            <tag
+                name="license"
+                description="https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License"
+                                                                                                />
+                            <tag
+                name="version"
+                description=""
+                                 version="1.1.0"                                                                />
+            </docblock>
+
+
+            
+            
+
+            
+                        
+                        
+                        
+                        
+            
+            <parse_markers></parse_markers>
+        </file>
+            <file path="app/Views/Partials/copyrightsinfos.part.php" hash="63bd67be672293e48e56951a8a762637">
+            <docblock line="0">
+    <description></description>
+    <long-description></long-description>
+                    <tag
+                name="package"
+                description="Application"
+                                                                                                />
+            </docblock>
+
+
+            
+            
+
+            
+                        
+                        
+                        
+                        
+            
+            <parse_markers></parse_markers>
+        </file>
+            <file path="app/Views/Partials/cssIncludes.part.php" hash="31af6b143a9c78bfddbb3f514c32751f">
+            <docblock line="0">
+    <description>MvcUI Inclusion de fichiers CSS additionnels</description>
+    <long-description>Application MvcUI</long-description>
+                    <tag
+                name="package"
+                description="MvcUI"
+                                                                                                />
+                            <tag
+                name="author"
+                description="Regis TEDONE"
+                                                                                                />
+                            <tag
+                name="email"
+                description="syradev@proton.me"
+                                                                                                />
+                            <tag
+                name="copyright"
+                description="Syradev 2023"
+                                                                                                />
+                            <tag
+                name="license"
+                description="https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License"
+                                                                                                />
+                            <tag
+                name="version"
+                description=""
+                                 version="1.1.0"                                                                />
+            </docblock>
+
+
+            
+            
+
+            
+                        
+                        
+                        
+                        
+            
+            <parse_markers></parse_markers>
+        </file>
+            <file path="app/Views/Partials/footer.part.php" hash="71f551b272873e5539d83baa7f48ff57">
+            <docblock line="0">
+    <description>MvcUI template partiel de Footer</description>
+    <long-description>Application MvcUI</long-description>
+                    <tag
+                name="package"
+                description="MvcUI"
+                                                                                                />
+                            <tag
+                name="author"
+                description="Regis TEDONE"
+                                                                                                />
+                            <tag
+                name="email"
+                description="syradev@proton.me"
+                                                                                                />
+                            <tag
+                name="copyright"
+                description="Syradev 2023"
+                                                                                                />
+                            <tag
+                name="license"
+                description="https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License"
+                                                                                                />
+                            <tag
+                name="version"
+                description=""
+                                 version="1.1.0"                                                                />
+            </docblock>
+
+
+            
+            
+
+            
+                        
+                        
+                        
+                        
+            
+            <parse_markers></parse_markers>
+        </file>
+            <file path="app/Views/Partials/header.part.php" hash="247d29c2cc0fe5947131362b2756324d">
+            <docblock line="0">
+    <description>MvcUI template partiel de Header</description>
+    <long-description>Application MvcUI</long-description>
+                    <tag
+                name="package"
+                description="MvcUI"
+                                                                                                />
+                            <tag
+                name="author"
+                description="Regis TEDONE"
+                                                                                                />
+                            <tag
+                name="email"
+                description="syradev@proton.me"
+                                                                                                />
+                            <tag
+                name="copyright"
+                description="Syradev 2023"
+                                                                                                />
+                            <tag
+                name="license"
+                description="https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License"
+                                                                                                />
+                            <tag
+                name="version"
+                description=""
+                                 version="1.1.0"                                                                />
+            </docblock>
+
+
+            
+            
+
+            
+                        
+                        
+                        
+                        
+            
+            <parse_markers></parse_markers>
+        </file>
+            <file path="app/Views/Partials/jsIncludes.part.php" hash="3ecf5fad9fd191d5db4b809c6d2160f1">
+            <docblock line="0">
+    <description>MvcUI Inclusion de fichiers JS additionnels</description>
+    <long-description>Application MvcUI</long-description>
+                    <tag
+                name="package"
+                description="MvcUI"
+                                                                                                />
+                            <tag
+                name="author"
+                description="Regis TEDONE"
+                                                                                                />
+                            <tag
+                name="email"
+                description="syradev@proton.me"
+                                                                                                />
+                            <tag
+                name="copyright"
+                description="Syradev 2023"
+                                                                                                />
+                            <tag
+                name="license"
+                description="https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License"
+                                                                                                />
+                            <tag
+                name="version"
+                description=""
+                                 version="1.1.0"                                                                />
+            </docblock>
+
+
+            
+            
+
+            
+                        
+                        
+                        
+                        
+            
+            <parse_markers></parse_markers>
+        </file>
+            <file path="app/Views/Partials/pagination.part.php" hash="c1bc962fa3f9879599918e7a37f7c181">
+            <docblock line="0">
+    <description>MvcUI partiel affichant une barre de pagination</description>
+    <long-description>Application MvcUI</long-description>
+                    <tag
+                name="package"
+                description="MvcUI"
+                                                                                                />
+                            <tag
+                name="author"
+                description="Regis TEDONE"
+                                                                                                />
+                            <tag
+                name="email"
+                description="syradev@proton.me"
+                                                                                                />
+                            <tag
+                name="copyright"
+                description="Syradev 2023"
+                                                                                                />
+                            <tag
+                name="license"
+                description="https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License"
+                                                                                                />
+                            <tag
+                name="version"
+                description=""
+                                 version="1.1.0"                                                                />
+            </docblock>
+
+
+            
+            
+
+            
+                        
+                        
+                        
+                        
+            
+            <parse_markers></parse_markers>
+        </file>
+            <file path="app/Views/Partials/topmenu.part.php" hash="173abf6f6708390490090d036c6b74ca">
+            <docblock line="0">
+    <description>MvcUI Menu du haut</description>
+    <long-description>Application MvcUI</long-description>
+                    <tag
+                name="package"
+                description="MvcUI"
+                                                                                                />
+                            <tag
+                name="author"
+                description="Regis TEDONE"
+                                                                                                />
+                            <tag
+                name="email"
+                description="syradev@proton.me"
+                                                                                                />
+                            <tag
+                name="copyright"
+                description="Syradev 2023"
+                                                                                                />
+                            <tag
+                name="license"
+                description="https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License"
+                                                                                                />
+                            <tag
+                name="version"
+                description=""
+                                 version="1.1.0"                                                                />
+            </docblock>
+
+
+            
+            
+
+            
+                        
+                        
+                        
+                        
+            
+            <parse_markers></parse_markers>
+        </file>
+            <file path="app/Views/Templates/framed.tmpl.php" hash="5c80c051f310640c214d7e8097dc5045">
+            <docblock line="0">
+    <description>Mvc::UI Template avec iframe</description>
+    <long-description>Application MvcUI</long-description>
+                    <tag
+                name="package"
+                description="MvcUI"
+                                                                                                />
+                            <tag
+                name="author"
+                description="Regis TEDONE"
+                                                                                                />
+                            <tag
+                name="email"
+                description="syradev@proton.me"
+                                                                                                />
+                            <tag
+                name="copyright"
+                description="Syradev 2023"
+                                                                                                />
+                            <tag
+                name="license"
+                description="https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License"
+                                                                                                />
+                            <tag
+                name="version"
+                description=""
+                                 version="1.1.0"                                                                />
+            </docblock>
+
+
+            
+            
+
+            
+                        
+                        
+                        
+                        
+            
+            <parse_markers></parse_markers>
+        </file>
+            <file path="app/Views/Templates/home.tmpl.php" hash="6e92ee403c24e49bc6a3bf9481f2410a">
+            <docblock line="0">
+    <description>MvcUI template page d&#039;accueil</description>
+    <long-description>Application MvcUI</long-description>
+                    <tag
+                name="package"
+                description="MvcUI"
+                                                                                                />
+                            <tag
+                name="author"
+                description="Regis TEDONE"
+                                                                                                />
+                            <tag
+                name="email"
+                description="syradev@proton.me"
+                                                                                                />
+                            <tag
+                name="copyright"
+                description="Syradev 2023"
+                                                                                                />
+                            <tag
+                name="license"
+                description="https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License"
+                                                                                                />
+                            <tag
+                name="version"
+                description=""
+                                 version="1.1.0"                                                                />
+            </docblock>
+
+
+            
+            
+
+            
+                        
+                        
+                        
+                        
+            
+            <parse_markers></parse_markers>
+        </file>
+            <file path="app/Views/Templates/paginate.tmpl.php" hash="92acef52ce728f77ffc36094a5ef113c">
+            <docblock line="0">
+    <description>MvcUI template de test</description>
+    <long-description>Application MvcUI</long-description>
+                    <tag
+                name="package"
+                description="MvcUI"
+                                                                                                />
+                            <tag
+                name="author"
+                description="Regis TEDONE"
+                                                                                                />
+                            <tag
+                name="email"
+                description="syradev@proton.me"
+                                                                                                />
+                            <tag
+                name="copyright"
+                description="Syradev 2023"
+                                                                                                />
+                            <tag
+                name="license"
+                description="https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License"
+                                                                                                />
+                            <tag
+                name="version"
+                description=""
+                                 version="1.1.0"                                                                />
+            </docblock>
+
+
+            
+            
+
+            
+                        
+                        
+                        
+                        
+            
+            <parse_markers></parse_markers>
+        </file>
+    
+            <namespace name="app" full_name="\SYRADEV\app" />
+
+            <namespace name="\" full_name="\">
+            <namespace name="SYRADEV" full_name="\SYRADEV">
+            <namespace name="app" full_name="\SYRADEV\app" />
+
+    </namespace>
+
+    </namespace>
+
+            <namespace name="SYRADEV" full_name="\SYRADEV">
+            <namespace name="app" full_name="\SYRADEV\app" />
+
+    </namespace>
+
+    </project>

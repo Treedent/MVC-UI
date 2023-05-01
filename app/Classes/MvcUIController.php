@@ -1,23 +1,26 @@
 <?php
 /**
-* MvcUI classe principale de l'interface
-*
-* Application MvcUI
-*
-* @package    MvcUI
-* @author     Regis TEDONE
-* @email      syradev@proton.me
-* @copyright  Syradev 2023
-* @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
-* @version    1.0.0
-*/
+ * MvcUI classe principale de l'interface
+ *
+ * Application MvcUI
+ *
+ * @package    MvcUI
+ * @author     Regis TEDONE
+ * @email      syradev@proton.me
+ * @copyright  Syradev 2023
+ * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
+ * @version    1.1.0
+ */
 
 namespace SYRADEV\app;
+
+use Random\Randomizer;
 
 /**
  * Classe MvcUIControlller
  */
-class MvcUIController {
+class MvcUIController
+{
 
     /**
      * Instance de la classe
@@ -292,10 +295,11 @@ class MvcUIController {
 
     /**
      * Rendu d'un partiel
-     * @param $partial
-     * @return string *
+     * @param string $partial
+     * @param null $params
+     * @return string
      */
-    public function renderPartial($partial, $params = null): string
+    public function renderPartial(string $partial, $params = null): string
     {
         ob_start();
         require(self::PARTIALSPATH . '/' . $partial . self::PARTIAL_EXT);
@@ -333,8 +337,13 @@ class MvcUIController {
         echo $this->render('Layouts.login');
     }
 
-    public function docs(): void{
-        echo $this->render('Layouts.framed', 'Templates.docs');
+    public function docs(): void
+    {
+        $data = [
+            'appurl' => '/documentation',
+            'apptitle' => 'Documentation API Mvc::UI'
+        ];
+        echo $this->render('Layouts.default', 'Templates.framed', $data);
     }
 
 
@@ -406,5 +415,20 @@ class MvcUIController {
         $expected = hash_hmac($mvcConf->hashAlgo, $mvcConf->hmacData, $_SESSION[$sessionTokenLabel]);
         $requestToken = $_POST[$mvcConf->form_token_label];
         return hash_equals($requestToken, $expected);
+    }
+
+
+    public static function getCopyRights(): string
+    {
+        $mvcUi = (new self);
+        $appConf = (array)$mvcUi->getConf();
+        extract($appConf);
+        return $mvcUi->renderPartial('copyrightsinfos', ['app_name'=>$app_name, 'version'=>$version, 'company'=>$company] );
+    }
+
+    public static function huerotate(): string
+    {
+        $huesRotate = ['0','45deg','90deg','135deg','180deg','225deg','270deg','315deg'];
+        return  $huesRotate[array_rand($huesRotate)];
     }
 }

@@ -9,7 +9,7 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.0.0
+ * @version    1.1.0
  */
 
 use Syradev\app\MvcUIController;
@@ -29,8 +29,8 @@ use Syradev\app\MvcUIController;
     <?php require_once MvcUIController::partial('/cssIncludes.part.php'); ?>
 </head>
 <body oncontextmenu="return false;" data-bs-theme="light">
-<div class="container">
-    <div class="row flex-nowrap">
+<div class="container-fluid">
+    <div class="row flex-nowrap mx-2 my-2">
         <main id="mvcMain" class="col ps-md-2 pt-1">
             <div class="row">
                 <div class="col">

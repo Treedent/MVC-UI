@@ -8,11 +8,10 @@
  * @author     Regis TEDONE
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.0.0
+ * @version    1.1.0
  */
 
 use SYRADEV\app\MvcUIController;
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,15 +36,15 @@ use SYRADEV\app\MvcUIController;
         <?php if (!MvcUIController::isConnected()) { ?>
             <form autocomplete="off">
                 <div class="form-group my-2">
-                    <label class="d-block" for="mvcun">Username:</label>
+                    <label class="d-block" for="mvcun">Identifiant:</label>
                     <input type="text" class="form-control" id="mvcun" placeholder="________________________" required>
                 </div>
                 <div class="form-group my-2">
-                    <label class="d-block" for="mvcpw">Password:</label>
+                    <label class="d-block" for="mvcpw">Mot de passe:</label>
                     <input type="password" class="form-control" id="mvcpw" placeholder="________________________" required>
                 </div>
                 <div class="form-group my-6">
-                    <button type="button" id="connect" class="btn btn-primary w-100 text-white">Login</button>
+                    <button type="button" id="connect" class="btn btn-primary w-100 text-white">Se connecter...</button>
                 </div>
             </form>
         <?php } else { ?>
@@ -60,7 +59,7 @@ use SYRADEV\app\MvcUIController;
             </div>
         <?php } ?>
         <div class="text-center my-2">
-            <span class="small normal text-black">Syradev&copy;<?= date('Y'); ?></span>
+            <?= MvcUIController::getCopyRights(); ?>
         </div>
     </div>
 </div>

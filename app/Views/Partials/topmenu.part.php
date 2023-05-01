@@ -9,7 +9,7 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.0.0
+ * @version    1.1.0
  */
 
 use SYRADEV\app\MvcUIController;
@@ -26,7 +26,7 @@ use SYRADEV\app\MvcUIController;
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link<?= MvcUIController::isActive(['home']); ?>" aria-current="page"
+                    <a class="nav-link<?= MvcUIController::isActive(['home']); ?>"
                        href="<?= MvcUIController::getRoute('home'); ?>">Accueil</a>
                 </li>
                 <li class="nav-item">
@@ -34,8 +34,8 @@ use SYRADEV\app\MvcUIController;
                        href="<?= MvcUIController::getRoute('pagination'); ?>">Pagination</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link<?= MvcUIController::isActive(['doc']); ?>"
-                       href="<?= MvcUIController::getRoute('doc'); ?>">Docs</a>
+                    <a class="nav-link<?= MvcUIController::isActive(['docs']); ?>"
+                       href="<?= MvcUIController::getRoute('docs'); ?>">Docs</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link<?= MvcUIController::isActive(['infiniteScroll']); ?>"
