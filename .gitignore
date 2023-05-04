@@ -1,13 +1,10 @@
-
 ### PhpDocumentor ###
-.phpdoc
+./scripts/.phpdoc
 
 ### Sass ###
-.sass-cache
-
+./scripts/.sass-cache
 
 ### PhpStorm ###
-
 # User-specific stuff:
 .idea/**/workspace.xml
 .idea/**/tasks.xml
@@ -28,5 +25,5 @@
 # Mongo Explorer plugin:
 .idea/**/mongoSettings.xml
 
-## File-based project format:
+# File-based project format:
 *.iws
