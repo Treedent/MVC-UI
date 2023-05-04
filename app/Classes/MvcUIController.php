@@ -9,7 +9,7 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.1.0
+ * @version    1.2.0
  */
 
 namespace SYRADEV\app;
@@ -81,11 +81,9 @@ class MvcUIController
     {
     }
 
-
     protected function __clone()
     {
     }
-
 
     /**
      * Instantie l'objet MvcUIController
@@ -258,29 +256,30 @@ class MvcUIController
     /**
      * Rendu d'un layout + template
      * @param $layout
-     * @param null $view
+     * @param null $template
      * @param null $data
-     * @return string *
+     * @param null $toptitle
+     * @return string
      */
-    public function render($layout, $view = null, $data = null): string
+    public function render($layout, $template = null, $data = null, $toptitle = null): string
     {
         // Récupère le layout
         $layout_ar = explode('.', $layout);
         ob_start();
-        require(sprintf("%s/%s/%s%s", self::VIEWPATH, $layout_ar[0], $layout_ar[1], self::LAYOUT_EXT));
+        require(self::VIEWPATH . '/' . implode('/', $layout_ar) . self::LAYOUT_EXT);
         $layout_content = ob_get_contents();
         ob_end_clean();
-        $layout = str_replace('{{ pageTitle }}', self::PAGETITLE, $layout_content);
+        $layout_content = str_replace('{{ pageTitle }}', self::PAGETITLE, $layout_content);
         // Récupère le template
-        $view_content = '';
-        if (!is_null($view)) {
-            $view_ar = explode('.', $view);
+        $template_content = '';
+        if (!is_null($template)) {
+            $template_ar = explode('.', $template);
             ob_start();
-            require(self::VIEWPATH . '/' . $view_ar[0] . '/' . $view_ar[1] . self::TMPL_EXT);
-            $view_content = ob_get_contents();
+            require(self::VIEWPATH . '/' . implode('/', $template_ar) . self::TMPL_EXT);
+            $template_content = ob_get_contents();
             ob_end_clean();
         }
-        return str_replace('{{ pageContent }}', $view_content, $layout);
+        return str_replace('{{ pageContent }}', $template_content, $layout_content);
     }
 
     /**
@@ -343,7 +342,7 @@ class MvcUIController
             'appurl' => '/documentation',
             'apptitle' => 'Documentation API Mvc::UI'
         ];
-        echo $this->render('Layouts.default', 'Templates.framed', $data);
+        echo $this->render('Layouts.default', 'Templates.framed', $data, 'Documentation');
     }
 
 
@@ -353,7 +352,7 @@ class MvcUIController
      */
     public function home(): void
     {
-        echo $this->render('Layouts.default', 'Templates.home');
+        echo $this->render('Layouts.default', 'Templates.home', null, 'Acceuil');
     }
 
     /**
@@ -362,8 +361,30 @@ class MvcUIController
      */
     public function error404(): void
     {
-        echo $this->render('Layouts.404');
+        header("HTTP/1.1 404 Not Found");
+        echo $this->render('Layouts.errors', 'Templates.errors.404', 'error404');
     }
+
+    /**
+     * Affiche la page d'erreur 403
+     * @return void
+     */
+    public function error403(): void
+    {
+        header("HTTP/1.1 403 Forbidden");
+        echo $this->render('Layouts.errors', 'Templates.errors.403', 'error403');
+    }
+
+    /**
+     * Affiche la page d'erreur 401
+     * @return void
+     */
+    public function error401(): void
+    {
+        header("HTTP/1.1 401 Unauthorized");
+        echo $this->render('Layouts.errors', 'Templates.errors.401', 'error401');
+    }
+
 
     /**
      * Vérifie les requêtes Ajax
@@ -418,6 +439,10 @@ class MvcUIController
     }
 
 
+    /**
+     * Renvoie les informations de copyrights
+     * @return string
+     */
     public static function getCopyRights(): string
     {
         $mvcUi = (new self);
@@ -426,9 +451,25 @@ class MvcUIController
         return $mvcUi->renderPartial('copyrightsinfos', ['app_name'=>$app_name, 'version'=>$version, 'company'=>$company] );
     }
 
+    /**
+     * Renvoie une rotation en degrès pour la fonction hue rotate de CSS
+     * @return string
+     */
     public static function huerotate(): string
     {
-        $huesRotate = ['0','45deg','90deg','135deg','180deg','225deg','270deg','315deg'];
+        for($i=0;$i<=360;$i+=9) {
+            $huesRotate[] = $i . 'deg';
+        }
         return  $huesRotate[array_rand($huesRotate)];
+    }
+
+    /**
+     * Fonction qui formatte un nombre en monnaie Euro
+     * @return string
+     * @var string $montant
+     */
+    public static function formalizeEuro(string $montant): string
+    {
+        return (int)$montant . '.00 &euro;';
     }
 }

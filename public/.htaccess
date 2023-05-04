@@ -2,6 +2,7 @@
     RewriteEngine on
 
     ErrorDocument 404 /404
+    ErrorDocument 403 /403
     ErrorDocument 401 /401
 
     RewriteCond %{HTTP_HOST} ^mvc-ui.org
@@ -15,6 +16,9 @@
 
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^pagination/(.*) /index.php?num=$1
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^api/products/(.*) /index.php?productspage=$1
 
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d

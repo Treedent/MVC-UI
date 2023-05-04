@@ -9,14 +9,14 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.1.0
+ * @version    1.2.0
  */
 
 use Syradev\app\MvcUIController;
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,15 +48,10 @@ use Syradev\app\MvcUIController;
                     {{ pageContent }}
                 </div>
             </div>
-            <div id="row footer">
-                <?php
-                $footer = [
-                    'logo' => '/imgs/mvc-ui.svg',
-                    'title' => 'MVC::UI',
-                    'classTitle' => 'php'
-                ];
-                require_once MvcUIController::partial('/footer.part.php');
-                ?>
+            <div class="row" id="footer">
+                <div class="col">
+                    <?php require_once MvcUIController::partial('/footer.part.php'); ?>
+                </div>
             </div>
         </main>
     </div>

@@ -9,7 +9,7 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.1.0
+ * @version    1.2.0
  */
 namespace SYRADEV\app;
 
@@ -40,7 +40,7 @@ class PaginateController extends MvcUIController
      */
     public function paginateDemo(): void
     {
-        echo $this->render('Layouts.default', 'Templates.paginate');
+        echo $this->render('Layouts.default', 'Templates.paginate', null, 'Démo Pagination');
     }
 
     /**
@@ -54,5 +54,29 @@ class PaginateController extends MvcUIController
         return (new self)->renderPartial('pagination', ['num'=>$num,'maxpage'=>$maxpage, 'align'=>$align]);
     }
 
+    public function productslist() {
+        echo $this->render('Layouts.default', 'Templates.productlist', null, 'Liste de produits');
+    }
 
+
+    /**
+     * Affiche la page de démo du défilement de contenus infini
+     * @param int $page
+     * @param int $maxPerPage
+     * @return void
+     */
+    public function infinitescroll(int $page, int $maxPerPage): void
+    {
+        $cnx = PdoMySQL::getInstance();
+        // Récupère le nombre d'enregistrements
+        $requeteNbProducts = 'SELECT COUNT(*) AS nbProduits FROM `Products`';
+        $resultNBProducts = $cnx->requete($requeteNbProducts, 'fetch');
+        $nbProduits = $resultNBProducts['nbProduits'];
+        $nbPages = $nbProduits > 0 ? ceil($nbProduits/$maxPerPage) : 0;
+        $position = $page === 1 ? 0 : $page * $maxPerPage;
+        $requeteProducts = sprintf('SELECT * from `Products` ORDER BY `ProductID` LIMIT %d,%d', $position, $maxPerPage);
+        echo $requeteProducts;
+        $produits = $cnx->requete($requeteProducts);
+        echo $this->renderPartial('products', $produits);
+    }
 }

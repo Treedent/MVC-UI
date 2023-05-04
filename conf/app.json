@@ -1,14 +1,20 @@
 {
-  "domain": "mvc-ui.org",
+  "domain": "www.mvc-ui.org",
   "originating_url": "https://www.mvc-ui.org",
   "originating_segment": "/",
   "hmacData": "loCVRhEEWLCGjV7kRU06RBhXRhr2yzpcPQQE4C9Xvp",
   "app_name": "Mvc::UI",
   "company": "Syradev",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "user_session_name": "MvcUiUserSession",
   "session_token_label": "MVCUI_CSRF_TOKEN_SESS_IDX",
   "form_token_label": "mvc-ui-csrf-token-label",
   "hashAlgo": "sha3-512",
-  "cipherAlgo": "aes-256-cbc"
+  "cipherAlgo": "aes-256-cbc",
+  "db": {
+    "database": "northwind",
+    "host": "localhost",
+    "user": "root",
+    "password": "PhpRoot@2022"
+  }
 }

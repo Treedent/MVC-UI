@@ -8,7 +8,7 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.1.0
+ * @version    1.2.0
 */
 
 @import "variables";
@@ -18,17 +18,19 @@
 }
 
 #top-menu {
-  a::before {
-    content: " ::  ";
-  }
-  a.active {
-    color: $primary;
+  a {
+    font-size: .8em;
+    &.active {
+      color: $secondary;
+    }
   }
 }
 
 #to-top {
   display: none;
-  float: right;
+  position:fixed;
+  bottom: 33px;
+  right:33px;
   z-index: 1032;
 }
 
@@ -65,4 +67,66 @@
   50% {
     background-position: 100% 0;
   }
+}
+
+.page-load-status {
+  display: none;
+  padding-top: 20px;
+  border-top: 1px solid $primary;
+  text-align: center;
+  color: $secondary;
+  margin-top:20px;
+}
+
+/**
+* loader-ellipse
+*/
+.loader-ellipse {
+  font-size: 20px;
+  position: relative;
+  width: 4em;
+  height: 1em;
+  margin: 10px auto;
+}
+
+.loader-ellipse__dot {
+  display: block;
+  width: 1em;
+  height: 1em;
+  border-radius: 0.5em;
+  background: $secondary;
+  position: absolute;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+.loader-ellipse__dot:nth-child(1),
+.loader-ellipse__dot:nth-child(2) {
+  left: 0;
+}
+.loader-ellipse__dot:nth-child(3) { left: 1.5em; }
+.loader-ellipse__dot:nth-child(4) { left: 3em; }
+
+@keyframes reveal {
+  from { transform: scale(0.001); }
+  to { transform: scale(1); }
+}
+
+@keyframes slide {
+  to { transform: translateX(1.5em); }
+}
+
+.loader-ellipse__dot:nth-child(1) {
+  animation-name: reveal;
+}
+
+.loader-ellipse__dot:nth-child(2),
+.loader-ellipse__dot:nth-child(3) {
+  animation-name: slide;
+}
+
+.loader-ellipse__dot:nth-child(4) {
+  animation-name: reveal;
+  animation-direction: reverse;
 }

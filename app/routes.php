@@ -9,7 +9,7 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.1.0
+ * @version    1.2.0
  */
 
 use SYRADEV\app\MvcUIController;
@@ -34,6 +34,24 @@ return [
         'action' => 'error404',
         'info' => 'Affiche la page d\'erreur 404.'
     ],
+    '403' => [
+        'access' => 'web',
+        'privacy' => 'public',
+        'method' => 'get',
+        'route' => '/403',
+        'class' => MvcUIController::class,
+        'action' => 'error403',
+        'info' => 'Affiche la page d\'erreur 403.'
+    ],
+    '401' => [
+        'access' => 'web',
+        'privacy' => 'public',
+        'method' => 'get',
+        'route' => '/401',
+        'class' => MvcUIController::class,
+        'action' => 'error401',
+        'info' => 'Affiche la page d\'erreur 401.'
+    ],
     'home' => [
         'access' => 'web',
         'privacy' => 'public',
@@ -56,7 +74,7 @@ return [
         'access' => 'api',
         'privacy' => 'public',
         'method' => 'post',
-        'route' => '/connect',
+        'route' => '/api/connect',
         'class' => MvcUIController::class,
         'action' => 'connect',
         'info' => 'Connecte un utilisateur.'
@@ -65,7 +83,7 @@ return [
         'access' => 'api',
         'privacy' => 'private',
         'method' => 'post',
-        'route' => '/disconnect',
+        'route' => '/api/disconnect',
         'class' => MvcUIController::class,
         'action' => 'disconnect',
         'info' => 'Déconnecte un utilisateur.'
@@ -79,6 +97,25 @@ return [
         'class' => PaginateController::class,
         'action' => 'paginateDemo',
         'info' => 'Exemple de pagination.'
+    ],
+    'productslist'=> [
+        'access' => 'web',
+        'privacy' => 'public',
+        'method' => 'get',
+        'route' => '/productslist',
+        'class' => PaginateController::class,
+        'action' => 'productslist',
+        'info' => 'Demo scroll infini.'
+    ],
+    'products' => [
+        'access' => 'api',
+        'privacy' => 'public',
+        'method' => 'get',
+        'route' => '/api/products',
+        'allowed_params_regex' => 'int+',
+        'class' => PaginateController::class,
+        'action' => 'infinitescroll',
+        'info' => 'Renvoie un partiel de produits.'
     ],
     'docs'=> [
         'access' => 'web',

@@ -8,7 +8,7 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.1.0
+ * @version    1.2.0
  */
 
 docReady(() => {
@@ -23,12 +23,8 @@ docReady(() => {
         e.preventDefault();
         window.scrollTo({top: 0, behavior: 'smooth'});
     });
+    /** Affichage du boutn to-top suivant le scroll de la page **/
     window.onscroll = () => {
-        if (d.body.scrollTop > 20 || d.documentElement.scrollTop > 20) {
-            totop.style.display = 'block';
-        } else {
-            totop.style.display = 'none';
-        }
+        totop.style.display = (d.body.scrollTop > 20 || d.documentElement.scrollTop > 20) ? 'block' : 'none';
     }
-
 });

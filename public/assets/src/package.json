@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "animate.css": "^4.1.1",
     "bootstrap": "^5.3.0-alpha3",
     "uglify-js": "^3.17.4"
   }

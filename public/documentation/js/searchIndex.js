@@ -111,6 +111,16 @@ Search.appendIndex(
             "summary": "Affiche\u0020la\u0020page\u0020d\u0027erreur\u0020404",
             "url": "classes/SYRADEV-app-MvcUIController.html#method_error404"
         },                {
+            "fqsen": "\\SYRADEV\\app\\MvcUIController\u003A\u003Aerror403\u0028\u0029",
+            "name": "error403",
+            "summary": "Affiche\u0020la\u0020page\u0020d\u0027erreur\u0020403",
+            "url": "classes/SYRADEV-app-MvcUIController.html#method_error403"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\MvcUIController\u003A\u003Aerror401\u0028\u0029",
+            "name": "error401",
+            "summary": "Affiche\u0020la\u0020page\u0020d\u0027erreur\u0020401",
+            "url": "classes/SYRADEV-app-MvcUIController.html#method_error401"
+        },                {
             "fqsen": "\\SYRADEV\\app\\MvcUIController\u003A\u003AajaxCheck\u0028\u0029",
             "name": "ajaxCheck",
             "summary": "V\u00E9rifie\u0020les\u0020requ\u00EAtes\u0020Ajax",
@@ -133,13 +143,18 @@ Search.appendIndex(
         },                {
             "fqsen": "\\SYRADEV\\app\\MvcUIController\u003A\u003AgetCopyRights\u0028\u0029",
             "name": "getCopyRights",
-            "summary": "",
+            "summary": "Renvoie\u0020les\u0020informations\u0020de\u0020copyrights",
             "url": "classes/SYRADEV-app-MvcUIController.html#method_getCopyRights"
         },                {
             "fqsen": "\\SYRADEV\\app\\MvcUIController\u003A\u003Ahuerotate\u0028\u0029",
             "name": "huerotate",
-            "summary": "",
+            "summary": "Renvoie\u0020une\u0020rotation\u0020en\u0020degr\u00E8s\u0020pour\u0020la\u0020fonction\u0020hue\u0020rotate\u0020de\u0020CSS",
             "url": "classes/SYRADEV-app-MvcUIController.html#method_huerotate"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\MvcUIController\u003A\u003AformalizeEuro\u0028\u0029",
+            "name": "formalizeEuro",
+            "summary": "Fonction\u0020qui\u0020formatte\u0020un\u0020nombre\u0020en\u0020monnaie\u0020Euro",
+            "url": "classes/SYRADEV-app-MvcUIController.html#method_formalizeEuro"
         },                {
             "fqsen": "\\SYRADEV\\app\\MvcUIController\u003A\u003AROUTESFILE",
             "name": "ROUTESFILE",
@@ -206,6 +221,16 @@ Search.appendIndex(
             "summary": "Construit\u0020une\u0020barre\u0020de\u0020pagination",
             "url": "classes/SYRADEV-app-PaginateController.html#method_getPagination"
         },                {
+            "fqsen": "\\SYRADEV\\app\\PaginateController\u003A\u003Aproductslist\u0028\u0029",
+            "name": "productslist",
+            "summary": "",
+            "url": "classes/SYRADEV-app-PaginateController.html#method_productslist"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\PaginateController\u003A\u003Ainfinitescroll\u0028\u0029",
+            "name": "infinitescroll",
+            "summary": "Affiche\u0020la\u0020page\u0020de\u0020d\u00E9mo\u0020du\u0020d\u00E9filement\u0020de\u0020contenus\u0020infini",
+            "url": "classes/SYRADEV-app-PaginateController.html#method_infinitescroll"
+        },                {
             "fqsen": "\\SYRADEV\\app\\PaginateController\u003A\u003A\u0024instance",
             "name": "instance",
             "summary": "Instance\u0020de\u0020la\u0020classe",
@@ -213,8 +238,43 @@ Search.appendIndex(
         },                {
             "fqsen": "\\SYRADEV\\app\\PdoMySQL",
             "name": "PdoMySQL",
-            "summary": "",
+            "summary": "Classe\u0020PdoMySQL\nPermet\u0020d\u0027op\u00E9rer\u0020sur\u0020une\u0020base\u0020de\u0020donn\u00E9es\u0020MySQL",
             "url": "classes/SYRADEV-app-PdoMySQL.html"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\PdoMySQL\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/SYRADEV-app-PdoMySQL.html#method___construct"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\PdoMySQL\u003A\u003AgetInstance\u0028\u0029",
+            "name": "getInstance",
+            "summary": "",
+            "url": "classes/SYRADEV-app-PdoMySQL.html#method_getInstance"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\PdoMySQL\u003A\u003Arequete\u0028\u0029",
+            "name": "requete",
+            "summary": "",
+            "url": "classes/SYRADEV-app-PdoMySQL.html#method_requete"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\PdoMySQL\u003A\u003Ainserer\u0028\u0029",
+            "name": "inserer",
+            "summary": "Insert\u0020des\u0020donn\u00E9es\u0020dans\u0020une\u0020table",
+            "url": "classes/SYRADEV-app-PdoMySQL.html#method_inserer"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\PdoMySQL\u003A\u003AdernierIndex\u0028\u0029",
+            "name": "dernierIndex",
+            "summary": "Retourne\u0020l\u0027id\u0020de\u0020la\u0020derni\u00E8re\u0020insertion\u0020par\u0020auto\u002Dincr\u00E9ment\u0020dans\u0020la\u0020base\u0020de\u0020donn\u00E9es",
+            "url": "classes/SYRADEV-app-PdoMySQL.html#method_dernierIndex"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\PdoMySQL\u003A\u003A\u0024connect",
+            "name": "connect",
+            "summary": "",
+            "url": "classes/SYRADEV-app-PdoMySQL.html#property_connect"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\PdoMySQL\u003A\u003A\u0024conx",
+            "name": "conx",
+            "summary": "",
+            "url": "classes/SYRADEV-app-PdoMySQL.html#property_conx"
         },                {
             "fqsen": "\\",
             "name": "\\",
