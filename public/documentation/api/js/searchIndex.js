@@ -283,32 +283,32 @@ Search.appendIndex(
         },                {
             "fqsen": "\\SYRADEV\\app\\DemoController\u003A\u003AgetInstance\u0028\u0029",
             "name": "getInstance",
-            "summary": "Instantie\u0020l\u0027objet\u0020DemoController",
+            "summary": "Syst\u00E8me\u0020\u003A\nInstantie\u0020l\u0027objet\u0020DemoController",
             "url": "classes/SYRADEV-app-DemoController.html#method_getInstance"
         },                {
             "fqsen": "\\SYRADEV\\app\\DemoController\u003A\u003AredirectPaginateDemo\u0028\u0029",
             "name": "redirectPaginateDemo",
-            "summary": "Affiche\u0020la\u0020page\u0020de\u0020d\u00E9mo\u0020de\u0020pagination\u0020redirig\u00E9e",
+            "summary": "Affichage\u0020\u003A\nAffiche\u0020la\u0020page\u0020de\u0020d\u00E9mo\u0020de\u0020pagination\u0020redirig\u00E9e",
             "url": "classes/SYRADEV-app-DemoController.html#method_redirectPaginateDemo"
         },                {
             "fqsen": "\\SYRADEV\\app\\DemoController\u003A\u003AajaxPaginateDemo\u0028\u0029",
             "name": "ajaxPaginateDemo",
-            "summary": "Affiche\u0020la\u0020page\u0020de\u0020d\u00E9mo\u0020pagination\u0020Ajax",
+            "summary": "Affichage\u0020\u003A\nAffiche\u0020la\u0020page\u0020de\u0020d\u00E9mo\u0020pagination\u0020Ajax",
             "url": "classes/SYRADEV-app-DemoController.html#method_ajaxPaginateDemo"
-        },                {
-            "fqsen": "\\SYRADEV\\app\\DemoController\u003A\u003Aclientslist\u0028\u0029",
-            "name": "clientslist",
-            "summary": "Renvoie\u0020la\u0020liste\u0020pagin\u00E9e\u0020des\u0020clients",
-            "url": "classes/SYRADEV-app-DemoController.html#method_clientslist"
         },                {
             "fqsen": "\\SYRADEV\\app\\DemoController\u003A\u003Aproductslist\u0028\u0029",
             "name": "productslist",
-            "summary": "Affiche\u0020une\u0020liste\u0020de\u0020produits",
+            "summary": "Affichage\u0020\u003A\nAffiche\u0020une\u0020liste\u0020de\u0020produits",
             "url": "classes/SYRADEV-app-DemoController.html#method_productslist"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\DemoController\u003A\u003Aclientslist\u0028\u0029",
+            "name": "clientslist",
+            "summary": "Utilitaire\u0020\u003A\nRenvoie\u0020la\u0020liste\u0020pagin\u00E9e\u0020des\u0020clients",
+            "url": "classes/SYRADEV-app-DemoController.html#method_clientslist"
         },                {
             "fqsen": "\\SYRADEV\\app\\DemoController\u003A\u003Ainfinitescroll\u0028\u0029",
             "name": "infinitescroll",
-            "summary": "S\u00E9lectionne\u0020et\u0020envoie\u0020les\u0020donn\u00E9es\u0020du\u0020d\u00E9filement\u0020infini",
+            "summary": "Utilitaire\u0020\u003A\nS\u00E9lectionne\u0020et\u0020envoie\u0020les\u0020donn\u00E9es\u0020du\u0020d\u00E9filement\u0020infini",
             "url": "classes/SYRADEV-app-DemoController.html#method_infinitescroll"
         },                {
             "fqsen": "\\SYRADEV\\app\\DemoController\u003A\u003A\u0024instance",

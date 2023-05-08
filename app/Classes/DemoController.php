@@ -21,13 +21,16 @@ namespace SYRADEV\app;
 class DemoController extends MvcUIController
 {
 
+
     /**
      * Instance de la classe
      * @protected MvcUIController|null $instance
      */
     protected static ?MvcUIController $instance = null;
 
+
     /**
+     * Système :
      * Instantie l'objet DemoController
      * @return DemoController object *
      */
@@ -39,7 +42,9 @@ class DemoController extends MvcUIController
         return DemoController::$instance;
     }
 
+
     /**
+     * Affichage :
      * Affiche la page de démo de pagination redirigée
      * @param int $page le numéro de page demandé
      * @param int $maxPerPage le nombre de clients à afficher par page
@@ -72,6 +77,7 @@ class DemoController extends MvcUIController
 
 
     /**
+     * Affichage :
      * Affiche la page de démo pagination Ajax
      * @return void *
      */
@@ -82,6 +88,18 @@ class DemoController extends MvcUIController
 
 
     /**
+     * Affichage :
+     * Affiche une liste de produits
+     * @return void
+     */
+    public function productslist(): void
+    {
+        echo $this->render('Layouts.default', 'Templates.Demo.productlist', null, 'Liste de produits');
+    }
+
+
+    /**
+     * Utilitaire :
      * Renvoie la liste paginée des clients
      * @param int $page Le numéro de page demandé
      * @param string $routeName Le nom d'une route
@@ -113,17 +131,9 @@ class DemoController extends MvcUIController
         echo $this->renderPartial('/Demo/clients', ['nbpages'=>$nbPages, 'clients'=>$clients]);
     }
 
-    /**
-     * Affiche une liste de produits
-     * @return void
-     */
-    public function productslist(): void
-    {
-        echo $this->render('Layouts.default', 'Templates.Demo.productlist', null, 'Liste de produits');
-    }
-
 
     /**
+     * Utilitaire :
      * Sélectionne et envoie les données du défilement infini
      * @param int $page
      * @param int $maxPerPage
@@ -135,9 +145,7 @@ class DemoController extends MvcUIController
         $cnx = PdoMySQL::getInstance();
 
         // Récupère le nombre d'enregistrements de la table produits
-        $requeteNbProducts = 'SELECT COUNT(*) AS nbProduits FROM `Products`';
-        $resultNBProducts = $cnx->requete($requeteNbProducts, 'fetch');
-        $nbProduits = $resultNBProducts['nbProduits'];
+        $nbProduits = $cnx->compteTable('Products')['nombre'];
 
         // Calcule le nombre de pages de produits
         $nbPages = $nbProduits > 0 ? ceil($nbProduits / $maxPerPage) : 0;
