@@ -25,7 +25,7 @@ Notice d'installation du package PHP Mvc::UI :
 
 6. Éditez le fichier de configuration /conf/app.json pour paramétrer votre domaine et votre url complète (originating_url) et votre clé d'encryptage (hmacData : 42 caractères conseillés).
 
-7. Compilez les fichiers CSS, JS et généreez la documentation de vos classes depuis le dossier /scripts/*.vbs ou *.sh.
+7. Compilez les fichiers CSS, JS et générez la documentation de vos classes depuis le dossier /scripts/*.vbs ou *.sh.
 
 
 Le package Mvc::UI est maintenant installé et prêt à être utilisé. Il vous permettra de créer des interfaces utilisateur avancées pour votre application en utilisant une structure MVC (Modèle-Vue-Contrôleur). N'oubliez pas de consulter la documentation de classes fournie pour en apprendre davantage sur les fonctionnalités et l'utilisation de ce package.
