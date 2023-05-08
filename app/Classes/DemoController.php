@@ -57,9 +57,7 @@ class DemoController extends MvcUIController
         $cnx = PdoMySQL::getInstance();
 
         // Récupère le nombre de clients de la table Customers
-        $requeteNbClients = 'SELECT COUNT(*) AS nbClients FROM `Customers`';
-        $resultNBClients = $cnx->requete($requeteNbClients, 'fetch');
-        $nbClients = $resultNBClients['nbClients'];
+        $nbClients = $cnx->compteTable('Customers')['nombre'];
 
         // Calcule le nombre de pages de clients
         $nbPages = $nbClients > 0 ? ceil($nbClients / $maxPerPage) : 0;
