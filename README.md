@@ -12,7 +12,7 @@ La classe `MvcUIController` est la classe principale de l'interface utilisateur 
 Notice d'installation du package PHP Mvc::UI :
 --------
 
-1. Créez un domaine vituel apache pointant vers un dossier local de vote disque dur.
+1. Créez un domaine virtuel apache pointant vers un dossier local de vote disque dur.
 
 2. Ajoutez votre domaine factice dans votre fichier hosts (c:\windows\system32\drivers\etc\hosts ou /etc/hosts).
 
@@ -21,9 +21,12 @@ Notice d'installation du package PHP Mvc::UI :
 
 4. Importez la base de données Northwind qui se trouve dans le dossier /public/assets/src/SQL en utilisant un outil de gestion de bases de données tel que phpMyAdmin. Si vous avez déjà la base de données Northwind, vous pouvez passer cette étape.
 
-5. Éditez le fichier de configuration /config/app.json pour paramétrer l'accès à la base de données. Il suffit de modifier les informations de votre serveur de base de données et les informations de connexion appropriées. Si vous avez choisi d'utiliser la base de données northwind, modifiez les paramètres de connexion pour correspondre à votre propre installation de la base de données.
+5. Éditez le fichier de configuration /conf/app.json pour paramétrer l'accès à la base de données. Il suffit de modifier les informations de votre serveur de base de données et les informations de connexion appropriées. Si vous avez choisi d'utiliser la base de données northwind, modifiez les paramètres de connexion pour correspondre à votre propre installation de la base de données.
 
-6. Compilez les fichiers CSS, JS et généreez la documentation de vos classes depuis le dossier /scripts/*.vbs ou *.sh.
+6. Éditez le fichier de configuration /conf/app.json pour paramétrer votre domaine et votre url complète (originating_url) et votre clé d'encryptage (hmacData : 42 caractères conseillés).
+
+7. Compilez les fichiers CSS, JS et généreez la documentation de vos classes depuis le dossier /scripts/*.vbs ou *.sh.
+
 
 Le package Mvc::UI est maintenant installé et prêt à être utilisé. Il vous permettra de créer des interfaces utilisateur avancées pour votre application en utilisant une structure MVC (Modèle-Vue-Contrôleur). N'oubliez pas de consulter la documentation de classes fournie pour en apprendre davantage sur les fonctionnalités et l'utilisation de ce package.
 
