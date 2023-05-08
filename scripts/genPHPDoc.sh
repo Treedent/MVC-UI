@@ -3,4 +3,4 @@
 # Génère la documentation PHPDoc
 
 declare rootPath="/home/regis/Public/localsites/github/MVC-UI/"
-php ./phpDocumentor.phar run -d "$rootPath" -t ../public/documentation
+php ./phpDocumentor.phar run -d "$rootPath" -t ../public/documentation/api

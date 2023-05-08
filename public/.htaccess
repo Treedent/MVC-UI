@@ -1,28 +1,57 @@
+### Gestion des pages d'erreur ###
+ErrorDocument 500 /500
+ErrorDocument 404 /404
+ErrorDocument 403 /403
+ErrorDocument 401 /401
+
 <IfModule mod_rewrite.c>
     RewriteEngine on
 
-    ErrorDocument 404 /404
-    ErrorDocument 403 /403
-    ErrorDocument 401 /401
+    ###################
+    ### Directives de réécriture (RewriteRule) qui utilisent une condition (RewriteCond).
+    ###################
 
+    ### Redirection du domaine non-www vers www ###
     RewriteCond %{HTTP_HOST} ^mvc-ui.org
     RewriteRule (.*) https://www.mvc-ui.org/$1 [R=301,L]
 
+    ### Extrait certaines parties de l'URL demandée puis les stocke dans des variables d'environnement Apache.
+    ### La première partie est stockée dans la variable $0 et correspond à toute l'URL demandée
+    ###     (y compris le nom de domaine et le chemin).
+    ### La deuxième partie est stockée dans la variable %2 et correspond à la partie du chemin de l'URL demandée
     RewriteCond $0#%{REQUEST_URI} ([^#]*)#(.*)\1$
     RewriteRule ^.*$ - [E=CWD:%2]
 
+    ### Vérifie si la demande correspond à un répertoire existant sur le serveur.
+    ### Puis supprime le dernier slash de la demande
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)/+$ $1 [R=301,L]
 
+    ### Placez ici vos segments d'url réécrits ###
+    # Récupération de la variable get redirectpage
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^pagination/(.*) /index.php?num=$1
+    RewriteRule ^demo/redirectpagination/(.*) /index.php?redirectpage=$1
 
+    # Récupération de la variable get productspage
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^api/products/(.*) /index.php?productspage=$1
 
+    # Récupération de la variable get clientspage
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^api/clients/(.*) /index.php?clientspage=$1
+    ### Fin des segments d'url ###
+
+    ### Redirection globale de toutes les requêtes vers le fichier index.php dans le répertoire courant,
+    ### en incluant les paramètres de chaîne de la requête originale.
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-l
     RewriteRule ^.*$ %{ENV:CWD}index.php [QSA,L]
 
 </IfModule>
+
+# ETag removal
+<IfModule mod_headers.c>
+	Header unset ETag
+</IfModule>
+FileETag None

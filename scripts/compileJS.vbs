@@ -10,7 +10,6 @@ if (action = vbOK) Then
   sourceJS = "../public/assets/src/JS/"
   destinationJS = "../public/assets/js/"
   uglify = "../public/assets/src/node_modules/uglify-js/bin/uglifyjs"
-  domainUrl = "https://www.mvc-ui.org"
 
   Set fso = CreateObject("Scripting.FileSystemObject")
   Set folder = fso.GetFolder(sourceJS)
@@ -20,7 +19,7 @@ if (action = vbOK) Then
     If LCase(fso.GetExtensionName(file.Path)) = "js" Then
       sourceFile = fso.GetFileName(file.Path)
       sourceFilenoExt = fso.GetBaseName(sourceFile)
-      command = "node " & uglify & " """ & file.Path & """ -o """ & destinationJS & sourceFilenoExt & ".min.js"" -c -m --comments '/syradev/' --source-map ""root='" & domainUrl & "/assets/src/JS/',url='" & sourceFilenoExt & ".min.js.map'"""
+      command = "node " & uglify & " """ & file.Path & """ -o """ & destinationJS & sourceFilenoExt & ".min.js"" -c -m --comments '/syradev/' --source-map ""filename='" & sourceFilenoExt & ".min.js.map'"""
       CreateObject("WScript.Shell").Run command, 0, True
       finalMessage = finalMessage & sourceFilenoExt & ".min.js compiled." & vbNewLine
     End If

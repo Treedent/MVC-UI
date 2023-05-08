@@ -1,8 +1,11 @@
 ### PhpDocumentor ###
-./scripts/.phpdoc
+!/scripts/.phpdoc/
 
 ### Sass ###
-./scripts/.sass-cache
+!/scripts/.sass-cache/
+
+### Certificats ###
+!/cert/
 
 ### PhpStorm ###
 # User-specific stuff:

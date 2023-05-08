@@ -9,7 +9,7 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.2.0
+ * @version    1.3.0
  */
 
 use Syradev\app\MvcUIController;
@@ -26,7 +26,7 @@ use Syradev\app\MvcUIController;
     <link rel="stylesheet" href="<?= MvcUIController::assets('/css/animate.min.css'); ?>">
     <link rel="stylesheet" href="<?= MvcUIController::assets('/css/bootstrap.min.css'); ?>">
     <link rel="stylesheet" href="<?= MvcUIController::assets('/css/mvcui.min.css'); ?>">
-    <?php require_once MvcUIController::partial('/cssIncludes.part.php'); ?>
+    <?php require_once MvcUIController::partial('/MvcUI/cssIncludes.part.php'); ?>
 </head>
 <body oncontextmenu="return false;" data-bs-theme="light">
 <div class="container-fluid">
@@ -39,7 +39,7 @@ use Syradev\app\MvcUIController;
                             'logo' => '/imgs/mvc-ui-.svg',
                             'title' => 'Mvc::UI'
                         ];
-                        require_once MvcUIController::partial('/header.part.php');
+                        require_once MvcUIController::partial('/MvcUI/header.part.php');
                     ?>
                 </div>
             </div>
@@ -50,7 +50,7 @@ use Syradev\app\MvcUIController;
             </div>
             <div class="row" id="footer">
                 <div class="col">
-                    <?php require_once MvcUIController::partial('/footer.part.php'); ?>
+                    <?php require_once MvcUIController::partial('/MvcUI/footer.part.php'); ?>
                 </div>
             </div>
         </main>
@@ -59,6 +59,6 @@ use Syradev\app\MvcUIController;
 <script src="<?= MvcUIController::assets('/js/docready.min.js'); ?>"></script>
 <script src="<?= MvcUIController::assets('/js/bootstrap.bundle.min.js'); ?>"></script>
 <script src="<?= MvcUIController::assets('/js/mvcui.min.js'); ?>"></script>
-<?php require_once MvcUIController::partial('/jsIncludes.part.php'); ?>
+<?php require_once MvcUIController::partial('/MvcUI/jsIncludes.part.php'); ?>
 </body>
 </html>

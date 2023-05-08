@@ -9,11 +9,11 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.2.0
+ * @version    1.3.0
  */
 
 use SYRADEV\app\MvcUIController;
-use SYRADEV\app\PaginateController;
+use SYRADEV\app\DemoController;
 
 return [
     'login' => [
@@ -24,6 +24,15 @@ return [
         'class' => MvcUIController::class,
         'action' => 'login',
         'info' => 'Affiche la bannière de login.'
+    ],
+    '500' => [
+        'access' => 'web',
+        'privacy' => 'public',
+        'method' => 'get',
+        'route' => '/500',
+        'class' => MvcUIController::class,
+        'action' => 'error500',
+        'info' => 'Affiche la page d\'erreur 500.'
     ],
     '404' => [
         'access' => 'web',
@@ -88,24 +97,64 @@ return [
         'action' => 'disconnect',
         'info' => 'Déconnecte un utilisateur.'
     ],
-    'pagination'=> [
+    'apidoc'=> [
         'access' => 'web',
         'privacy' => 'public',
         'method' => 'get',
-        'route' => '/pagination',
+        'route' => '/apidoc',
+        'class' => MvcUIController::class,
+        'action' => 'apidoc',
+        'info' => 'Documentation classe MvcUI.'
+    ],
+    'dbdoc'=> [
+        'access' => 'web',
+        'privacy' => 'public',
+        'method' => 'get',
+        'route' => '/dbdoc',
+        'class' => MvcUIController::class,
+        'action' => 'dbdoc',
+        'info' => 'Documentation de la base de données northwind.'
+    ],
+
+    'redirectpagination'=> [
+        'access' => 'web',
+        'privacy' => 'public',
+        'method' => 'get',
+        'route' => '/demo/redirectpagination',
         'allowed_params_regex' => 'int+',
-        'class' => PaginateController::class,
-        'action' => 'paginateDemo',
-        'info' => 'Exemple de pagination.'
+        'class' => DemoController::class,
+        'action' => 'redirectPaginateDemo',
+        'info' => 'Exemple de pagination redirigée.'
+    ],
+    'ajaxpagination'=> [
+        'access' => 'web',
+        'privacy' => 'public',
+        'method' => 'get',
+        'route' => '/demo/ajaxpagination',
+        'allowed_params_regex' => 'int+',
+        'class' => DemoController::class,
+        'action' => 'ajaxPaginateDemo',
+        'info' => 'Exemple de pagination gérée en Ajax.'
     ],
     'productslist'=> [
         'access' => 'web',
         'privacy' => 'public',
         'method' => 'get',
-        'route' => '/productslist',
-        'class' => PaginateController::class,
+        'route' => '/demo/productslist',
+        'class' => DemoController::class,
         'action' => 'productslist',
         'info' => 'Demo scroll infini.'
+    ],
+    'clientslist'=> [
+        'access' => 'api',
+        'privacy' => 'public',
+        'method' => 'get',
+        'route' => '/api/clients',
+        'allowed_params_regex' => 'int+',
+        'elements_per_page' => 8,
+        'class' => DemoController::class,
+        'action' => 'clientslist',
+        'info' => 'Requête une liste de clients paginée en base de données.'
     ],
     'products' => [
         'access' => 'api',
@@ -113,17 +162,8 @@ return [
         'method' => 'get',
         'route' => '/api/products',
         'allowed_params_regex' => 'int+',
-        'class' => PaginateController::class,
+        'class' => DemoController::class,
         'action' => 'infinitescroll',
         'info' => 'Renvoie un partiel de produits.'
-    ],
-    'docs'=> [
-        'access' => 'web',
-        'privacy' => 'public',
-        'method' => 'get',
-        'route' => '/docs',
-        'class' => MvcUIController::class,
-        'action' => 'docs',
-        'info' => 'Documentation classe MvcUI.'
     ]
 ];

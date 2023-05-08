@@ -1,6 +1,6 @@
 <?php
 /**
- * MvcUI classe principale de l'interface
+ * MvcUI classe principale de l'interface Mvc::UI
  *
  * Application MvcUI
  *
@@ -9,7 +9,7 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.2.0
+ * @version    1.3.0
  */
 
 namespace SYRADEV\app;
@@ -17,7 +17,7 @@ namespace SYRADEV\app;
 use Random\Randomizer;
 
 /**
- * Classe MvcUIControlller
+ * Classe MvcUIControlller : Classe principale de l'interface Mvc::UI
  */
 class MvcUIController
 {
@@ -46,6 +46,20 @@ class MvcUIController
      */
     const PARTIALSPATH = self::VIEWPATH . '/Partials';
 
+
+    /**
+     * Dossier des assets
+     * @const ASSETSFOLDER
+     */
+    const ASSETSFOLDER = '/assets';
+
+    /**
+     * Chemin vers les assets
+     * @const ASSETSPATH
+     */
+    const ASSETSPATH = __DIR__ . '/../../public/assets';
+
+
     /**
      * Extension des fichiers de Layout
      * @const LAYOUT_EXT
@@ -64,11 +78,6 @@ class MvcUIController
      */
     const PARTIAL_EXT = '.part.php';
 
-    /**
-     * Chemin vers les assets
-     * @const ASSETSFOLDER
-     */
-    const ASSETSFOLDER = '/assets';
 
     /**
      * Titre de page par défaut
@@ -85,7 +94,12 @@ class MvcUIController
     {
     }
 
+    /***************************************************************
+     * MÉTHODES SYSTÈME
+     ***************************************************************/
+
     /**
+     * Système :
      * Instantie l'objet MvcUIController
      * @return MvcUIController object *
      */
@@ -98,8 +112,9 @@ class MvcUIController
     }
 
     /**
+     * Système :
      * Récupère la configuration de l'application
-     * @param null $key
+     * @param null $key Une des clé du tableau de configuration de l'application
      */
     public function getConf($key = null)
     {
@@ -109,17 +124,19 @@ class MvcUIController
     }
 
     /**
+     * Système :
      * Renvoie le chemin des assets
-     * @param $asset
+     * @param string $asset Le chemin et le nom de fichier de l'asset à afficher
      * @return string *
      */
-    public static function assets($asset): string
+    public static function assets(string $asset): string
     {
         return self::ASSETSFOLDER . $asset;
     }
 
 
     /**
+     * Système :
      * Mise en cache des routes de l'Application dans une session PHP
      * @return void
      */
@@ -152,9 +169,10 @@ class MvcUIController
     }
 
     /**
+     * Système :
      * Renvoie vrai si une route existe
-     * @param string $routeName
-     * @param bool|null $startBy
+     * @param string $routeName Le nom d'une route
+     * @param bool|null $startBy Si vrai, la recherche se fait sur le début du nom de la route
      * @return bool $isRoute *
      */
     public static function isRoute(string $routeName, bool|null $startBy = null): bool
@@ -172,9 +190,10 @@ class MvcUIController
 
 
     /**
+     * Système :
      * Renvoie le nom d'une route à partir de ses segments
-     * @param string $requestedRoute
-     * @return string|null $routeKey *
+     * @param string $requestedRoute La route demandée ie. /api/test
+     * @return string|null $routeKey Renvoie le nom de la route
      */
     public function getRouteName(string $requestedRoute): string|null
     {
@@ -205,9 +224,10 @@ class MvcUIController
     }
 
     /**
+     * Système :
      * Renvoie les segments d'une route à partir de son nom
-     * @param string $routeName
-     * @return string $route *
+     * @param string $routeName Le nom de la route demandé
+     * @return string $route La route ie. /api/test
      */
     public static function getRoute(string $routeName): string
     {
@@ -220,48 +240,15 @@ class MvcUIController
 
 
     /**
-     * Atténuation des risques XSS
-     * @param $data
-     * @return string *
-     */
-    private static function xssafe($data): string
-    {
-        return htmlspecialchars($data, ENT_QUOTES | ENT_HTML5, 'UTF-8');
-    }
-
-
-    /**
-     * Génère un jeton CSRF
-     * @return string *
-     */
-    private function generateCSRFToken(): string
-    {
-        $mvcConf = $this->getConf();
-        $sessionTokenLabel = $mvcConf->session_token_label;
-        if (empty($_SESSION[$sessionTokenLabel])) {
-            $_SESSION[$sessionTokenLabel] = bin2hex(openssl_random_pseudo_bytes(256));
-        }
-        return hash_hmac($mvcConf->hashAlgo, $mvcConf->hmacData, $_SESSION[$sessionTokenLabel]);
-    }
-
-    /**
-     * Renvoie le jeton CSRF
-     * @return string *
-     */
-    public static function getCSRFToken(): string
-    {
-        return self::xssafe((new self)->generateCSRFToken());
-    }
-
-    /**
+     * Système :
      * Rendu d'un layout + template
-     * @param $layout
-     * @param null $template
-     * @param null $data
-     * @param null $toptitle
-     * @return string
+     * @param string $layout Le chemin/nom du layout demandé
+     * @param string|null $template Le chemin/nom du template demandé
+     * @param string|array|null $data Les données à afficher
+     * @param string|null $toptitle Le titre à afficher en top bar
+     * @return string Le contenu à afficher
      */
-    public function render($layout, $template = null, $data = null, $toptitle = null): string
+    public function render(string $layout, string $template = null, string|array $data = null, string $toptitle = null): string
     {
         // Récupère le layout
         $layout_ar = explode('.', $layout);
@@ -283,22 +270,24 @@ class MvcUIController
     }
 
     /**
+     * Système :
      * Renvoie le chemin d'un partiel
-     * @param $partial
+     * @param string $partial Le chemin/nom du fichier partiel
      * @return string *
      */
-    public static function partial($partial): string
+    public static function partial(string $partial): string
     {
         return self::PARTIALSPATH . $partial;
     }
 
     /**
+     * Système :
      * Rendu d'un partiel
-     * @param string $partial
-     * @param null $params
-     * @return string
+     * @param string $partial Le nom du partiel sans son extension
+     * @param array|null $params Des paramètres à passer au partiel
+     * @return string Le rendu du partiel
      */
-    public function renderPartial(string $partial, $params = null): string
+    public function renderPartial(string $partial, array $params = null): string
     {
         ob_start();
         require(self::PARTIALSPATH . '/' . $partial . self::PARTIAL_EXT);
@@ -308,26 +297,23 @@ class MvcUIController
     }
 
     /**
-     * Compare la route courante pour son activation dans le menu
-     * @param array $routes
-     * @return string *
+     * Système :
+     * Rends un fichier svg dans le DOM
+     * @param string $svg Le chemin/nom du fichier SVG
+     * @return false|string Le code source du fichier SVG
      */
-    static public function isActive(array $routes): string
+    public static function renderSVG(string $svg): false|string
     {
-        $routeName = (new self)->getRouteName($_SERVER['REQUEST_URI']);
-        return in_array($routeName, $routes) ? ' active' : '';
+        return file_get_contents(self::ASSETSPATH . $svg);
     }
 
-    /**
-     * Vérifie si un utilisateur est connecté
-     * @return bool
-     */
-    public static function isConnected(): bool
-    {
-        return isset($_SESSION['admin']) && !empty($_SESSION['admin']);
-    }
+
+    /***************************************************************
+     * MÉTHODES D'AFFICHAGE
+     ***************************************************************/
 
     /**
+     * Affichage :
      * Affiche la bannière de login
      * @return void
      */
@@ -336,26 +322,59 @@ class MvcUIController
         echo $this->render('Layouts.login');
     }
 
-    public function docs(): void
+
+    /**
+     * Affichage :
+     * Affiche la documentation de l'API Mvc::UI
+     * @return void
+     */
+    public function apidoc(): void
     {
         $data = [
-            'appurl' => '/documentation',
+            'appurl' => '/documentation/api',
             'apptitle' => 'Documentation API Mvc::UI'
         ];
-        echo $this->render('Layouts.default', 'Templates.framed', $data, 'Documentation');
+        echo $this->render('Layouts.default', 'Templates.MvcUI.framed', $data, 'Documentation API Mvc::UI');
+    }
+
+    /**
+     * Affichage :
+     * Affiche la documentation de la database northwind
+     * @return void
+     */
+    public function dbdoc(): void
+    {
+        $data = [
+            'appurl' => '/documentation/db',
+            'apptitle' => 'Documentation database northwind'
+        ];
+        echo $this->render('Layouts.default', 'Templates.MvcUI.framed', $data, 'Documentation database northwind');
     }
 
 
     /**
+     * Affichage :
      * Affiche la page d'accueil
      * @return void
      */
     public function home(): void
     {
-        echo $this->render('Layouts.default', 'Templates.home', null, 'Acceuil');
+        echo $this->render('Layouts.default', 'Templates.MvcUI.home', null, 'Acceuil');
     }
 
     /**
+     * Affichage :
+     * Affiche la page d'erreur 404
+     * @return void
+     */
+    public function error500(): void
+    {
+        header("HTTP/1.1 500 Internal Server Error");
+        echo $this->render('Layouts.errors', 'Templates.errors.500', 'error500');
+    }
+
+    /**
+     * Affichage :
      * Affiche la page d'erreur 404
      * @return void
      */
@@ -366,6 +385,7 @@ class MvcUIController
     }
 
     /**
+     * Affichage :
      * Affiche la page d'erreur 403
      * @return void
      */
@@ -376,6 +396,7 @@ class MvcUIController
     }
 
     /**
+     * Affichage :
      * Affiche la page d'erreur 401
      * @return void
      */
@@ -386,7 +407,51 @@ class MvcUIController
     }
 
 
+    /***************************************************************
+     * MÉTHODES DE SÉCURITÉ
+     ***************************************************************/
+
     /**
+     * Sécurité :
+     * Atténuation des risques XSS
+     * @param $data
+     * @return string *
+     */
+    private static function xssafe($data): string
+    {
+        return htmlspecialchars($data, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    }
+
+
+    /**
+     * Sécurité :
+     * Génère un jeton CSRF
+     * @return string *
+     */
+    private function generateCSRFToken(): string
+    {
+        $mvcConf = $this->getConf();
+        $sessionTokenLabel = $mvcConf->session_token_label;
+        if (empty($_SESSION[$sessionTokenLabel])) {
+            $_SESSION[$sessionTokenLabel] = bin2hex(openssl_random_pseudo_bytes(256));
+        }
+        return hash_hmac($mvcConf->hashAlgo, $mvcConf->hmacData, $_SESSION[$sessionTokenLabel]);
+    }
+
+
+    /**
+     * Sécurité :
+     * Renvoie le jeton CSRF
+     * @return string *
+     */
+    public static function getCSRFToken(): string
+    {
+        return self::xssafe((new self)->generateCSRFToken());
+    }
+
+
+    /**
+     * Sécurité :
      * Vérifie les requêtes Ajax
      * @return bool *
      */
@@ -395,7 +460,9 @@ class MvcUIController
         return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
     }
 
+
     /**
+     * Sécurité :
      * Vérification du Domaine enregistré
      * @return bool *
      */
@@ -405,8 +472,20 @@ class MvcUIController
         return $_SERVER['HTTP_HOST'] === $domain && $_SERVER['SERVER_NAME'] === $domain;
     }
 
+
     /**
-     * Valide le jeton CSRF pour les appels Ajax
+     * Sécurité :
+     * Vérifie si un utilisateur est connecté
+     * @return bool
+     */
+    public static function isConnected(): bool
+    {
+        return isset($_SESSION['admin']) && !empty($_SESSION['admin']);
+    }
+
+    /**
+     * Sécurité :
+     * Valide le jeton CSRF du header d'une requête Ajax
      * @return bool *
      */
     public function validateAjaxRequest(): bool
@@ -423,7 +502,8 @@ class MvcUIController
 
 
     /**
-     * Valide le jeton CSRF pour les données postées
+     * Sécurité :
+     * Valide le jeton CSRF posté par un formulaire
      * @return bool *
      */
     public function validateFormRequest(): bool
@@ -439,37 +519,106 @@ class MvcUIController
     }
 
 
+
+    /***************************************************************
+     * MÉTHODES UTILITAIRES
+     ***************************************************************/
+
     /**
+     * Utilitaire :
+     * Compare la route courante pour son activation dans le menu
+     * @param array $routes Un tableau composé du nom des routes
+     * @return string ' active'|''
+     */
+    static public function isActive(array $routes): string
+    {
+        $routeName = (new self)->getRouteName($_SERVER['REQUEST_URI']);
+        return in_array($routeName, $routes) ? ' active' : '';
+    }
+
+    /**
+     * Utilitaire :
      * Renvoie les informations de copyrights
-     * @return string
+     * @return string Les informations de copyrights issus de la configuration de l'application
      */
     public static function getCopyRights(): string
     {
         $mvcUi = (new self);
         $appConf = (array)$mvcUi->getConf();
         extract($appConf);
-        return $mvcUi->renderPartial('copyrightsinfos', ['app_name'=>$app_name, 'version'=>$version, 'company'=>$company] );
+        return $mvcUi->renderPartial('/MvcUI/copyrightsinfos', ['app_name' => $app_name, 'version' => $version, 'company' => $company]);
     }
 
     /**
+     * Utilitaire :
      * Renvoie une rotation en degrès pour la fonction hue rotate de CSS
-     * @return string
+     * @return string Une rotation en degrès
      */
     public static function huerotate(): string
     {
-        for($i=0;$i<=360;$i+=9) {
+        for ($i = 0; $i <= 360; $i += 9) {
             $huesRotate[] = $i . 'deg';
         }
-        return  $huesRotate[array_rand($huesRotate)];
+        return $huesRotate[array_rand($huesRotate)];
     }
 
     /**
+     * Utilitaire :
      * Fonction qui formatte un nombre en monnaie Euro
-     * @return string
-     * @var string $montant
+     * @var string $montant Le montant à formaliser en Euros
+     * @return string La chaine formalisée en €
      */
     public static function formalizeEuro(string $montant): string
     {
         return (int)$montant . '.00 &euro;';
+    }
+
+    /**
+     * Utilitaire :
+     * Construit une barre de pagination géréé en redirections
+     * @param int $numpage Le numéro de page demandée
+     * @param int $maxpage Le nombre maximum de pages
+     * @param string $route La route des liens de la barre de pagination
+     * @param string $align L'alignement de la barre de pagination
+     * @return string
+     */
+    public static function getPagination(int $numpage, int $maxpage, string $route, string $align): string
+    {
+        return (new self)->renderPartial(
+            '/MvcUI/linkpaginator',
+            [
+                'numpage' => $numpage,
+                'maxpage' => $maxpage,
+                'route' => $route,
+                'align' => $align
+            ]
+        );
+    }
+
+
+    /**
+     * Utilitaire :
+     * Construit une barre de pagination géréé en ajax
+     * @param int $numpage Le numéro de page courante
+     * @param int $maxperpage Le nombre maximum d'enregistrements par page
+     * @param int $maxrecords Le nombre maximum d'enregistrements en base
+     * @param string $action La méthode JS à exécuter
+     * @param string $align L'alignement de la barre de pagination
+     * @param string $uniq Un identifiant unique pour paginations multiples
+     * @return string
+     */
+    public static function getAjaxPagination(int $numpage, int $maxperpage, int $maxrecords, string $action, string $align, string $uniq): string
+    {
+        return (new self)->renderPartial(
+            '/MvcUI/ajaxpaginator',
+            [
+                'numpage' => $numpage,
+                'maxperpage' => $maxperpage,
+                'maxrecords' => $maxrecords,
+                'action' => $action,
+                'align' => $align,
+                'uniq' => $uniq
+            ]
+        );
     }
 }

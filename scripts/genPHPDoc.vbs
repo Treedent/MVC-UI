@@ -11,7 +11,7 @@ if (action = vbOK) Then
 	rootPath = "C:\xampp\localsites\MVC-UI"
 	phpdocPath = ".\phpDocumentor.phar"
 	sourcePath = rootPath
-	targetPath = "..\public\documentation"
+	targetPath = "..\public\documentation\api"
 
 	Set shell = CreateObject("WScript.Shell")
 	command = "php """ & phpdocPath & """ run -d """ & sourcePath & """ -t """ & targetPath & """"

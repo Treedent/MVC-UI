@@ -10,7 +10,7 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.2.0
+ * @version    1.3.0
  */
 
 use SYRADEV\app\MvcUIController;
@@ -32,7 +32,8 @@ $access = $_SESSION['mvcRoutes'][$routeName]['access'] ?? 'web';
 //**************************************************
 // Vérifie si la requête est une requête Ajax XmlHttpRequest
 // Vérifiction du domaine enregistré
-$requestIsAjax = $mvcUI->ajaxCheck() && $mvcUI->domainCheck() && $access=== 'api';
+// Vérification si la route demandé est de type api
+$requestIsAjax = $mvcUI->ajaxCheck() && $mvcUI->domainCheck() && $access === 'api';
 
 if ($requestIsAjax) {
     // Récupération du flux de données JSON envoyé par le client
@@ -102,18 +103,22 @@ if ($requestIsAjax) {
 
         }
         // Si la requête ajax reçue contient des paramètres sur $_GET
-        if(isset($_GET) && !empty($_GET)) {
-            // Products page
-            if(isset($_GET['productspage']) && !empty($_GET['productspage'])) {
+        if (isset($_GET) && !empty($_GET)) {
+            // Affiche la liste paginée des produits suivant le numéro de page demandé.
+            if (isset($_GET['productspage']) && !empty($_GET['productspage'])) {
                 $products_page = $_GET['productspage'];
                 $maxProductPerPage = 9;
                 $mvcUI = $_SESSION['mvcRoutes'][$routeName]['class']::getInstance();
                 $mvcUI->{$_SESSION['mvcRoutes'][$routeName]['action']}($products_page, $maxProductPerPage);
             }
+
+            // Affiche la liste paginée des clients suivant le numéro de page demandé.
+            if (isset($_GET['clientspage']) && !empty($_GET['clientspage'])) {
+                $clients_page = $_GET['clientspage'];
+                $mvcUI = $_SESSION['mvcRoutes'][$routeName]['class']::getInstance();
+                $mvcUI->{$_SESSION['mvcRoutes'][$routeName]['action']}($clients_page, $routeName);
+            }
         }
-
-
-
         // Si le CSRF Token n'est pas ou plus valide
     } else {
 
@@ -156,7 +161,18 @@ if ($requestIsAjax) {
                 exit();
             }
         }
-        $mvcUI = $_SESSION['mvcRoutes'][$routeName]['class']::getInstance();
-        $mvcUI->{$_SESSION['mvcRoutes'][$routeName]['action']}();
+        switch ($routeName) {
+            case 'redirectpagination':
+                // Suivant le numéro de page client
+                $clients_page = $_GET['redirectpage'] ?? 1;
+                $maxClientsPerPage = 10;
+                $mvcUI = $_SESSION['mvcRoutes'][$routeName]['class']::getInstance();
+                $mvcUI->{$_SESSION['mvcRoutes'][$routeName]['action']}($clients_page, $maxClientsPerPage);
+                break;
+            default:
+                $mvcUI = $_SESSION['mvcRoutes'][$routeName]['class']::getInstance();
+                $mvcUI->{$_SESSION['mvcRoutes'][$routeName]['action']}();
+                break;
+        }
     }
 }

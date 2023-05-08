@@ -1,5 +1,5 @@
 /**
- * MvcUI Product demo Scroll
+ * MvcUI Démo Scroll infini produits
  *
  * Application MvcUI
  *
@@ -8,7 +8,7 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.2.0
+ * @version    1.3.0
  */
 
 docReady(() => {
