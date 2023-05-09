@@ -122,6 +122,7 @@ return [
         'method' => 'get',
         'route' => '/demo/redirectpagination',
         'allowed_params_regex' => 'int+',
+        'elements_per_page' => 12,
         'class' => DemoController::class,
         'action' => 'redirectPaginateDemo',
         'info' => 'Exemple de pagination redirigée.'
@@ -162,6 +163,7 @@ return [
         'method' => 'get',
         'route' => '/api/products',
         'allowed_params_regex' => 'int+',
+        'elements_per_page' => 3,
         'class' => DemoController::class,
         'action' => 'infinitescroll',
         'info' => 'Renvoie un partiel de produits.'

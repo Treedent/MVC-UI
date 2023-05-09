@@ -107,7 +107,7 @@ if ($requestIsAjax) {
             // Affiche la liste paginée des produits suivant le numéro de page demandé.
             if (isset($_GET['productspage']) && !empty($_GET['productspage'])) {
                 $products_page = $_GET['productspage'];
-                $maxProductPerPage = 9;
+                $maxProductPerPage = $_SESSION['mvcRoutes'][$routeName]['elements_per_page'];
                 $mvcUI = $_SESSION['mvcRoutes'][$routeName]['class']::getInstance();
                 $mvcUI->{$_SESSION['mvcRoutes'][$routeName]['action']}($products_page, $maxProductPerPage);
             }
@@ -165,7 +165,7 @@ if ($requestIsAjax) {
             case 'redirectpagination':
                 // Suivant le numéro de page client
                 $clients_page = $_GET['redirectpage'] ?? 1;
-                $maxClientsPerPage = 10;
+                $maxClientsPerPage = $_SESSION['mvcRoutes'][$routeName]['elements_per_page'];
                 $mvcUI = $_SESSION['mvcRoutes'][$routeName]['class']::getInstance();
                 $mvcUI->{$_SESSION['mvcRoutes'][$routeName]['action']}($clients_page, $maxClientsPerPage);
                 break;

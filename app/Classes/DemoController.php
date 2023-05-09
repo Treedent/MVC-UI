@@ -62,6 +62,12 @@ class DemoController extends MvcUIController
         // Calcule le nombre de pages de clients
         $nbPages = $nbClients > 0 ? ceil($nbClients / $maxPerPage) : 0;
 
+        // Si la page demandée a une valeur supérieure au nombre maximum de pages
+        // On affiche la dernièer page
+        if($page > $nbPages) {
+            $page = $nbPages;
+        }
+
         // Calcule la position à requêter en base
         $position = $page === 1 ? 0 : $page * $maxPerPage - $maxPerPage;
 
@@ -133,8 +139,8 @@ class DemoController extends MvcUIController
     /**
      * Utilitaire :
      * Sélectionne et envoie les données du défilement infini
-     * @param int $page
-     * @param int $maxPerPage
+     * @param int $page La page demandée
+     * @param int $maxPerPage Le nombre d'éléments à afficher par page
      * @return void
      */
     public function infinitescroll(int $page, int $maxPerPage): void
