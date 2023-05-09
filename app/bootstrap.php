@@ -104,7 +104,7 @@ if ($requestIsAjax) {
         }
         // Si la requête ajax reçue contient des paramètres sur $_GET
         if (isset($_GET) && !empty($_GET)) {
-            // Affiche la liste paginée des produits suivant le numéro de page demandé.
+            // Affiche la liste paginée des produits suivant le numéro de page demandé /api/products/x
             if (isset($_GET['productspage']) && !empty($_GET['productspage'])) {
                 $products_page = $_GET['productspage'];
                 $maxProductPerPage = $_SESSION['mvcRoutes'][$routeName]['elements_per_page'];
@@ -112,7 +112,7 @@ if ($requestIsAjax) {
                 $mvcUI->{$_SESSION['mvcRoutes'][$routeName]['action']}($products_page, $maxProductPerPage);
             }
 
-            // Affiche la liste paginée des clients suivant le numéro de page demandé.
+            // Affiche la liste paginée des clients suivant le numéro de page demandé /api/clients/x
             if (isset($_GET['clientspage']) && !empty($_GET['clientspage'])) {
                 $clients_page = $_GET['clientspage'];
                 $mvcUI = $_SESSION['mvcRoutes'][$routeName]['class']::getInstance();
@@ -122,9 +122,14 @@ if ($requestIsAjax) {
         // Si le CSRF Token n'est pas ou plus valide
     } else {
 
+        if(str_starts_with($requestUri, '/api/clients')) {
+            echo '<br><a href="/demo/ajaxpagination" class="btn btn-danger text-white">Jeton expiré - Recharger la page !</a>';
+            exit();
+        }
+
         // Routage de la demande
         switch ($requestUri) {
-            case '/disconnect':
+            case '/api/disconnect':
                 echo json_encode([
                     'status' => 200,
                     'action' => 'disconnect',
