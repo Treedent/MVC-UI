@@ -46,8 +46,8 @@ class DemoController extends MvcUIController
     /**
      * Affichage :
      * Affiche la page de démo de pagination redirigée
-     * @param int $page le numéro de page demandé
-     * @param int $maxPerPage le nombre de clients à afficher par page
+     * @param int $page Le numéro de page demandé
+     * @param int $maxPerPage Le nombre de clients à afficher par page
      * @return void
      */
     public function redirectPaginateDemo(int $page, int $maxPerPage): void

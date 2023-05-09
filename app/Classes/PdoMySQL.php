@@ -93,7 +93,7 @@ final class PdoMySQL {
      */
     public function compteTable(string $tableName): array
     {
-        $sql = 'SELECT COUNT(*) AS nombre FROM `'.$tableName.'`';
+        $sql = 'SELECT COUNT(*) AS nombre FROM '.$tableName;
         return $this->requete($sql, 'fetch');
     }
 
@@ -111,7 +111,7 @@ final class PdoMySQL {
         $fields = array_keys($dataTab);
         // On récupère les valeurs
         $values = array_values($dataTab);
-        // On compte le nombre de champ
+        // On compte le nombre de champs
         $values_count = count($values);
         // On construit la chaine des paramètres ':p0,:p1,:p2,...'
         $params = [];
@@ -131,7 +131,7 @@ final class PdoMySQL {
                 'boolean' => PDO::PARAM_BOOL,
                 default => PDO::PARAM_STR,
             };
-            // On lie une valeur au paramètre :pX
+            // On lie une valeur au paramètre : px
             $prepared->bindParam(':p'.$i, $values[$i], $type);
         }
         // On exécute la requête.

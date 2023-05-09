@@ -14,8 +14,6 @@
 
 namespace SYRADEV\app;
 
-use Random\Randomizer;
-
 /**
  * Classe MvcUIControlller : Classe principale de l'interface Mvc::UI
  */
@@ -114,7 +112,7 @@ class MvcUIController
     /**
      * Système :
      * Récupère la configuration de l'application
-     * @param null $key Une des clé du tableau de configuration de l'application
+     * @param null $key Une des clés du tableau de configuration de l'application
      */
     public function getConf($key = null)
     {
@@ -192,7 +190,7 @@ class MvcUIController
     /**
      * Système :
      * Renvoie le nom d'une route à partir de ses segments
-     * @param string $requestedRoute La route demandée ie. /api/test
+     * @param string $requestedRoute La route demandée eg. /api/test
      * @return string|null $routeKey Renvoie le nom de la route
      */
     public function getRouteName(string $requestedRoute): string|null
@@ -253,7 +251,7 @@ class MvcUIController
         // Récupère le layout
         $layout_ar = explode('.', $layout);
         ob_start();
-        require(self::VIEWPATH . '/' . implode('/', $layout_ar) . self::LAYOUT_EXT);
+        require(sprintf("%s/%s%s", self::VIEWPATH, implode('/', $layout_ar), self::LAYOUT_EXT));
         $layout_content = ob_get_contents();
         ob_end_clean();
         $layout_content = str_replace('{{ pageTitle }}', self::PAGETITLE, $layout_content);
@@ -566,7 +564,7 @@ class MvcUIController
      * Utilitaire :
      * Fonction qui formatte un nombre en monnaie Euro
      * @var string $montant Le montant à formaliser en Euros
-     * @return string La chaine formalisée en €
+     * @return string La chaine formalisée en Euros
      */
     public static function formalizeEuro(string $montant): string
     {
@@ -604,7 +602,7 @@ class MvcUIController
      * @param int $maxrecords Le nombre maximum d'enregistrements en base
      * @param string $action La méthode JS à exécuter
      * @param string $align L'alignement de la barre de pagination
-     * @param string $uniq Un identifiant unique pour paginations multiples
+     * @param string $uniq Un identifiant unique pour des barres de pagination multiple
      * @return string
      */
     public static function getAjaxPagination(int $numpage, int $maxperpage, int $maxrecords, string $action, string $align, string $uniq): string
