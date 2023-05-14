@@ -9,7 +9,7 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.3.0
+ * @version    1.4.0
  */
 
 use SYRADEV\app\MvcUIController;
@@ -115,6 +115,15 @@ return [
         'action' => 'dbdoc',
         'info' => 'Documentation de la base de données northwind.'
     ],
+    'relationsdoc'=> [
+        'access' => 'web',
+        'privacy' => 'public',
+        'method' => 'get',
+        'route' => '/relationsdoc',
+        'class' => MvcUIController::class,
+        'action' => 'relationsdoc',
+        'info' => 'Documentation relations base de données.'
+    ],
 
     'redirectpagination'=> [
         'access' => 'web',
@@ -145,6 +154,15 @@ return [
         'class' => DemoController::class,
         'action' => 'productslist',
         'info' => 'Demo scroll infini.'
+    ],
+    'productsbycategory'=> [
+        'access' => 'web',
+        'privacy' => 'public',
+        'method' => 'get',
+        'route' => '/productsbycategory',
+        'class' => DemoController::class,
+        'action' => 'productsByCategory',
+        'info' => 'Demo blog.'
     ],
     'clientslist'=> [
         'access' => 'api',

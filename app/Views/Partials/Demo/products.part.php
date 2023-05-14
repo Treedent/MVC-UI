@@ -9,7 +9,7 @@ use SYRADEV\app\MvcUIController;
 foreach ($params as $product) {
     extract($product);
     ?>
-    <div class="col produit animate__animated animate__backInLeft">
+    <div class="col produit animated backInLeft">
         <div class="card">
             <img src="<?= MvcUIController::assets('/imgs/product.svg'); ?>"
                  style="display:block; margin: auto; filter: hue-rotate(<?= MvcUIController::huerotate(); ?>);"

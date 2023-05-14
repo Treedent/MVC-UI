@@ -8,7 +8,7 @@
  * @author     Regis TEDONE
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.3.0
+ * @version    1.4.0
  */
 
 use SYRADEV\app\MvcUIController;
@@ -29,7 +29,7 @@ use SYRADEV\app\MvcUIController;
 </head>
 <body oncontextmenu="return false;" data-bs-theme="light">
 <div id="mainLogin" class="d-flex align-items-center">
-    <div id="loginContainer" class="animate__animated animate__fadeIn">
+    <div id="loginContainer" class="animated fadeIn">
         <div class="text-center mb-4">
             <img id="loginLogo" src="<?= MvcUIController::assets('/imgs/mvc-ui-.svg'); ?>" alt="MvcUI">
         </div>

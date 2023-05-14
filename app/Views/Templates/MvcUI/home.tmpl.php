@@ -9,7 +9,7 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.3.0
+ * @version    1.4.0
  */
 
 use SYRADEV\app\MvcUIController;
@@ -21,7 +21,7 @@ $degres = MvcUIController::huerotate();
 <div class="container py-2 py-md-4 py-lg-5">
     <div class="row">
         <div class="col">
-            <figure class="card position-relative bg-light-subtle py-3 p-0 p-lg-4 mt-4 mb-0 ms-xl-5 animate__animated animate__fadeIn" style="border: none;">
+            <figure class="card position-relative bg-light-subtle py-3 p-0 p-lg-4 mt-4 mb-0 ms-xl-5 animated fadeIn" style="border: none;">
                 <span class="btn btn-icon btn-lg pe-none position-absolute top-0 start-0 translate-middle-y ms-4 ms-lg-5"
                       style="background:#ff8e31;filter: hue-rotate(<?= $degres; ?>);">
                   <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#ffffff" viewBox="0 0 16 16">

@@ -9,7 +9,7 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.3.0
+ * @version    1.4.0
  */
 
 use SYRADEV\app\MvcUIController;
@@ -24,7 +24,7 @@ extract($data);
  * @var $apptitle * Titre de l'application
  */
 ?>
-<div class="container animate__animated animate__fadeIn">
+<div class="container animated fadeIn">
     <div class="row">
         <div class="col">
             <iframe src="<?= $appurl; ?>" id="framed" referrerpolicy="strict-origin-when-cross-origin"

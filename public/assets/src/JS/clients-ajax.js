@@ -8,7 +8,7 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.3.0
+ * @version    1.4.0
  */
 
 
@@ -34,7 +34,7 @@ docReady(() => {
 
     /** Affichage des clients par page */
     window.refreshClients = function(page){
-        clientslist.innerHTML = '<tr><td colSpan="6">Chargement des données...</td></tr>';
+        //clientslist.innerHTML = '<tr><td colSpan="6">Chargement des données...</td></tr>';
         /** Appel des données paginées */
         fetch('/api/clients/' + page, {
             headers: ajaxHeaders

@@ -9,7 +9,7 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.3.0
+ * @version    1.4.0
  */
 
 namespace SYRADEV\app;
@@ -149,10 +149,10 @@ class DemoController extends MvcUIController
         $cnx = PdoMySQL::getInstance();
 
         // Récupère le nombre d'enregistrements de la table produits
-        $nbProduits = $cnx->compteTable('Products')['nombre'];
+        //$nbProduits = $cnx->compteTable('Products')['nombre'];
 
         // Calcule le nombre de pages de produits
-        $nbPages = $nbProduits > 0 ? ceil($nbProduits / $maxPerPage) : 0;
+        //$nbPages = $nbProduits > 0 ? ceil($nbProduits / $maxPerPage) : 0;
 
         // Calcule la position à requêter en base
         $position = $page === 1 ? 0 : $page * $maxPerPage - $maxPerPage;
@@ -163,5 +163,44 @@ class DemoController extends MvcUIController
 
         // Envoie les données des produits au partiel products
         echo $this->renderPartial('/Demo/products', $produits);
+    }
+
+
+    /**
+     * Utilitaire :
+     * Affiche les produits classés par catégorie
+     * @return void
+     */
+    public function productsByCategory(): void
+    {
+
+        // On se connecte à la database
+        /** @var PdoMySQL $cnx */
+        $cnx = PdoMySQL::getInstance();
+
+        // On exécute la requête à travers 3 tables Products, Categories et Suppliers
+        $sql = 'SELECT p.`ProductID`, p.`ProductName`, p.`QuantityPerUnit`, p.`UnitPrice`, p.`UnitsInStock`, c.`CategoryID`, c.`CategoryName`, c.`Picture`, 
+                    s.`CompanyName`, s.`ContactName`, s.`Country`, s.`Phone`
+                    FROM `Products` p 
+	                INNER JOIN `Categories` c ON ( p.`CategoryID` = c.`CategoryID`  )  
+	                INNER JOIN `Suppliers` s ON ( p.`SupplierID` = s.`SupplierID`  )  
+	                WHERE p.`Discontinued` = 0
+                    GROUP BY p.`ProductID`, p.`ProductName`, p.`QuantityPerUnit`, p.`UnitPrice`, p.`UnitsInStock`, c.`CategoryID`, c.`CategoryName`, 
+                    s.`CompanyName`, s.`ContactName`, s.`Country`, s.`Phone`
+                    ORDER BY p.`ProductID`';
+        $products_category = $cnx->requete($sql);
+
+        // On isole les catégories
+        $categories = [];
+        foreach($products_category as $product) {
+            extract($product);
+            $categories[$CategoryID] = $CategoryName;
+        }
+        ksort($categories);
+        echo $this->render('Layouts.default',
+                            'Templates.Demo.productsbycategory',
+                            ['products'=>$products_category, 'categories'=>$categories],
+                            'Produits par catégorie'
+        );
     }
 }

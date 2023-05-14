@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Les types de relations en base de données</title>
+    <link rel="icon" type="image/svg+xml" href="../../assets/imgs/favicon.svg">
+    <link rel="stylesheet" href="../../assets/css/animate.min.css">
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/mvcui.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="row mt-1">
+        <div class="col text-center d-none">
+            <h1 class="display-6">Les types de relations en base de données</h1>
+            <hr>
+        </div>
+    </div>
+
+    <section class="row mt-3 mb-6">
+        <div class="col">
+            <h2>Introduction</h2>
+            <p style="text-align: justify">
+                Les relations constituent la principale caractéristique des bases de données relationnelles. Les
+                différents types de relations contrôlent la manière dont les données et les tables sont liées les unes
+                aux autres. L'établissement de liens entre les tables par le biais de relations rend ce type de base de
+                données unique et la connaissance du fonctionnement des relations permet d'élargir les capacités de
+                modélisation des bases de données.
+            </p>
+            <p style="text-align: justify">
+                Cet article explique les différents types de relations et leur fonctionnement à l'aide d'exemples
+                pratiques.
+            </p>
+        </div>
+    </section>
+
+
+    <section class="row mt-3 mb-6">
+        <div class="col">
+            <h2>Comment les relations s'établissent-elles ?</h2>
+            <p style="text-align: justify">
+                Les deux éléments suivants définissent la manière dont une relation de base de données est établie :
+            </p>
+            <ul>
+                <li><strong>Clé primaire</strong> : Colonne dont la valeur identifie de manière unique un enregistrement
+                    de la table.
+                </li>
+                <li><strong>Clé étrangère</strong> : Colonne dont les valeurs font référence à la clé primaire d'une
+                    autre table.
+                </li>
+            </ul>
+            <p style="text-align: justify">
+                Une connexion entre une table parente et une table enfant existe en référençant la clé primaire de la
+                table parente.
+                <br>Le comportement de la référence définit le type de relation entre deux tables de la base de données.
+                <br>Une base de données utilise les relations entre deux tables par le biais d'instructions JOIN dans un
+                langage de requête
+                structuré (SQL).
+            </p>
+        </div>
+    </section>
+
+
+    <section class="row mt-3 mb-6">
+        <div class="col">
+            <h2>Pourquoi les relations sont-elles importantes dans une base de données ?</h2>
+            <p style="text-align: justify">
+                Les relations dans une base de données permettent de créer des informations significatives. Par
+                conséquent, les
+                relations dans une base de données se traduisent par :
+            </p>
+            <ul>
+                <li><strong>Une réduction de la redondance des données</strong> : Les relations permettent de référencer
+                    les
+                    informations stockées dans les tables existantes, réduisant ainsi les répétitions.
+                </li>
+                <li><strong>Des bases de données mieux organisées</strong> : Les relations permettent de mettre en œuvre
+                    des
+                    techniques de normalisation des bases de données. La normalisation permet d'obtenir une base de
+                    données mieux
+                    organisée et plus robuste.
+                </li>
+                <li><strong>Intégrité référentielle</strong> : Au fur et à mesure que les bases de données se
+                    développent, les
+                    jointures, les requêtes et les tris deviennent coûteux. Les relations permettent de réduire le
+                    nombre de
+                    transactions et d'améliorer la validité des données.
+                </li>
+            </ul>
+            <p style="text-align: justify">
+                Les relations établies entre les bases de données garantissent la viabilité, la flexibilité et la
+                stabilité d'un SGBDR (Système de gestion de base de données relationnelles).
+            </p>
+        </div>
+    </section>
+
+    <section class="row mt-3 mb-6">
+        <div class="col">
+            <h2>Les types de relations dans les bases de données</h2>
+            <p style="text-align: justify">
+                Une base de données relationnelle met en œuvre trois types de relations différentes :
+            </p>
+            <ol>
+                <li>Une à une (1:1)</li>
+                <li>Une à plusieurs (1:N)</li>
+                <li>Plusieurs à plusieurs (N:N)</li>
+            </ol>
+            <p style="text-align: justify">
+                Une ligne reliant deux tables représente une relation, tandis que les symboles à l'extrémité de la ligne
+                représentent le
+                type de relation exact.
+                <br>Par exemple, dans les diagrammes ER (Diagramme de relations entre entités), les cardinalités des
+                relations "une" et "plusieurs" apparaissent sous la forme des
+                symboles suivants :
+            </p>
+            <ul>
+                <li>Une ligne perpendiculaire (un).</li>
+                <li>Patte d'oie (plusieurs).</li>
+                <li>Un cercle (zéro).</li>
+            </ul>
+            <figure class="text-center">
+                <img src="imgs/er-diagram-relationship-cardinality.png" class="img-thumbnail" alt="Symboles relationnels">
+                <figcaption>
+                    Les symboles se combinent pour former des types de relations complexes
+                </figcaption>
+            </figure>
+
+        </div>
+    </section>
+
+    <section class="row mt-5 mb-6">
+        <div class="col">
+            <h3>1. Relation de type "un à un" dans une base de données</h3>
+            <p style="text-align: justify">
+                Une relation "un à un" (1:1) dans une base de données comporte un enregistrement de chaque côté de la
+                relation.
+                Chaque clé primaire se rapporte au plus à une entrée d'une autre table, ce qui rend la clé étrangère
+                unique.
+            </p>
+            <h4>Exemple de relation "un à un"</h4>
+            <p style="text-align: justify">
+                Un exemple simple de relation "un à un" est celui des capitales. Un pays (ou un État) n'a qu'une seule
+                capitale, et une capitale n'appartient qu'à un seul pays (ou État).
+            </p>
+            <p style="text-align: justify">
+                Deux tables contenant des informations sur les pays et les capitales sont reliées dans une base de
+                données à l'aide
+                d'une clé primaire. Par exemple, lorsqu'il est ajouté à la table des pays, l'identifiant unique d'une
+                capitale (sa
+                clé primaire) devient une clé étrangère, créant ainsi une relation.
+            </p>
+            <figure class="text-center">
+                <img src="imgs/one-to-one-relationship.png" class="img-thumbnail" alt="Relation un à un">
+                <figcaption>
+                    Dans ce cas, la relation "un à un" est obligatoire. Chaque pays doit avoir une capitale unique et la
+                    clé étrangère
+                    doit être unique pour garantir la relation 1:1.
+                </figcaption>
+            </figure>
+            <p style="text-align: justify">
+                <em>Note : D'autres façons de créer une relation 1:1 consisteraient à utiliser le country_id comme
+                identifiant unique pour la table capital, ou à référencer le country_id comme clé étrangère unique.</em>
+            </p>
+        </div>
+    </section>
+
+
+    <section class="row mt-5 mb-6">
+        <div class="col">
+            <h3>2. Relation de type "un à plusieurs" dans une base de données</h3>
+            <p style="text-align: justify">
+                Dans une base de données, une relation de type "un à plusieurs" (1:N) comporte une seule entrée d'un
+                côté et
+                plusieurs entrées de l'autre. Chaque clé primaire correspond à un ou plusieurs enregistrements d'une
+                autre table.
+                Dans ce cas, la clé étrangère n'est pas unique.
+                Les relations "un à plusieurs" sont naturelles et apparaissent souvent comme une connexion logique dans
+                la modélisation des bases de données.
+            </p>
+
+            <p><strong>Exemple de relation de type "un à plusieurs"</strong> :</p>
+
+            <p style="text-align: justify">
+                Le lien entre une mère et ses enfants est un exemple de relation de type "un à plusieurs". Une mère peut
+                avoir de nombreux enfants, mais chaque enfant n'appartient qu'à une seule mère.
+
+                <br>Une base de données contenant deux tables avec des informations sur les mères et les enfants se
+                connecte
+                à l'aide d'une clé primaire. Lorsqu'il est ajouté à la table des enfants, l'identifiant unique d'une
+                mère devient
+                une clé étrangère. Différents enfants peuvent avoir la même mère.
+            </p>
+            <figure class="text-center">
+                <img src="imgs/one-to-many-relationship.png" class="img-thumbnail" alt="Relation un à un">
+                <figcaption>
+                    La relation est obligatoire aux deux extrémités, et au moins une entrée doit exister dans les deux
+                    tables pour
+                    établir une connexion.
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+
+    <section class="row mt-5 mb-6">
+        <div class="col">
+            <h3>3. Relation de type "plusieurs à plusieurs" dans une base de données</h3>
+            <p style="text-align: justify">
+                Les relations de plusieurs à plusieurs (N:N) ou (M:M) dans une base de données comportent plusieurs
+                entrées aux deux
+                extrémités de la relation. Étant donné que de nombreuses entrées peuvent exister aux deux extrémités,
+                une solution
+                standard consiste à créer une table d'association (jonction, jointure) avec des clés étrangères
+                provenant des deux
+                tables.
+                Les relations de plusieurs à plusieurs sont une pratique courante dans les bases de données
+                relationnelles mises en
+                œuvre dans les technologies web, telles que les sites de commerce électronique.
+            </p>
+
+            <p><strong>Exemple de relation de plusieurs à plusieurs</strong> :</p>
+
+            <p style="text-align: justify">Il existe une relation de plusieurs à plusieurs entre les livres et les
+                auteurs. Par
+                exemple, un seul livre peut avoir plusieurs auteurs. De même, un auteur unique peut avoir plusieurs
+                livres.
+
+                S'il existe une table contenant des livres et une autre contenant des auteurs, la meilleure façon
+                d'établir la
+                relation entre les deux est de créer une nouvelle table. La nouvelle table possède des clés étrangères
+                provenant des
+                deux tables mères, ce qui crée une relation de plusieurs à plusieurs.
+            </p>
+            <figure class="text-center">
+                <img src="imgs/many-to-many-relationship.png" class="img-thumbnail" alt="Relation plusieurs à plusieurs">
+                <figcaption>
+                    L'exécution de différents types de requêtes JOIN permet de récupérer efficacement les données des
+                    deux tables tout
+                    en protégeant les tables d'origine contre les redondances.
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section class="row mt-5 mb-5 mb-6">
+        <div class="col">
+            <h2>Conclusion</h2>
+            <p style="text-align: justify">
+                Après avoir lu cet article, vous connaissez les différents types de relations et savez comment ils
+                contribuent à
+                fournir une solution de modélisation pratique dans les bases de données relationnelles.
+            </p>
+        </div>
+    </section>
+    <a id="to-top" href="#" title="Haut de la page.">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16" class="animated fadeIn">
+            <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+        </svg>
+    </a>
+</div>
+<script src="../../assets/js/docready.min.js"></script>
+<script src="../../assets/js/mvcui.min.js"></script>
+</body>
+</html>

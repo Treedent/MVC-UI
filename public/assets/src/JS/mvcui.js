@@ -8,7 +8,7 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.3.0
+ * @version    1.4.0
  */
 
 docReady(() => {
@@ -18,22 +18,38 @@ docReady(() => {
     const d = document;
     const totop = d.querySelector('#to-top');
     const ajaxPaginateBtn = d.querySelectorAll('.ajaxPagination li > a');
+    const navbarToggler = d.querySelector('#hamburger');
+    const animatedHamburger = d.querySelector('#animated-hamburger');
+    const navbarmvcui = d.querySelector('#navbarMvcui');
+
+    /**
+     * Evènement click sur menu hamburger
+     */
+    if(navbarToggler !== null) {
+        navbarToggler.addEventListener('click', (e) => {
+            new bootstrap.Collapse(navbarmvcui);
+            animatedHamburger.classList.toggle('open');
+        });
+    }
+
 
     /**
      * Evènement click sur bouton To top
      */
-    totop.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.scrollTo({top: 0, behavior: 'smooth'});
-    });
-    /** Affichage du boutn to-top suivant le scroll de la page **/
-    window.onscroll = () => {
-        totop.style.display = (d.body.scrollTop > 20 || d.documentElement.scrollTop > 20) ? 'block' : 'none';
+    if(totop !== null) {
+        totop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+        /** Affichage du boutn to-top suivant le scroll de la page **/
+        window.onscroll = () => {
+            totop.style.display = (d.body.scrollTop > 20 || d.documentElement.scrollTop > 20) ? 'block' : 'none';
+        }
     }
 
     /**
      * Supprime les classes active de tous les liens d'un parent
-     * @param parent Le node parent du paginateur
+     * @param parent Le node parent
      */
     let removeActiveLinks = (parent) => {
         for (const link of parent.getElementsByTagName("a")) {
@@ -93,7 +109,7 @@ docReady(() => {
                     paginator.parentNode.querySelector('.currentpage').value = pageDemanded;
                     $this.blur();
                 });
-                /** Execute the clients data load */
+                /** Exécute la méthode chargement de page demandée */
                 window[action](pageDemanded);
             });
         });

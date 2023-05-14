@@ -9,7 +9,7 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.3.0
+ * @version    1.4.0
  */
 use SYRADEV\app\MvcUIController;
 
@@ -22,7 +22,7 @@ $nbPages = $maxrecords > 0 ? ceil($maxrecords / $maxperpage) : 0;
     <nav class="ajaxPagination d-flex flex-row-reverse" aria-label="ajax pagination">
         <input type="hidden" class="currentpage" value="1">
         <input type="hidden" class="nbpages" value="<?= $nbPages; ?>">
-        <ul class="pagination pagination-sm" data-paginatorid="<?= $uniq;?>">
+        <ul class="pagination pagination-sm flex-wrap" data-paginatorid="<?= $uniq;?>">
             <?php
             $prevDisabled = $numpage <= 1 ? ' disabled' : '';
             ?>

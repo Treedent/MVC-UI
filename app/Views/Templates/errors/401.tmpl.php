@@ -3,7 +3,7 @@
 use SYRADEV\app\MvcUIController;
 
 ?>
-<div id="messageError" class="text-center px-5 py-5 animate__animated animate__fadeIn">
+<div id="messageError" class="text-center px-5 py-5 animated fadeIn">
     <a href="<?= MvcUIController::getRoute('home'); ?>" title="Page d'accueil">
         <img id="mvclogo" src="<?= MvcUIController::assets('/imgs/mvc-ui-.svg'); ?>"
              alt="Application MVC"></a>

@@ -1,6 +1,51 @@
 Search.appendIndex(
     [
                 {
+            "fqsen": "\\SYRADEV\\app\\DemoController",
+            "name": "DemoController",
+            "summary": "Classe\u0020DemoController\u0020\u00E9tends\u0020MvcUIControlller\nGestion\u0020de\u0020la\u0020pagination",
+            "url": "classes/SYRADEV-app-DemoController.html"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\DemoController\u003A\u003AgetInstance\u0028\u0029",
+            "name": "getInstance",
+            "summary": "Syst\u00E8me\u0020\u003A\nInstantie\u0020l\u0027objet\u0020DemoController",
+            "url": "classes/SYRADEV-app-DemoController.html#method_getInstance"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\DemoController\u003A\u003AredirectPaginateDemo\u0028\u0029",
+            "name": "redirectPaginateDemo",
+            "summary": "Affichage\u0020\u003A\nAffiche\u0020la\u0020page\u0020de\u0020d\u00E9mo\u0020de\u0020pagination\u0020redirig\u00E9e",
+            "url": "classes/SYRADEV-app-DemoController.html#method_redirectPaginateDemo"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\DemoController\u003A\u003AajaxPaginateDemo\u0028\u0029",
+            "name": "ajaxPaginateDemo",
+            "summary": "Affichage\u0020\u003A\nAffiche\u0020la\u0020page\u0020de\u0020d\u00E9mo\u0020pagination\u0020Ajax",
+            "url": "classes/SYRADEV-app-DemoController.html#method_ajaxPaginateDemo"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\DemoController\u003A\u003Aproductslist\u0028\u0029",
+            "name": "productslist",
+            "summary": "Affichage\u0020\u003A\nAffiche\u0020une\u0020liste\u0020de\u0020produits",
+            "url": "classes/SYRADEV-app-DemoController.html#method_productslist"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\DemoController\u003A\u003Aclientslist\u0028\u0029",
+            "name": "clientslist",
+            "summary": "Utilitaire\u0020\u003A\nRenvoie\u0020la\u0020liste\u0020pagin\u00E9e\u0020des\u0020clients",
+            "url": "classes/SYRADEV-app-DemoController.html#method_clientslist"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\DemoController\u003A\u003Ainfinitescroll\u0028\u0029",
+            "name": "infinitescroll",
+            "summary": "Utilitaire\u0020\u003A\nS\u00E9lectionne\u0020et\u0020envoie\u0020les\u0020donn\u00E9es\u0020du\u0020d\u00E9filement\u0020infini",
+            "url": "classes/SYRADEV-app-DemoController.html#method_infinitescroll"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\DemoController\u003A\u003AproductsByCategory\u0028\u0029",
+            "name": "productsByCategory",
+            "summary": "Utilitaire\u0020\u003A\nAffiche\u0020les\u0020produits\u0020class\u00E9s\u0020par\u0020cat\u00E9gorie",
+            "url": "classes/SYRADEV-app-DemoController.html#method_productsByCategory"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\DemoController\u003A\u003A\u0024instance",
+            "name": "instance",
+            "summary": "Instance\u0020de\u0020la\u0020classe",
+            "url": "classes/SYRADEV-app-DemoController.html#property_instance"
+        },                {
             "fqsen": "\\SYRADEV\\app\\MvcUIController",
             "name": "MvcUIController",
             "summary": "Classe\u0020MvcUIControlller\u0020\u003A\u0020Classe\u0020principale\u0020de\u0020l\u0027interface\u0020Mvc\u003A\u003AUI",
@@ -86,6 +131,11 @@ Search.appendIndex(
             "summary": "Affichage\u0020\u003A\nAffiche\u0020la\u0020documentation\u0020de\u0020la\u0020database\u0020northwind",
             "url": "classes/SYRADEV-app-MvcUIController.html#method_dbdoc"
         },                {
+            "fqsen": "\\SYRADEV\\app\\MvcUIController\u003A\u003Arelationsdoc\u0028\u0029",
+            "name": "relationsdoc",
+            "summary": "Affichage\u0020\u003A\nAffiche\u0020une\u0020documentation\u0020sur\u0020les\u0020relations\u0020de\u0020base\u0020de\u0020donn\u00E9es",
+            "url": "classes/SYRADEV-app-MvcUIController.html#method_relationsdoc"
+        },                {
             "fqsen": "\\SYRADEV\\app\\MvcUIController\u003A\u003Ahome\u0028\u0029",
             "name": "home",
             "summary": "Affichage\u0020\u003A\nAffiche\u0020la\u0020page\u0020d\u0027accueil",
@@ -170,6 +220,11 @@ Search.appendIndex(
             "name": "formalizeEuro",
             "summary": "Utilitaire\u0020\u003A\nFonction\u0020qui\u0020formatte\u0020un\u0020nombre\u0020en\u0020monnaie\u0020Euro",
             "url": "classes/SYRADEV-app-MvcUIController.html#method_formalizeEuro"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\MvcUIController\u003A\u003AsanitizeName\u0028\u0029",
+            "name": "sanitizeName",
+            "summary": "Utilitaire\u0020\u003A\nFonction\u0020qui\u0020rend\u0020conforme\u0020\u0028sans\u0020espace\u0020et\u0020ponctuation\u0029\u0020une\u0020chaine",
+            "url": "classes/SYRADEV-app-MvcUIController.html#method_sanitizeName"
         },                {
             "fqsen": "\\SYRADEV\\app\\MvcUIController\u003A\u003AgetPagination\u0028\u0029",
             "name": "getPagination",
@@ -275,46 +330,6 @@ Search.appendIndex(
             "name": "conx",
             "summary": "Objet\u0020de\u0020connexion\u0020\u00E0\u0020la\u0020base\u0020ded\u0020donn\u00E9es",
             "url": "classes/SYRADEV-app-PdoMySQL.html#property_conx"
-        },                {
-            "fqsen": "\\SYRADEV\\app\\DemoController",
-            "name": "DemoController",
-            "summary": "Classe\u0020DemoController\u0020\u00E9tends\u0020MvcUIControlller\nGestion\u0020de\u0020la\u0020pagination",
-            "url": "classes/SYRADEV-app-DemoController.html"
-        },                {
-            "fqsen": "\\SYRADEV\\app\\DemoController\u003A\u003AgetInstance\u0028\u0029",
-            "name": "getInstance",
-            "summary": "Syst\u00E8me\u0020\u003A\nInstantie\u0020l\u0027objet\u0020DemoController",
-            "url": "classes/SYRADEV-app-DemoController.html#method_getInstance"
-        },                {
-            "fqsen": "\\SYRADEV\\app\\DemoController\u003A\u003AredirectPaginateDemo\u0028\u0029",
-            "name": "redirectPaginateDemo",
-            "summary": "Affichage\u0020\u003A\nAffiche\u0020la\u0020page\u0020de\u0020d\u00E9mo\u0020de\u0020pagination\u0020redirig\u00E9e",
-            "url": "classes/SYRADEV-app-DemoController.html#method_redirectPaginateDemo"
-        },                {
-            "fqsen": "\\SYRADEV\\app\\DemoController\u003A\u003AajaxPaginateDemo\u0028\u0029",
-            "name": "ajaxPaginateDemo",
-            "summary": "Affichage\u0020\u003A\nAffiche\u0020la\u0020page\u0020de\u0020d\u00E9mo\u0020pagination\u0020Ajax",
-            "url": "classes/SYRADEV-app-DemoController.html#method_ajaxPaginateDemo"
-        },                {
-            "fqsen": "\\SYRADEV\\app\\DemoController\u003A\u003Aproductslist\u0028\u0029",
-            "name": "productslist",
-            "summary": "Affichage\u0020\u003A\nAffiche\u0020une\u0020liste\u0020de\u0020produits",
-            "url": "classes/SYRADEV-app-DemoController.html#method_productslist"
-        },                {
-            "fqsen": "\\SYRADEV\\app\\DemoController\u003A\u003Aclientslist\u0028\u0029",
-            "name": "clientslist",
-            "summary": "Utilitaire\u0020\u003A\nRenvoie\u0020la\u0020liste\u0020pagin\u00E9e\u0020des\u0020clients",
-            "url": "classes/SYRADEV-app-DemoController.html#method_clientslist"
-        },                {
-            "fqsen": "\\SYRADEV\\app\\DemoController\u003A\u003Ainfinitescroll\u0028\u0029",
-            "name": "infinitescroll",
-            "summary": "Utilitaire\u0020\u003A\nS\u00E9lectionne\u0020et\u0020envoie\u0020les\u0020donn\u00E9es\u0020du\u0020d\u00E9filement\u0020infini",
-            "url": "classes/SYRADEV-app-DemoController.html#method_infinitescroll"
-        },                {
-            "fqsen": "\\SYRADEV\\app\\DemoController\u003A\u003A\u0024instance",
-            "name": "instance",
-            "summary": "Instance\u0020de\u0020la\u0020classe",
-            "url": "classes/SYRADEV-app-DemoController.html#property_instance"
         },                {
             "fqsen": "\\",
             "name": "\\",

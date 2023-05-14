@@ -9,7 +9,7 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.3.0
+ * @version    1.4.0
  */
 
 namespace SYRADEV\app;
@@ -332,8 +332,9 @@ class MvcUIController
             'appurl' => '/documentation/api',
             'apptitle' => 'Documentation API Mvc::UI'
         ];
-        echo $this->render('Layouts.default', 'Templates.MvcUI.framed', $data, 'Documentation API Mvc::UI');
+        echo $this->render('Layouts.default', 'Templates.MvcUI.framed', $data, $data['apptitle']);
     }
+
 
     /**
      * Affichage :
@@ -343,10 +344,25 @@ class MvcUIController
     public function dbdoc(): void
     {
         $data = [
-            'appurl' => '/documentation/db',
+            'appurl' => '/documentation/northwind_bdd',
             'apptitle' => 'Documentation database northwind'
         ];
-        echo $this->render('Layouts.default', 'Templates.MvcUI.framed', $data, 'Documentation database northwind');
+        echo $this->render('Layouts.default', 'Templates.MvcUI.framed', $data, $data['apptitle']);
+    }
+
+
+    /**
+     * Affichage :
+     * Affiche une documentation sur les relations de base de données
+     * @return void
+     */
+    public function relationsdoc(): void
+    {
+        $data = [
+            'appurl' => '/documentation/relations_bdd',
+            'apptitle' => 'Documentation relations base de données.'
+        ];
+        echo $this->render('Layouts.default', 'Templates.MvcUI.framed', $data, $data['apptitle']);
     }
 
 
@@ -357,7 +373,7 @@ class MvcUIController
      */
     public function home(): void
     {
-        echo $this->render('Layouts.default', 'Templates.MvcUI.home', null, 'Acceuil');
+        echo $this->render('Layouts.default', 'Templates.MvcUI.home', null, 'Accueil');
     }
 
     /**
@@ -534,6 +550,7 @@ class MvcUIController
         return in_array($routeName, $routes) ? ' active' : '';
     }
 
+
     /**
      * Utilitaire :
      * Renvoie les informations de copyrights
@@ -546,6 +563,7 @@ class MvcUIController
         extract($appConf);
         return $mvcUi->renderPartial('/MvcUI/copyrightsinfos', ['app_name' => $app_name, 'version' => $version, 'company' => $company]);
     }
+
 
     /**
      * Utilitaire :
@@ -560,16 +578,33 @@ class MvcUIController
         return $huesRotate[array_rand($huesRotate)];
     }
 
+
     /**
      * Utilitaire :
      * Fonction qui formatte un nombre en monnaie Euro
-     * @var string $montant Le montant à formaliser en Euros
      * @return string La chaine formalisée en Euros
+     * @var string $montant Le montant à formaliser en Euros
      */
     public static function formalizeEuro(string $montant): string
     {
         return (int)$montant . '.00 &euro;';
     }
+
+
+    /**
+     * Utilitaire :
+     * Fonction qui rend conforme (sans espace et ponctuation) une chaine
+     * @param string $name
+     * @return string
+     */
+    public static function sanitizeName(string $name): string
+    {
+        // Supprimme la ponctuation et les espaces
+        $name = preg_replace('/[\p{P}\p{Zs}]+/u', '', $name);
+        // Converti les caractères accentués en ASCII
+        return iconv('UTF-8', 'ASCII//TRANSLIT', $name);
+    }
+
 
     /**
      * Utilitaire :

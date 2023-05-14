@@ -9,7 +9,7 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.3.0
+ * @version    1.4.0
  */
 use SYRADEV\app\MvcUIController;
 
@@ -18,7 +18,7 @@ extract($params);
 ?>
 <div class="w-100 mt-3 mb-3 d-flex justify-content-<?= $align; ?>">
     <nav aria-label="Pagination d-flex flex-row-reverse">
-        <ul class="pagination pagination-sm">
+        <ul class="pagination pagination-sm flex-wrap">
             <?php
             $prevDisabled = $numpage <= 1 ? ' disabled' : '';
             $prevLink = MvcUIController::getRoute($route) . '/' . ($numpage - 1);
