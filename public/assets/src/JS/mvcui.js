@@ -128,18 +128,24 @@ docReady(() => {
             if (d.documentElement.requestFullscreen) {
                 if (!screenfull) {
                     d.documentElement.requestFullscreen().then(() => {
-                        fullscreen.textContent = 'Écran réduit';
                         fullscreen.classList.add('active');
-                        screenfull = true;
                     });
                 } else {
                     d.exitFullscreen().then(() => {
-                        fullscreen.textContent = 'Plein écran';
                         fullscreen.classList.remove('active');
-                        screenfull = false;
                     });
                 }
             }
         });
     }
+    d.documentElement.addEventListener("fullscreenchange", (e) => {
+        screenfull = !screenfull;
+        if (screenfull) {
+            fullscreen.classList.add('active');
+            fullscreen.textContent = 'Écran réduit';
+        } else {
+            fullscreen.classList.remove('active');
+            fullscreen.textContent = 'Plein écran';
+        }
+    });
 });
