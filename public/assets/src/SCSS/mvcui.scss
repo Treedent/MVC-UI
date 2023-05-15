@@ -43,16 +43,6 @@
   border: none !important;
 }
 
-#top-menu {
-  a {
-    font-size: .8em;
-
-    &.active {
-      color: $secondary;
-    }
-  }
-}
-
 #top-logo {
   width: 200px;
   margin-right: 20px;
@@ -89,8 +79,8 @@
 
 #fullscreen {
   position: absolute;
-  top:120px;
-  left:20px;
+  top: 120px;
+  left: 20px;
 }
 
 .page-load-status {
@@ -149,30 +139,6 @@
   }
 }
 
-#navbarMvcui {
-  &.show {
-    li {
-      padding:10px;
-      width: 100%;
-      border: 1px solid #ffffff;
-
-      a {
-        font-size: 1rem;
-        line-height: 1.8;
-      }
-    }
-    .dropdown-menu.show {
-      padding:10px;
-      background: none !important;
-      background-color: transparent;
-      border: none !important;
-      border-radius: 0;
-      box-shadow: none;
-    }
-  }
-}
-
-
 .btn {
   &:hover {
     color: white;
@@ -180,6 +146,38 @@
 
   &.active {
     color: white;
+  }
+}
+
+#navbarMvcui {
+  ul {
+    margin-top: -4px;
+    border-radius: 3px !important;
+  }
+  li {
+    padding: 10px;
+
+    a {
+      padding-left : 10px;
+      font-size: 1rem;
+      line-height: 1.2;
+      border-radius: 3px;
+      &.active {
+        color: $secondary;
+      }
+      &:hover {
+        background: $primary;
+        color: white;
+      }
+    }
+  }
+  .dropdown-menu.show {
+    padding: 10px;
+    border: none !important;
+    border-radius: 0;
+    a {
+      padding-left : 10px;
+    }
   }
 }
 
@@ -297,13 +295,8 @@
   #mvcheader {
     background: $bgcolor !important;
   }
-  #navbarMvcui {
-    li {
-      a {
-        font-size: 1.2rem;
-        line-height: 2;
-      }
-    }
+  #top-title {
+    font-size: 1.2rem;
   }
   .grid {
     left: 0;
@@ -326,14 +319,8 @@
   #mvcheader {
     background: $bgcolor !important;
   }
-  #navbarMvcui {
-    li {
-      padding:10px;
-      a {
-        font-size: 1.2rem;
-        line-height: 2;
-      }
-    }
+  #top-title {
+    font-size: 1.2rem;
   }
   .grid {
     left: 0;
@@ -349,6 +336,9 @@
   #mvcheader {
     background: $bgcolor !important;
   }
+  #top-title {
+    font-size: 1.2rem;
+  }
 }
 
 /** LG Screen >=992px **/
@@ -356,13 +346,8 @@
   #mvcheader {
     background: $bgcolor url(/assets/imgs/filet.svg) bottom right no-repeat !important;
   }
-  #navbarMvcui {
-    li {
-      a {
-        font-size: 1rem;
-        line-height: 1.8;
-      }
-    }
+  #top-title {
+    font-size: 1.5rem;
   }
   .grid {
     margin: 0 auto;

@@ -25,7 +25,7 @@ extract($data);
  */
 ?>
 <div class="container animated fadeIn">
-    <button type="button" id="fullscreen" class="btn btn-primary text-white">Plein écran</button>
+    <button type="button" id="fullscreen" class="btn btn-primary text-white d-none d-sm-block">Plein écran</button>
     <div class="row">
         <div class="col">
             <iframe src="<?= $appurl; ?>" id="framed" referrerpolicy="strict-origin-when-cross-origin"
