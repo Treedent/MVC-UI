@@ -179,15 +179,15 @@ class DemoController extends MvcUIController
         $cnx = PdoMySQL::getInstance();
 
         // On exécute la requête à travers 3 tables Products, Categories et Suppliers
-        $sql = 'SELECT p.`ProductID`, p.`ProductName`, p.`QuantityPerUnit`, p.`UnitPrice`, p.`UnitsInStock`, c.`CategoryID`, c.`CategoryName`, c.`Picture`, 
-                    s.`CompanyName`, s.`ContactName`, s.`Country`, s.`Phone`
+        $sql = 'SELECT p.`ProductID`, p.`ProductName`, p.`QuantityPerUnit`, p.`UnitPrice`, p.`UnitsInStock`, c.`CategoryID`,
+                    c.`CategoryName`, c.`Picture`, s.`CompanyName`, s.`ContactName`, s.`Country`, s.`Phone`
                     FROM `Products` p 
 	                INNER JOIN `Categories` c ON ( p.`CategoryID` = c.`CategoryID`  )  
 	                INNER JOIN `Suppliers` s ON ( p.`SupplierID` = s.`SupplierID`  )  
 	                WHERE p.`Discontinued` = 0
-                    GROUP BY p.`ProductID`, p.`ProductName`, p.`QuantityPerUnit`, p.`UnitPrice`, p.`UnitsInStock`, c.`CategoryID`, c.`CategoryName`, 
-                    s.`CompanyName`, s.`ContactName`, s.`Country`, s.`Phone`
-                    ORDER BY p.`ProductID`';
+                    GROUP BY p.`ProductID`, p.`ProductName`, p.`QuantityPerUnit`, p.`UnitPrice`, p.`UnitsInStock`, c.`CategoryID`,
+                             c.`CategoryName`, s.`CompanyName`, s.`ContactName`, s.`Country`, s.`Phone`
+                    ORDER BY p.`ProductName`';
         $products_category = $cnx->requete($sql);
 
         // On isole les catégories

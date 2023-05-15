@@ -21,10 +21,10 @@ docReady(() => {
     const grid = d.querySelector('.grid');
 
 // On identifie le groupe de boutons de filtrage
-    const filters = document.querySelector('.filters');
+    const filters = d.querySelector('.filters');
 
     // On identifie le groupe de boutons d'ordre
-    const orders = document.querySelector('.ordering');
+    const orders = d.querySelector('.ordering');
 
 // On initialise le composant javaScript Isotope
     let iso = new Isotope(grid, {
