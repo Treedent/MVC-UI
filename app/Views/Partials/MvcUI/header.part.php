@@ -1,6 +1,6 @@
 <?php
 /**
- * MvcUI template partiel de Header
+ * MvcUI Partiel de Header
  *
  * Application MvcUI
  *

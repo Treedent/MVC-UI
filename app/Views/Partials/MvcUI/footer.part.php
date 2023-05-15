@@ -1,6 +1,6 @@
 <?php
 /**
- * MvcUI template partiel de Footer
+ * MvcUI Partiel de Footer
  *
  * Application MvcUI
  *

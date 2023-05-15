@@ -1,6 +1,6 @@
 <?php
 /**
- * Mvc::UI Template avec iframe
+ * MvcUI Template avec iframe
  *
  * Application MvcUI
  *

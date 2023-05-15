@@ -1,6 +1,6 @@
 <?php
 /**
- * MvcUI template page d'accueil
+ * MvcUI Template page d'accueil
  *
  * Application MvcUI
  *
