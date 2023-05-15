@@ -81,10 +81,16 @@
 
 #framed {
   width: 100%;
-  height: calc(100vh - 185px);
+  height: calc(100vh - 210px);
   overflow: auto;
   border: none;
   border-radius: 6px;
+}
+
+#fullscreen {
+  position: absolute;
+  top:120px;
+  left:20px;
 }
 
 .page-load-status {
@@ -151,8 +157,8 @@
       border: 1px solid #ffffff;
 
       a {
-        font-size: 1.2rem;
-        line-height: 2;
+        font-size: 1rem;
+        line-height: 1.8;
       }
     }
     .dropdown-menu.show {
@@ -353,8 +359,8 @@
   #navbarMvcui {
     li {
       a {
-        font-size: inherit;
-        line-height: inherit;
+        font-size: 1rem;
+        line-height: 1.8;
       }
     }
   }

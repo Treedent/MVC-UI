@@ -21,6 +21,9 @@ docReady(() => {
     const navbarToggler = d.querySelector('#hamburger');
     const animatedHamburger = d.querySelector('#animated-hamburger');
     const navbarmvcui = d.querySelector('#navbarMvcui');
+    const fullscreen = d.querySelector('#fullscreen');
+    const framed = d.querySelector('#framed');
+    let screenfull = false;
 
     /**
      * Evènement click sur menu hamburger
@@ -112,6 +115,31 @@ docReady(() => {
                 /** Exécute la méthode chargement de page demandée */
                 window[action](pageDemanded);
             });
+        });
+    }
+
+
+    /**
+     * Evènement sur bouton fullscreen
+     */
+    if(fullscreen !== null) {
+        fullscreen.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (d.documentElement.requestFullscreen) {
+                if (!screenfull) {
+                    d.documentElement.requestFullscreen().then(() => {
+                        fullscreen.textContent = 'Écran réduit';
+                        fullscreen.classList.add('active');
+                        screenfull = true;
+                    });
+                } else {
+                    d.exitFullscreen().then(() => {
+                        fullscreen.textContent = 'Plein écran';
+                        fullscreen.classList.remove('active');
+                        screenfull = false;
+                    });
+                }
+            }
         });
     }
 });
