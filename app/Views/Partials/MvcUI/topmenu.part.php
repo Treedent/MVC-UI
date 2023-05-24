@@ -9,7 +9,7 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.4.0
+ * @version    1.5.0
  */
 
 use SYRADEV\app\MvcUIController;
@@ -23,12 +23,12 @@ use SYRADEV\app\MvcUIController;
 
 ?>
 
-<nav class="navbar navbar-expand-lg" id="top-menu">
+<nav class="navbar navbar-expand-lg d-flex justify-content-start" id="top-menu">
     <a href="<?= MvcUIController::getRoute('home'); ?>" class="navbar-brand align-middle">
         <img id="top-logo" src="<?= MvcUIController::assets($logo); ?>"
              class="d-inline-block animated fadeIn" alt="<?= $title; ?>">
     </a>
-    <h1 id="top-title" class="align-middle"><?= $toptitle; ?></h1>
+    <h1 id="top-title" class="float-left align-middle"><?= $toptitle; ?></h1>
     <button class="navbar-toggler" id="hamburger" type="button"
             aria-controls="navbarMvcui" aria-expanded="false" aria-label="Basculer la navigation">
         <span id="animated-hamburger"><span></span><span></span><span></span><span></span></span>
@@ -40,12 +40,16 @@ use SYRADEV\app\MvcUIController;
                    href="<?= MvcUIController::getRoute('home'); ?>">Accueil</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle <?= MvcUIController::isActive(['redirectpagination', 'ajaxpagination', 'productslist', 'productsbycategory']); ?>"
+                <a class="nav-link dropdown-toggle <?= MvcUIController::isActive(['users', 'newuser', 'edituser', 'deleteuser', 'redirectpagination', 'ajaxpagination', 'productslist', 'productsbycategory']); ?>"
                    href="#" role="button" data-bs-toggle="dropdown"
                    aria-expanded="false">
                     Démos
                 </a>
                 <ul class="dropdown-menu">
+                    <li>
+                        <a class="nav-link<?= MvcUIController::isActive(['users']); ?>"
+                           href="<?= MvcUIController::getRoute('users'); ?>">CRUD Utilisateurs</a>
+                    </li>
                     <li>
                         <a class="nav-link<?= MvcUIController::isActive(['redirectpagination']); ?>"
                            href="<?= MvcUIController::getRoute('redirectpagination'); ?>">Pagination redirigée</a>
@@ -95,7 +99,7 @@ use SYRADEV\app\MvcUIController;
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= MvcUIController::getRoute('login'); ?>">Se connecter</a>
+                <a class="nav-link" href="<?= MvcUIController::getRoute('login'); ?>">Connexion</a>
             </li>
         </ul>
     </div>

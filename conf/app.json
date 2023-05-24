@@ -5,7 +5,7 @@
   "hmacData": "loCVRhEEWLCGjV7kRU06RBhXRhr2yzpcPQQE4C9Xvp",
   "app_name": "Mvc::UI",
   "company": "Syradev",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "user_session_name": "MvcUiUserSession",
   "session_token_label": "MVCUI_CSRF_TOKEN_SESS_IDX",
   "form_token_label": "mvc-ui-csrf-token-label",

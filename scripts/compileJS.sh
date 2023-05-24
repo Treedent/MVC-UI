@@ -10,7 +10,7 @@ for file in "$sourceJS"*.js; do
   sourceFile=$(basename "$file")
   sourceFilenoExt="${sourceFile%.*}"
   echo Treating "$sourceFile":
-  $uglify "$file" -o $destinationJS"$sourceFilenoExt".min.js -c -m --comments '/syradev/' --source-map "filename='$sourceFilenoExt.min.js.map'"
+  $uglify "$file" -o $destinationJS"$sourceFilenoExt".min.js -c -m --comments '/syradev/' --source-map url="$sourceFilenoExt".min.js.map
   echo "$sourceFilenoExt".min.js compiled.
   echo ----------------------------------
 done

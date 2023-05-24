@@ -9,10 +9,12 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.4.0
+ * @version    1.5.0
  */
 
 namespace SYRADEV\app;
+
+use NumberFormatter;
 
 /**
  * Classe MvcUIControlller : Classe principale de l'interface Mvc::UI
@@ -165,6 +167,7 @@ class MvcUIController
             $_SESSION['mvcRoutes'] = include_once self::ROUTESFILE;
         }
     }
+
 
     /**
      * Système :
@@ -384,7 +387,7 @@ class MvcUIController
     public function error500(): void
     {
         header("HTTP/1.1 500 Internal Server Error");
-        echo $this->render('Layouts.errors', 'Templates.errors.500', 'error500');
+        echo $this->render('Layouts.errors', 'Templates.Errors.500', 'error500');
     }
 
     /**
@@ -395,7 +398,7 @@ class MvcUIController
     public function error404(): void
     {
         header("HTTP/1.1 404 Not Found");
-        echo $this->render('Layouts.errors', 'Templates.errors.404', 'error404');
+        echo $this->render('Layouts.errors', 'Templates.Errors.404', 'error404');
     }
 
     /**
@@ -406,7 +409,7 @@ class MvcUIController
     public function error403(): void
     {
         header("HTTP/1.1 403 Forbidden");
-        echo $this->render('Layouts.errors', 'Templates.errors.403', 'error403');
+        echo $this->render('Layouts.errors', 'Templates.Errors.403', 'error403');
     }
 
     /**
@@ -417,7 +420,7 @@ class MvcUIController
     public function error401(): void
     {
         header("HTTP/1.1 401 Unauthorized");
-        echo $this->render('Layouts.errors', 'Templates.errors.401', 'error401');
+        echo $this->render('Layouts.errors', 'Templates.Errors.401', 'error401');
     }
 
 
@@ -532,6 +535,35 @@ class MvcUIController
         return hash_equals($requestToken, $expected);
     }
 
+    /**
+     * Sécurité :
+     * Insert un champ caché avec le jeton CSRF
+     * @return string *
+     */
+    public static function insertHiddenToken(): string
+    {
+        $csrfToken = self::getCSRFToken();
+        return '<input type="hidden" name="' . self::xssafe((new self)->getConf('form_token_label')) . '" value="' . $csrfToken . '">';
+    }
+
+
+/**
+ * Sécurité :
+ * Nettoie les données postées avant stockage
+ * @var array $post Le tableau posté à nettoyer
+ * @return array $post Le tableau posté nettoyé
+ */
+    protected function cleanUpValues(array $post) :array {
+        foreach ($post as $key => $value) {
+            if (is_array($value)) {
+                $post[$key] = self::cleanUpValues($value);
+            } else {
+                $post[$key] = addslashes(htmlspecialchars(trim(strip_tags($value))));
+            }
+        }
+        return $post;
+    }
+
 
 
     /***************************************************************
@@ -582,12 +614,13 @@ class MvcUIController
     /**
      * Utilitaire :
      * Fonction qui formatte un nombre en monnaie Euro
+     * @param mixed $montant Le montant à formaliser en Euros
      * @return string La chaine formalisée en Euros
-     * @var string $montant Le montant à formaliser en Euros
      */
-    public static function formalizeEuro(string $montant): string
+    public static function formalizeEuro(mixed $montant): string
     {
-        return (int)$montant . '.00 &euro;';
+        $fmt = numfmt_create( 'fr_FR', NumberFormatter::CURRENCY );
+        return numfmt_format_currency($fmt, $montant, "EUR");
     }
 
 

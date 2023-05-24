@@ -9,20 +9,46 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.4.0
+ * @version    1.5.0
  */
+
 use SYRADEV\app\MvcUIController;
 
-if (MvcUIController::isRoute('productslist', true)) {
-    echo '<script src="'. MvcUIController::assets('/js/infinite-scroll.pkgd.min.js').'"></script>';
-    echo '<script src="'. MvcUIController::assets('/js/products-scroll.min.js').'"></script>';
+if (MvcUIController::isRoute('productslist')) {
+
+    echo '<script src="' . MvcUIController::assets('/js/infinite-scroll.pkgd.min.js') . '"></script>' . '\n'
+        . '<script src="' . MvcUIController::assets('/js/products-scroll.min.js') . '"></script>';
+
 }
 
-if (MvcUIController::isRoute('ajaxpagination', true)) {
-    echo '<script src="'. MvcUIController::assets('/js/clients-ajax.min.js').'"></script>';
+
+if (MvcUIController::isRoute('ajaxpagination')) {
+
+    echo '<script src="' . MvcUIController::assets('/js/clients-ajax.min.js') . '"></script>';
+
 }
 
-if (MvcUIController::isRoute('productsbycategory', true)) {
-    echo '<script src="'. MvcUIController::assets('/js/isotope.pkgd.min.js').'"></script>';
-    echo '<script src="'. MvcUIController::assets('/js/isotope.min.js').'"></script>';
+
+if (MvcUIController::isRoute('productsbycategory')) {
+
+    echo '<script src="' . MvcUIController::assets('/js/isotope.pkgd.min.js') . '"></script>' . "\n"
+        . '<script src="' . MvcUIController::assets('/js/isotope.min.js') . '"></script>';
+
+}
+
+
+if (MvcUIController::isRoute('newuser')
+    || MvcUIController::isRoute('edituser', true)) {
+
+    echo '<script src="' . MvcUIController::assets('/js/crypto-js.min.js') . '"></script>' . "\n"
+        . '<script src="' . MvcUIController::assets('/js/aesjson.min.js') . '"></script>' . "\n"
+        . '<script src="' . MvcUIController::assets('/js/users.min.js') . '"></script>';
+
+}
+
+
+if(MvcUIController::isRoute('deleteuser', true)) {
+
+    echo '<script src="' . MvcUIController::assets('/js/users.min.js') . '"></script>';
+
 }

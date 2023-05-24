@@ -9,7 +9,7 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.4.0
+ * @version    1.5.0
  */
 
 use Syradev\app\MvcUIController;
@@ -59,6 +59,11 @@ use Syradev\app\MvcUIController;
 <script src="<?= MvcUIController::assets('/js/docready.min.js'); ?>"></script>
 <script src="<?= MvcUIController::assets('/js/bootstrap.bundle.min.js'); ?>"></script>
 <script src="<?= MvcUIController::assets('/js/mvcui.min.js'); ?>"></script>
+<script src="<?= MvcUIController::assets('/js/wow.min.js'); ?>"></script>
 <?php require_once MvcUIController::partial('/MvcUI/jsIncludes.part.php'); ?>
+<script>
+    const wow = new WOW;
+    wow.init();
+</script>
 </body>
 </html>

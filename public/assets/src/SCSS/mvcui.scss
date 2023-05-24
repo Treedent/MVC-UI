@@ -8,7 +8,7 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.4.0
+ * @version    1.5.0
 */
 
 @import "variables";
@@ -27,6 +27,12 @@
   to {
     transform: translateX(1.5em);
   }
+}
+
+.bg-ui {
+  background-color: rgba(255, 151, 80, .1);
+  border-radius: 6px;
+  padding: .4em .8em;
 }
 
 .container {
@@ -52,14 +58,13 @@
   font-size: 1.5rem;
   line-height: 2;
   font-weight: 300;
-  margin: 0 !important;
 }
 
 #to-top {
   display: none;
   position: fixed;
   bottom: 22px;
-  right: 33px;
+  right: 35px;
   z-index: 1032;
 }
 
@@ -151,34 +156,45 @@
 
 #navbarMvcui {
   ul {
-    margin-top: -4px;
+    margin-top: -1px;
     border-radius: 3px !important;
   }
+
   li {
-    padding: 10px;
+    padding: 5px;
 
     a {
-      padding-left : 10px;
+      padding-left: 10px;
       font-size: 1rem;
       line-height: 1.2;
       border-radius: 3px;
+
       &.active {
         color: $secondary;
       }
+
       &:hover {
         background: $primary;
         color: white;
       }
     }
   }
+
   .dropdown-menu.show {
     padding: 10px;
     border: none !important;
     border-radius: 0;
+
     a {
-      padding-left : 10px;
+      padding-left: 10px;
     }
   }
+}
+
+#hamburger {
+  position: absolute;
+  top: 22px;
+  right: 10px;
 }
 
 #animated-hamburger {

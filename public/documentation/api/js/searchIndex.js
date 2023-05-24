@@ -201,6 +201,16 @@ Search.appendIndex(
             "summary": "S\u00E9curit\u00E9\u0020\u003A\nValide\u0020le\u0020jeton\u0020CSRF\u0020post\u00E9\u0020par\u0020un\u0020formulaire",
             "url": "classes/SYRADEV-app-MvcUIController.html#method_validateFormRequest"
         },                {
+            "fqsen": "\\SYRADEV\\app\\MvcUIController\u003A\u003AinsertHiddenToken\u0028\u0029",
+            "name": "insertHiddenToken",
+            "summary": "S\u00E9curit\u00E9\u0020\u003A\nInsert\u0020un\u0020champ\u0020cach\u00E9\u0020avec\u0020le\u0020jeton\u0020CSRF",
+            "url": "classes/SYRADEV-app-MvcUIController.html#method_insertHiddenToken"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\MvcUIController\u003A\u003AcleanUpValues\u0028\u0029",
+            "name": "cleanUpValues",
+            "summary": "S\u00E9curit\u00E9\u0020\u003A\nNettoie\u0020les\u0020donn\u00E9es\u0020post\u00E9es\u0020avant\u0020stockage",
+            "url": "classes/SYRADEV-app-MvcUIController.html#method_cleanUpValues"
+        },                {
             "fqsen": "\\SYRADEV\\app\\MvcUIController\u003A\u003AisActive\u0028\u0029",
             "name": "isActive",
             "summary": "Utilitaire\u0020\u003A\nCompare\u0020la\u0020route\u0020courante\u0020pour\u0020son\u0020activation\u0020dans\u0020le\u0020menu",
@@ -286,6 +296,16 @@ Search.appendIndex(
             "summary": "Instance\u0020de\u0020la\u0020classe",
             "url": "classes/SYRADEV-app-MvcUIController.html#property_instance"
         },                {
+            "fqsen": "\\SYRADEV\\app\\PdoDebug",
+            "name": "PdoDebug",
+            "summary": "Class\u0020PdoDebug",
+            "url": "classes/SYRADEV-app-PdoDebug.html"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\PdoDebug\u003A\u003Ashow\u0028\u0029",
+            "name": "show",
+            "summary": "Renvoie\u0020la\u0020cha\u00EEne\u0020SQL\u0020\u00E9mul\u00E9e",
+            "url": "classes/SYRADEV-app-PdoDebug.html#method_show"
+        },                {
             "fqsen": "\\SYRADEV\\app\\PdoMySQL",
             "name": "PdoMySQL",
             "summary": "Classe\u0020PdoMySQL\nPermet\u0020d\u0027op\u00E9rer\u0020avec\u0020PDO\u0020sur\u0020une\u0020base\u0020de\u0020donn\u00E9es\u0020MySQL",
@@ -301,20 +321,30 @@ Search.appendIndex(
             "summary": "Instantie\u0020l\u0027objet\u0020PdoMySQL",
             "url": "classes/SYRADEV-app-PdoMySQL.html#method_getInstance"
         },                {
-            "fqsen": "\\SYRADEV\\app\\PdoMySQL\u003A\u003Arequete\u0028\u0029",
-            "name": "requete",
-            "summary": "Ex\u00E9cute\u0020une\u0020requ\u00EAte\u0020de\u0020type\u0020SELECT",
-            "url": "classes/SYRADEV-app-PdoMySQL.html#method_requete"
-        },                {
             "fqsen": "\\SYRADEV\\app\\PdoMySQL\u003A\u003AcompteTable\u0028\u0029",
             "name": "compteTable",
             "summary": "Renvoie\u0020le\u0020nombre\u0020d\u0027\u00E9l\u00E9ments\u0020d\u0027une\u0020table",
             "url": "classes/SYRADEV-app-PdoMySQL.html#method_compteTable"
         },                {
+            "fqsen": "\\SYRADEV\\app\\PdoMySQL\u003A\u003Arequete\u0028\u0029",
+            "name": "requete",
+            "summary": "Ex\u00E9cute\u0020une\u0020requ\u00EAte\u0020de\u0020type\u0020SELECT",
+            "url": "classes/SYRADEV-app-PdoMySQL.html#method_requete"
+        },                {
             "fqsen": "\\SYRADEV\\app\\PdoMySQL\u003A\u003Ainserer\u0028\u0029",
             "name": "inserer",
             "summary": "Insert\u0020des\u0020donn\u00E9es\u0020dans\u0020une\u0020table",
             "url": "classes/SYRADEV-app-PdoMySQL.html#method_inserer"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\PdoMySQL\u003A\u003Ametajour\u0028\u0029",
+            "name": "metajour",
+            "summary": "Met\u0020\u00E0\u0020jour\u0020des\u0020donn\u00E9es\u0020dans\u0020une\u0020table",
+            "url": "classes/SYRADEV-app-PdoMySQL.html#method_metajour"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\PdoMySQL\u003A\u003Asupprime\u0028\u0029",
+            "name": "supprime",
+            "summary": "Supprime\u0020des\u0020donn\u00E9es\u0020dans\u0020une\u0020table",
+            "url": "classes/SYRADEV-app-PdoMySQL.html#method_supprime"
         },                {
             "fqsen": "\\SYRADEV\\app\\PdoMySQL\u003A\u003AdernierIndex\u0028\u0029",
             "name": "dernierIndex",
@@ -331,6 +361,146 @@ Search.appendIndex(
             "summary": "Objet\u0020de\u0020connexion\u0020\u00E0\u0020la\u0020base\u0020ded\u0020donn\u00E9es",
             "url": "classes/SYRADEV-app-PdoMySQL.html#property_conx"
         },                {
+            "fqsen": "\\SYRADEV\\app\\UsersController",
+            "name": "UsersController",
+            "summary": "Classe\u0020DemoController\u0020\u00E9tends\u0020MvcUIControlller\nGestion\u0020de\u0020la\u0020pagination",
+            "url": "classes/SYRADEV-app-UsersController.html"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\UsersController\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructeur\u0020de\u0020la\u0020classe\u0020UsersController",
+            "url": "classes/SYRADEV-app-UsersController.html#method___construct"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\UsersController\u003A\u003AgetInstance\u0028\u0029",
+            "name": "getInstance",
+            "summary": "Syst\u00E8me\u0020\u003A\nInstantie\u0020l\u0027objet\u0020UsersController",
+            "url": "classes/SYRADEV-app-UsersController.html#method_getInstance"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\UsersController\u003A\u003AaesEncrypt\u0028\u0029",
+            "name": "aesEncrypt",
+            "summary": "",
+            "url": "classes/SYRADEV-app-UsersController.html#method_aesEncrypt"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\UsersController\u003A\u003AaesDecrypt\u0028\u0029",
+            "name": "aesDecrypt",
+            "summary": "",
+            "url": "classes/SYRADEV-app-UsersController.html#method_aesDecrypt"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\UsersController\u003A\u003Aargon2idHash\u0028\u0029",
+            "name": "argon2idHash",
+            "summary": "",
+            "url": "classes/SYRADEV-app-UsersController.html#method_argon2idHash"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\UsersController\u003A\u003Aargon2idHashVerify\u0028\u0029",
+            "name": "argon2idHashVerify",
+            "summary": "",
+            "url": "classes/SYRADEV-app-UsersController.html#method_argon2idHashVerify"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\UsersController\u003A\u003AvalidateEmail\u0028\u0029",
+            "name": "validateEmail",
+            "summary": "S\u00E9curit\u00E9\u0020\u003A\nV\u00E9rifie\u0020la\u0020syntaxe\u0020d\u0027une\u0020adresse\u0020mail",
+            "url": "classes/SYRADEV-app-UsersController.html#method_validateEmail"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\UsersController\u003A\u003AgetNumberOfCPUs\u0028\u0029",
+            "name": "getNumberOfCPUs",
+            "summary": "Utilitaire\u0020\u003A\nRenvoie\u0020le\u0020nombre\u0020de\u0020processeurs\u0020de\u0020la\u0020machine\u0020h\u00F4te",
+            "url": "classes/SYRADEV-app-UsersController.html#method_getNumberOfCPUs"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\UsersController\u003A\u003AlistUsers\u0028\u0029",
+            "name": "listUsers",
+            "summary": "CRUD\u0020UTILISATEUR\u0020\u003A\nRenvoie\u0020la\u0020liste\u0020des\u0020utilisateurs",
+            "url": "classes/SYRADEV-app-UsersController.html#method_listUsers"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\UsersController\u003A\u003AnewUser\u0028\u0029",
+            "name": "newUser",
+            "summary": "CRUD\u0020UTILISATEUR\u0020\u003A\nAffiche\u0020le\u0020formulaire\u0020de\u0020cr\u00E9ation\u0020d\u0027un\u0020utilisateur",
+            "url": "classes/SYRADEV-app-UsersController.html#method_newUser"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\UsersController\u003A\u003AcreateUser\u0028\u0029",
+            "name": "createUser",
+            "summary": "CRUD\u0020UTILISATEUR\u0020\u003A\nCr\u00E9\u00E9\u0020un\u0020nouvel\u0020utilisateur\u0020en\u0020base\u0020de\u0020donn\u00E9es",
+            "url": "classes/SYRADEV-app-UsersController.html#method_createUser"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\UsersController\u003A\u003AeditUser\u0028\u0029",
+            "name": "editUser",
+            "summary": "CRUD\u0020UTILISATEUR\u0020\u003A\nAffiche\u0020le\u0020formulaire\u0020d\u0027\u00E9dition\u0020d\u0027un\u0020utilisateur",
+            "url": "classes/SYRADEV-app-UsersController.html#method_editUser"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\UsersController\u003A\u003AupdateUser\u0028\u0029",
+            "name": "updateUser",
+            "summary": "CRUD\u0020UTILISATEUR\u0020\u003A\nMet\u0020\u00E0\u0020jour\u0020un\u0020utilisateur\u0020en\u0020base\u0020de\u0020donn\u00E9es",
+            "url": "classes/SYRADEV-app-UsersController.html#method_updateUser"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\UsersController\u003A\u003AdeleteUser\u0028\u0029",
+            "name": "deleteUser",
+            "summary": "CRUD\u0020UTILISATEUR\u0020\u003A\nAffiche\u0020le\u0020formulaire\u0020de\u0020confirmation\u0020de\u0020suppression\u0020d\u0027un\u0020utilisateur",
+            "url": "classes/SYRADEV-app-UsersController.html#method_deleteUser"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\UsersController\u003A\u003AdestroyUser\u0028\u0029",
+            "name": "destroyUser",
+            "summary": "CRUD\u0020UTILISATEUR\u0020\u003A\nSupprime\u0020un\u0020utilisateur\u0020de\u0020la\u0020base\u0020de\u0020donn\u00E9es",
+            "url": "classes/SYRADEV-app-UsersController.html#method_destroyUser"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\UsersController\u003A\u003A\u0024instance",
+            "name": "instance",
+            "summary": "Instance\u0020de\u0020la\u0020classe",
+            "url": "classes/SYRADEV-app-UsersController.html#property_instance"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\UsersController\u003A\u003A\u0024cipherAlgo",
+            "name": "cipherAlgo",
+            "summary": "",
+            "url": "classes/SYRADEV-app-UsersController.html#property_cipherAlgo"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\UsersController\u003A\u003A\u0024hashAlgo",
+            "name": "hashAlgo",
+            "summary": "",
+            "url": "classes/SYRADEV-app-UsersController.html#property_hashAlgo"
+        },                {
+            "fqsen": "\\SYRADEV\\app\\UsersController\u003A\u003A\u0024secret",
+            "name": "secret",
+            "summary": "",
+            "url": "classes/SYRADEV-app-UsersController.html#property_secret"
+        },                {
+            "fqsen": "\\SYRADEV\\Model\\UserModel",
+            "name": "UserModel",
+            "summary": "",
+            "url": "classes/SYRADEV-Model-UserModel.html"
+        },                {
+            "fqsen": "\\SYRADEV\\Model\\UserModel\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Syst\u00E8me\u0020\u003A\nConstructeur\u0020du\u0020mod\u00E8le\u0020User",
+            "url": "classes/SYRADEV-Model-UserModel.html#method___construct"
+        },                {
+            "fqsen": "\\SYRADEV\\Model\\UserModel\u003A\u003A\u0024active",
+            "name": "active",
+            "summary": "",
+            "url": "classes/SYRADEV-Model-UserModel.html#property_active"
+        },                {
+            "fqsen": "\\SYRADEV\\Model\\UserModel\u003A\u003A\u0024role",
+            "name": "role",
+            "summary": "",
+            "url": "classes/SYRADEV-Model-UserModel.html#property_role"
+        },                {
+            "fqsen": "\\SYRADEV\\Model\\UserModel\u003A\u003A\u0024firstname",
+            "name": "firstname",
+            "summary": "",
+            "url": "classes/SYRADEV-Model-UserModel.html#property_firstname"
+        },                {
+            "fqsen": "\\SYRADEV\\Model\\UserModel\u003A\u003A\u0024lastname",
+            "name": "lastname",
+            "summary": "",
+            "url": "classes/SYRADEV-Model-UserModel.html#property_lastname"
+        },                {
+            "fqsen": "\\SYRADEV\\Model\\UserModel\u003A\u003A\u0024email",
+            "name": "email",
+            "summary": "",
+            "url": "classes/SYRADEV-Model-UserModel.html#property_email"
+        },                {
+            "fqsen": "\\SYRADEV\\Model\\UserModel\u003A\u003A\u0024password",
+            "name": "password",
+            "summary": "",
+            "url": "classes/SYRADEV-Model-UserModel.html#property_password"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -345,5 +515,10 @@ Search.appendIndex(
             "name": "SYRADEV",
             "summary": "",
             "url": "namespaces/syradev.html"
+        },                {
+            "fqsen": "\\SYRADEV\\Model",
+            "name": "Model",
+            "summary": "",
+            "url": "namespaces/syradev-model.html"
         }            ]
 );

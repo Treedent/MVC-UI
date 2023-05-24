@@ -63,6 +63,10 @@
                 <a href="namespaces/syradev-app.html" class="">app</a>
                 
             </li>
+                    <li>
+                <a href="namespaces/syradev-model.html" class="">Model</a>
+                
+            </li>
             </ul>
 
                         </section>
@@ -179,11 +183,25 @@ Permet d&#039;opérer avec PDO sur une base de données MySQL</p>
 <dd>Insert des données dans une table</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/SYRADEV-app-PdoMySQL.html#method_metajour">metajour()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Met à jour des données dans une table</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/SYRADEV-app-PdoMySQL.html#method_requete">requete()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
 <dd>Exécute une requête de type SELECT</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/SYRADEV-app-PdoMySQL.html#method_supprime">supprime()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Supprime des données dans une table</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/SYRADEV-app-PdoMySQL.html#method___construct">__construct()</a>
@@ -221,7 +239,7 @@ Connexion automatique à la base de données</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Classes/PdoMySQL.php"><a href="files/app-classes-pdomysql.html"><abbr title="app/Classes/PdoMySQL.php">PdoMySQL.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">39</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 
     </aside>
 
@@ -270,7 +288,7 @@ Connexion automatique à la base de données</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Classes/PdoMySQL.php"><a href="files/app-classes-pdomysql.html"><abbr title="app/Classes/PdoMySQL.php">PdoMySQL.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">32</span>
+    <span class="phpdocumentor-element-found-in__line">33</span>
 
     </aside>
 
@@ -323,7 +341,7 @@ Connexion automatique à la base de données</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Classes/PdoMySQL.php"><a href="files/app-classes-pdomysql.html"><abbr title="app/Classes/PdoMySQL.php">PdoMySQL.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">94</span>
+    <span class="phpdocumentor-element-found-in__line">79</span>
 
     </aside>
 
@@ -370,7 +388,7 @@ Connexion automatique à la base de données</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Classes/PdoMySQL.php"><a href="files/app-classes-pdomysql.html"><abbr title="app/Classes/PdoMySQL.php">PdoMySQL.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">146</span>
+    <span class="phpdocumentor-element-found-in__line">243</span>
 
     </aside>
 
@@ -403,7 +421,7 @@ Connexion automatique à la base de données</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Classes/PdoMySQL.php"><a href="files/app-classes-pdomysql.html"><abbr title="app/Classes/PdoMySQL.php">PdoMySQL.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">64</span>
+    <span class="phpdocumentor-element-found-in__line">66</span>
 
     </aside>
 
@@ -438,7 +456,7 @@ Connexion automatique à la base de données</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Classes/PdoMySQL.php"><a href="files/app-classes-pdomysql.html"><abbr title="app/Classes/PdoMySQL.php">PdoMySQL.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">106</span>
+    <span class="phpdocumentor-element-found-in__line">108</span>
 
     </aside>
 
@@ -487,6 +505,71 @@ Connexion automatique à la base de données</dd>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_metajour">
+        metajour()
+        <a href="classes/SYRADEV-app-PdoMySQL.html#method_metajour" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Classes/PdoMySQL.php"><a href="files/app-classes-pdomysql.html"><abbr title="app/Classes/PdoMySQL.php">PdoMySQL.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">152</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Met à jour des données dans une table</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">metajour</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$condition</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$table</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Le nom de la table cible</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$data</span>
+                : <span class="phpdocumentor-signature__argument__return-type">object</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>L'objet contenant les données à mettre à jour</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$condition</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>La condition de mise à jour (ex: &quot;id = :id&quot;)</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Retourne TRUE en cas de succès ou FALSE en cas d'échec</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_requete">
         requete()
         <a href="classes/SYRADEV-app-PdoMySQL.html#method_requete" class="headerlink"><i class="fas fa-link"></i></a>
@@ -494,7 +577,7 @@ Connexion automatique à la base de données</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Classes/PdoMySQL.php"><a href="files/app-classes-pdomysql.html"><abbr title="app/Classes/PdoMySQL.php">PdoMySQL.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">78</span>
+    <span class="phpdocumentor-element-found-in__line">91</span>
 
     </aside>
 
@@ -540,6 +623,62 @@ Connexion automatique à la base de données</dd>
                     <article
         class="phpdocumentor-element
             -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_supprime">
+        supprime()
+        <a href="classes/SYRADEV-app-PdoMySQL.html#method_supprime" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/Classes/PdoMySQL.php"><a href="files/app-classes-pdomysql.html"><abbr title="app/Classes/PdoMySQL.php">PdoMySQL.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">199</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Supprime des données dans une table</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">supprime</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$conditions</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$table</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Le nom de la table cible</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$conditions</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>un tableau de conditions composé de couples champ/valeur</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Retourne TRUE en cas de succès ou FALSE en cas d'échec</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
             -private
                                                         "
 >
@@ -550,7 +689,7 @@ Connexion automatique à la base de données</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/Classes/PdoMySQL.php"><a href="files/app-classes-pdomysql.html"><abbr title="app/Classes/PdoMySQL.php">PdoMySQL.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 
     </aside>
 

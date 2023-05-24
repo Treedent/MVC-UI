@@ -39,6 +39,15 @@ ErrorDocument 401 /401
     # Récupération de la variable get clientspage
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^api/clients/(.*) /index.php?clientspage=$1
+
+    # Récupération de la variable get uid
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^users/edituser/(.*) /index.php?uid=$1
+
+    # Récupération de la variable get uid
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^users/deleteuser/(.*) /index.php?uid=$1
+
     ### Fin des segments d'url ###
 
     ### Redirection globale de toutes les requêtes vers le fichier index.php dans le répertoire courant,

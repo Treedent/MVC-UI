@@ -9,7 +9,7 @@
  * @email      syradev@proton.me
  * @copyright  Syradev 2023
  * @license    https://www.gnu.org/licenses/gpl-3.0.en.html  GNU General Public License
- * @version    1.4.0
+ * @version    1.5.0
  */
 
 namespace SYRADEV\app;
@@ -26,7 +26,7 @@ class DemoController extends MvcUIController
      * Instance de la classe
      * @protected MvcUIController|null $instance
      */
-    protected static ?MvcUIController $instance = null;
+    public static ?MvcUIController $instance = null;
 
 
     /**
@@ -71,7 +71,7 @@ class DemoController extends MvcUIController
         // Calcule la position à requêter en base
         $position = $page === 1 ? 0 : $page * $maxPerPage - $maxPerPage;
 
-        // Requête paginée sur les clients en base
+        // Requête paginée des clients en base de données
         $requeteClients = sprintf('SELECT * from `Customers` ORDER BY `CustomerID` LIMIT %d,%d', $position, $maxPerPage);
         $clients = $cnx->requete($requeteClients);
 
